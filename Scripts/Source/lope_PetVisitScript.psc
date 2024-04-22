@@ -5,7 +5,7 @@ float timeEndingWalk = 0.0
 
 
 float function getHours(Float time)
-    return (time / 24)
+    return (time * 24)
 endfunction
 
 
@@ -22,6 +22,7 @@ endfunction
 function setWalkedTime()
     setEndingTime()
     walkTime.setvalue(getHours(timeEndingWalk - timeStartWalk))
+    ; Debug.messagebox("walkTime : "+walkTime.getValue())
 endfunction
 
 

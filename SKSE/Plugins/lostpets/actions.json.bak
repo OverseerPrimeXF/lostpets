@@ -1,0 +1,57 @@
+{
+    "forms": {
+        "WolfAmbushStart": {
+            "scene0": {
+                "stage0": {
+					"topic1": {
+                        "rotate": [
+                            180
+                        ]
+                    },
+                    "topic3": {
+						"quest": [
+                            "0x24A42C|lost_pets.esp"
+                        ],
+                        "modForm": [
+                            "0x280b67|lost_pets.esp"
+                        ],
+                        "playerIdle": [
+                            "0xD286|Dawnguard.esm"
+                        ],
+                        "questStage": [
+                            120
+                        ]
+                    },
+					"topic4": {
+						"quest": [
+                            "0x24A42C|lost_pets.esp"
+                        ],
+                        "modForm": [
+                            "0x24A42C|lost_pets.esp"
+                        ],
+                        "playerIdle": [
+                            "0xD286|Dawnguard.esm"
+                        ],
+                        "questStage": [
+                            125
+                        ]
+                    }
+                }
+            }
+        },
+		"WolfAmbushRape": {
+            "scene0": {
+                "stage5": {
+                    "topic10": {
+						"quest": [
+                            "0x24A42C|lost_pets.esp"
+                        ],
+                        "questStage": [
+                            150
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

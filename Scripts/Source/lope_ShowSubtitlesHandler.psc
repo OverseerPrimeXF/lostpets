@@ -48,7 +48,7 @@ event OnShowSubtitles(String eventName, String sceneName, int stageId, Form part
 
     while topicIdx <= topicCount
         replic = PathStringElements(fileName, sceneFullPath+".topic"+topicIdx)
-        ; messagebox(replic)
+        ; notification(sceneFullPath+".topic"+topicIdx)
         ; sub.WidgetVisible(True)
         if replic[1] == "Pause"
             sub.WidgetVisible(False)
@@ -59,12 +59,17 @@ event OnShowSubtitles(String eventName, String sceneName, int stageId, Form part
         else
             sub.showSubtitles(name=replic[0], text=replic[1])
         endif
+        if replic.length == 4
+            ; get package or apply actor to 
+            act.doActions(replic[3])
+        endif
         utility.wait(replic[2] as int)
         topicIdx += 1
     endwhile
     sub.WidgetVisible(False)
     topicIdx = 0
     sl.nextStageSexlab()
+    notification("sl.nextStageSexlab()")
 endevent
 
 
@@ -103,13 +108,14 @@ event OnShowSubtitlesNonSexlab(String eventName, String sceneName, int stageId, 
         endif
         if replic.length == 4
             ; get package or apply actor to 
+            act.doActions(replic[3], getowningquest())
         endif
         utility.wait(replic[2] as int)
         topicIdx += 1
     endwhile
     sub.WidgetVisible(False)
     topicIdx = 0
-    sl.nextStageSexlab()
+    ; sl.nextStageSexlab()
 endevent
 
 
@@ -256,3 +262,6 @@ endFunction
 lopeSubtitles Property sub  Auto  
 
 lope_sl Property sl  Auto  
+
+
+lopeSubtitlesActionsAPI Property act  Auto  

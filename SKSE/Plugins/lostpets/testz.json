@@ -1,0 +1,51 @@
+{
+	"dogTagsAnal" : 
+	{
+		"scene0" : 
+		{
+			"Stage0" : 
+			[
+				"Dog",
+				"Fucks player fast",
+				"3"
+			],
+			"Stage1" : 
+			[
+				"Dog",
+				"Fucks player fast",
+				"3"
+			],
+			"Stage2" : 
+			[
+				"Dog",
+				"Fucks player fast",
+				"3"
+			]
+		},
+		"scene1" : 
+		{
+			"Stage0" : 
+			[
+				"Dog",
+				"Fucks player fast",
+				"3"
+			],
+			"Stage1" : 
+			[
+				"Dog",
+				"Fucks player fast",
+				"3"
+			],
+			"Stage2" : 
+			[
+				"Dog",
+				"Fucks player fast",
+				"3"
+			]
+		},
+		"scene_1" : 
+		{
+			"Stage_0" : "0x280b67|lost_pets.esp"
+		}
+	}
+}

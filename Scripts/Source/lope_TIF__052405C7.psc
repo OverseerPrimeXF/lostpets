@@ -1,18 +1,12 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-;NEXT FRAGMENT INDEX 1
+;NEXT FRAGMENT INDEX 2
 Scriptname lope_TIF__052405C7 Extends TopicInfo Hidden
 
-;BEGIN FRAGMENT Fragment_0
-Function Fragment_0(ObjectReference akSpeakerRef)
+;BEGIN FRAGMENT Fragment_1
+Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-; lope_ShowSubtitlesHandler ssh = (lope_SSH as lope_ShowSubtitlesHandler)
-; ss h.ShowSubtitles(sceneName="dogTagsAnal",\
-;                         stageId=0,\
-;                         partner=akspeaker)
-; ssh.countPrefix()
-
-foos.MoveActorToRandomPosBehind(akspeaker, game.GetPlayer(), 240, 612)
+(lope_OvumWidget as lopeOvum).WidgetVisible(True)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -22,3 +16,5 @@ EndFunction
 ReferenceAlias Property lope_SSH  Auto  
 
 lope_functions Property foos  Auto  
+
+Quest Property lope_OvumWidget  Auto  
