@@ -21,7 +21,7 @@ Event OnWidgetInit()
     hudModes[14] = "SleepWaitMode"
     ; hudModes[15] = "JournalMode"
     ; hudModes[16] = "VATSPlayback"
-    debug.messagebox("widget initialized")
+    debug.trace("[LoPe] Subtitles widget initialized!")
     Modes = hudModes
 EndEvent
 

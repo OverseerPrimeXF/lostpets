@@ -12,6 +12,10 @@ Import JsonUtil
 
 Event  OnInit()
     doInit()
+    Storage.initializeRanksArrays()
+    Trace("[LoPe] Initialized arrays.")
+    startup.setPetsArrays()
+    Trace("[LoPe] Set pets arrays.")
 endEvent
 
 
@@ -32,23 +36,84 @@ event OnShowSubtitles(String eventName, String sceneName, int stageId, Form part
     int sceneCount
     int stageCount
     int topicCount
-    string sceneNameL = sceneName
+    ; string sceneNameL = sceneName
     string fileName = "../lostpets/subtitles.json"
-    string sceneFullPath = "."
+    string sceneFullPath = "."+sceneName
     string[] replic
 
-    sceneCount = PathCount(filename, "."+sceneName) - 1
+    sceneFullPath += ".relationshipRank" + (partner as Actor).GetRelationshipRank(PlayerActor)
+    ; sceneCount = PathCount(filename, "."+sceneName) - 1
+    sceneCount = PathCount(filename, sceneFullPath) - 1
     if sceneCount > 0
         sceneCount = RandomInt(0, sceneCount)
     endif
-    sceneFullPath += sceneName+".scene"+sceneCount
-    stageCount = PathCount(fileName, sceneFullPath)
-    sceneFullPath += ".stage"+stageId
+    ; sceneFullPath += sceneName+".scene"+sceneCount
+    sceneFullPath += ".scene" + sceneCount
+    ; stageCount = PathCount(fileName, sceneFullPath)
+    sceneFullPath += ".stage" + stageId
     topicCount = PathCount(fileName, sceneFullPath) - 1
-
+    MiscUtil.PrintConsole("[LoPe] full sexlab scene path: " + sceneFullPath)
     while topicIdx <= topicCount
+        if (sl.getSexlabStage() - 1) > stageId
+            ; MessageBox(sl.getSexlabStage()+">"+stageId)
+            return
+        endif
         replic = PathStringElements(fileName, sceneFullPath+".topic"+topicIdx)
         ; notification(sceneFullPath+".topic"+topicIdx)
+        if replic[1] == "Pause"
+            sub.WidgetVisible(False)
+        ElseIf (replic[0]=="Player")
+            sub.showSubtitles(\
+                speaker=PlayerActor,\
+                text=func.SRIB(replic[1], (partner as actor).getactorbase().getName()))
+        elseif partner && replic[0]=="Pet"
+            sub.showSubtitles(\
+                speaker=partner as actor,\
+                text=func.SRIB(replic[1], PlayerActor)\
+                )
+        else
+            sub.showSubtitles(name=replic[0], text=replic[1])
+        endif
+        if replic.length == 4
+            ; get package or apply actor to 
+            act.doActions(replic[3], replic[2] as int, partner as Actor)
+        endif
+        utility.wait(replic[2] as int)
+        topicIdx += 1
+    endwhile
+    sub.WidgetVisible(False)
+    topicIdx = 0
+    sl.nextStageSexlab()
+    ; notification("sl.nextStageSexlab()")
+endevent
+
+
+; Non Sexalb version of subtitles, just showes plain subtitles.
+event OnShowSubtitlesNonSexlab(String eventName, String sceneName, int stageId, Form partner)
+    int topicIdx = 0
+    int sceneCount
+    int stageCount
+    int topicCount
+    ; string sceneNameL = sceneName
+    string fileName = "../lostpets/subtitles.json"
+    ; string sceneFullPath = "."
+    string sceneFullPath = "."+sceneName
+    string[] replic
+
+    sceneFullPath += ".relationshipRank" + (partner as Actor).GetRelationshipRank(PlayerActor)
+    sceneCount = PathCount(filename, sceneFullPath) - 1
+    if sceneCount > 0
+        sceneCount = RandomInt(0, sceneCount)
+    endif
+    ; sceneFullPath += sceneName+".scene"+sceneCount
+    ; stageCount = PathCount(fileName, sceneFullPath)
+    sceneFullPath += ".scene" + sceneCount
+    sceneFullPath += ".stage" + stageId
+    topicCount = PathCount(fileName, sceneFullPath) - 1
+    MiscUtil.Printconsole("[LoPe] full scene path: " + sceneFullPath)
+    while topicIdx <= topicCount
+        replic = PathStringElements(fileName, sceneFullPath+".topic"+topicIdx)
+        ; messagebox(replic)
         ; sub.WidgetVisible(True)
         if replic[1] == "Pause"
             sub.WidgetVisible(False)
@@ -61,56 +126,18 @@ event OnShowSubtitles(String eventName, String sceneName, int stageId, Form part
         endif
         if replic.length == 4
             ; get package or apply actor to 
-            act.doActions(replic[3])
+            act.doActions(replic[3], replic[2] as int, partner as Actor)
+            if CurrentScene
+                while CurrentScene.IsPlaying()
+                    utility.wait(1)
+                endwhile
+            endif
         endif
-        utility.wait(replic[2] as int)
-        topicIdx += 1
-    endwhile
-    sub.WidgetVisible(False)
-    topicIdx = 0
-    sl.nextStageSexlab()
-    notification("sl.nextStageSexlab()")
-endevent
-
-
-; Non Sexalb version of subtitles, just showes plain subtitles.
-event OnShowSubtitlesNonSexlab(String eventName, String sceneName, int stageId, Form partner)
-    int topicIdx = 0
-    int sceneCount
-    int stageCount
-    int topicCount
-    string sceneNameL = sceneName
-    string fileName = "../lostpets/subtitles.json"
-    string sceneFullPath = "."
-    string[] replic
-
-    sceneCount = PathCount(filename, "."+sceneName) - 1
-    if sceneCount > 0
-        sceneCount = RandomInt(0, sceneCount)
-    endif
-    sceneFullPath += sceneName+".scene"+sceneCount
-    stageCount = PathCount(fileName, sceneFullPath)
-    sceneFullPath += ".stage"+stageId
-    topicCount = PathCount(fileName, sceneFullPath) - 1
-
-    while topicIdx <= topicCount
-        replic = PathStringElements(fileName, sceneFullPath+".topic"+topicIdx)
-        ; messagebox(replic)
-        ; sub.WidgetVisible(True)
-        if replic[1] == "Pause"
-            sub.WidgetVisible(False)
-        ElseIf (replic[0]=="Player")
-            sub.showSubtitles(speaker=game.GetPlayer() as actor, text=replic[1])
-        ; elseif partner && replic[0]=="Pet"
-        ;     sub.showSubtitles(speaker=partner as actor, text=replic[1])
+        if !CurrentScene
+            utility.wait(replic[2] as int)
         else
-            sub.showSubtitles(name=replic[0], text=replic[1])
+            CurrentScene = None
         endif
-        if replic.length == 4
-            ; get package or apply actor to 
-            act.doActions(replic[3], getowningquest())
-        endif
-        utility.wait(replic[2] as int)
         topicIdx += 1
     endwhile
     sub.WidgetVisible(False)
@@ -254,7 +281,7 @@ function SendEvent(String eventName, String sceneName, Int stageId, Form Partner
         ModEvent.PushForm(handle, Partner)
         ModEvent.Send(handle)
     Else
-        debug.messagebox("All fucked!")
+        debug.messagebox("[SendEvent] All fucked!")
     endif
 endFunction
 
@@ -263,5 +290,14 @@ lopeSubtitles Property sub  Auto
 
 lope_sl Property sl  Auto  
 
+lopeSubtitlesActionsAPI Property act Auto  
+ 
+lope_LostPetsStartupRoutine Property startup Auto  
 
-lopeSubtitlesActionsAPI Property act  Auto  
+lope_storageContainer Property Storage Auto 
+
+lope_functions Property func Auto
+
+Scene Property CurrentScene = None Auto 
+
+Actor Property PlayerActor Auto

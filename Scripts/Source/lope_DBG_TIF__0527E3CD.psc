@@ -1,16 +1,13 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-;NEXT FRAGMENT INDEX 2
-Scriptname lope_TIF__0527E3CD Extends TopicInfo Hidden
+;NEXT FRAGMENT INDEX 3
+Scriptname lope_DBG_TIF__0527E3CD Extends TopicInfo Hidden
 
-;BEGIN FRAGMENT Fragment_1
-Function Fragment_1(ObjectReference akSpeakerRef)
+;BEGIN FRAGMENT Fragment_2
+Function Fragment_2(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-; startup.setPetsArrays()
-; bool FIH = lope_Fenris.GetCurrentLocation().IsChild(\
-;     Storage.HaafingarLoc())
-; debug.messagebox(Storage.HaafingarLoc()+fih)
-debug.messagebox(Storage.HaafingarLoc() as string)
+func.StringReplaceInBrackets(\
+    "Fuck this {biden} I'm out!", "shit")
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -28,3 +25,9 @@ Form Property FenrisForm  Auto
 lope_LostPetsStartupRoutine Property startup  Auto  
 
 lope_storageContainer Property Storage  Auto  
+
+lope_functions Property func  Auto  
+
+Keyword Property LocTypeHold  Auto  
+
+ObjectReference Property PlayerRef  Auto  

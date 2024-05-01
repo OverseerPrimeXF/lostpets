@@ -6,6 +6,7 @@ Scriptname lope_TIF__0400BA73 Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
+lowestPetRelationship.setValueInt(StartupRoutine.getMinimalRelationships())
 RumorSourceLocation.ForceLocationTo(akspeaker.getCurrentLocation())
 RumorsSourceREF.ForceRefTo(akspeaker)
 ;debug.messagebox("rumors here - "+RumorSourceLocation.getLocation())
@@ -18,3 +19,9 @@ EndFunction
 LocationAlias Property RumorSourceLocation  Auto  
 
 ReferenceAlias Property RumorsSourceREF  Auto  
+
+GlobalVariable Property lowestPetRelationship  Auto  
+
+lope_LostPetsStartupRoutine Property StartupRoutine Auto 
+
+ReferenceAlias Property RandomPet  Auto  

@@ -1,4 +1,13 @@
 Scriptname lope_LostPetsController extends Quest  
+{Z}
+import Debug
+
+import PO3_SKSEFunctions
+import MiscUtil
+
+
+
+String sceneName = "FoundLostDogFacRank"
 
 function registerNextTimeUpdate()
     RegisterForSingleUpdate(1)
@@ -11,7 +20,14 @@ Event OnUpdate()
             Debug.Notification(Pet.GetActorReference().getActorBase().getName()+" somewhere nearby.")
             setobjectivecompleted(100)
             setstage(110)
-            PlayerFoundPet.start()
+            ; PlayerFoundPet.start()
+            sceneName += Pet.getActorRef().GetFactionRank(LostPetsFaction)
+            if MarkersInColdPlace.Find(PetMarker.getRef()) != -1
+                sceneName += "Cold"
+            endif
+            debug.messagebox(sceneName)
+            (lope_SSH as lope_ShowSubtitlesHandler).showSubtitlesNonSexlab(\
+                sceneName, 0, Pet.getActorRef())
         Else 
             registerNextTimeUpdate()
         EndIf
@@ -19,7 +35,7 @@ Event OnUpdate()
 EndEvent
 
 
-;[OBSOLETE] Return formlist with avaliable lost pet places for Owner's hold.;Doesnt worked, changed
+; [OBSOLETE] Return formlist with avaliable lost pet places for Owner's hold.;Doesnt worked, changed
 FormList function setFormList()
     Actor OwnersActor = Owner.GetActorReference()
     debug.messagebox("Owner's location: "+OwnersActor .getcurrentlocation().getname())
@@ -47,17 +63,14 @@ EndFunction
 
 
 ObjectReference function getPetMarker(ReferenceAlias OwnerActorExt=None,\
-                                                                 ReferenceAlias[] LostPet_MarkersExt=None\
-                                           )
+                                      ReferenceAlias[] LostPet_MarkersExt=None)
     Actor OwnersActor    
     if !OwnerActorExt
         OwnersActor = Owner.GetActorReference()
     else
         OwnersActor  = OwnerActorExt.GetActorReference()
     endif
-
-    ;debug.messagebox("Owner's location: "+OwnersActor .getcurrentlocation().getname())
-
+    ; debug.messagebox("Owner's location: "+OwnersActor .getcurrentlocation().getname())
     int arrayLength = Holds.length - 1
     if arrayLength != LostPet_Markers.length - 1
         Debug.MessageBox("Holy shoite! Arrays at lope_LostPetsController aren't same length :(!")
@@ -101,8 +114,8 @@ ObjectReference Function GetRandomMarker(FormList PossiblePlaces)
     ;debug.messagebox("formSize  "+formSize)
     Int index = utility.RandomInt(0, formSize)
     ;debug.messagebox("index "+index )
-    ;debug.messagebox("GetRandomMarker without as objectref returned "+PossiblePlaces.GetAt(index))
-    ;debug.messagebox("GetRandomMarker returned "+PossiblePlaces.GetAt(index) as ObjectReference)
+    ; debug.messagebox("GetRandomMarker without as objectref returned "+PossiblePlaces.GetAt(index))
+    ; debug.messagebox("GetRandomMarker returned "+PossiblePlaces.GetAt(index) as ObjectReference)
     Return PossiblePlaces.GetAt(index) as ObjectReference 
 EndFunction
 
@@ -121,7 +134,47 @@ Function SetPetLocationAlias(ObjectReference Marker)
 EndFunction
 
 
-function waveHand(Actor akActor)
+bool Function SetRandomPetFactionRank(Actor aPet, Faction fPetFaction)
+    ; MessageBox("Pet to set rank: "+aPet+aPet.GetActorBase().GetName())
+    if aPet.GetFactionRank(fPetFaction) > 0
+        PrintConsole("[LoPe] Pet already has a rank: "+aPet.GetFactionRank(fPetFaction))
+        ; Trace("[LoPe] Pet already has a rank!")
+        return False
+    endif
+    int[] petHoldRanks = func.getPetHoldRanksArray(aPet)
+    ; PrintMessage("petHoldRanks before loop: "+petHoldRanks)
+    if func.intSum(petHoldRanks) == func.intSum(Storage.MAX_RANKS)
+        PrintConsole("[LoPe] Maximum of ranked pets are reached!")
+        return False
+    endif
+    int generatedRank
+    int iterationLimit = 14
+    While (iterationLimit > 0)
+        PrintConsole("[LoPe] iteration on rank set: "+iterationLimit+\
+                     " generated rank: "+generatedRank)
+        generatedRank = GenerateRandomInt(1, 7)
+        if petHoldRanks[generatedRank - 1] == 0
+            petHoldRanks[generatedRank - 1] = 1
+            aPet.SetFactionRank(fPetFaction, generatedRank)
+            ; MessageBox("!petHoldRanks"+petHoldRanks)
+            return True
+        elseif petHoldRanks[generatedRank - 1] < Storage.MAX_RANKS[generatedRank - 1]
+            petHoldRanks[generatedRank - 1] = petHoldRanks[generatedRank - 1] + 1
+            aPet.SetFactionRank(fPetFaction, generatedRank)
+            ; MessageBox("petHoldRanks<MAX_RANKS"+petHoldRanks)
+            return True
+        endif
+        iterationLimit -= 1
+    EndWhile
+    if iterationLimit <= 0
+        PrintConsole("[LoPe] Iteration limit reached without luck of rank assignment, "+\
+            "giving up and setting random one.")
+        aPet.SetFactionRank(fPetFaction, generatedRank)
+    endif
+EndFunction
+
+
+Function waveHand(Actor akActor)
     akActor.playIdle(zIdle_waveHand)
 EndFunction
 
@@ -146,3 +199,15 @@ Scene Property PlayerFoundPet  Auto
 ReferenceAlias Property PlayerSpeaker  Auto  
 
 Idle Property zIdle_waveHand  Auto  
+
+ReferenceAlias Property lope_SSH  Auto  
+
+Faction Property LostPetsFaction  Auto  
+
+ReferenceAlias Property PetMarker  Auto  
+
+FormList Property MarkersInColdPlace  Auto  
+
+lope_functions Property func  Auto  
+
+lope_storageContainer Property Storage  Auto  

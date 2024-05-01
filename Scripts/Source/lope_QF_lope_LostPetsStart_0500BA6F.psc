@@ -2,14 +2,14 @@
 ;NEXT FRAGMENT INDEX 2
 Scriptname lope_QF_lope_LostPetsStart_0500BA6F Extends Quest Hidden
 
-;BEGIN ALIAS PROPERTY RumorSourceLocation
-;ALIAS PROPERTY TYPE LocationAlias
-LocationAlias Property Alias_RumorSourceLocation Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY RumorsSourceREF
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_RumorsSourceREF Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY RumorSourceLocation
+;ALIAS PROPERTY TYPE LocationAlias
+LocationAlias Property Alias_RumorSourceLocation Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN FRAGMENT Fragment_0
@@ -27,3 +27,5 @@ EndFunction
 ReferenceAlias Property PlayerSpeaker  Auto  
 
 ObjectReference Property PlayerRef  Auto  
+
+GlobalVariable Property minimalRelationship  Auto  

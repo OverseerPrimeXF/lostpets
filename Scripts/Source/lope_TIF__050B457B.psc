@@ -7,7 +7,8 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 int giftLength = Gift.GetSize() - 1
-PlayerREF.addItem(Gift.getAt(utility.randomInt(0, giftLength )), 1)
+PlayerREF.addItem(\
+    Gift.getAt(utility.randomInt(0, giftLength)) as ObjectReference, 1)
 ;END CODE
 EndFunction
 ;END FRAGMENT
