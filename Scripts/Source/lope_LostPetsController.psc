@@ -16,16 +16,19 @@ EndFunction
 
 Event OnUpdate()
     If getstage() == 100
-        If playerRef.GetDistance(Pet.getReference())<= 1024
+        If playerRef.GetDistance(Pet.getReference()) <= 1024
             Debug.Notification(Pet.GetActorReference().getActorBase().getName()+" somewhere nearby.")
             setobjectivecompleted(100)
             setstage(110)
             ; PlayerFoundPet.start()
             sceneName += Pet.getActorRef().GetFactionRank(LostPetsFaction)
-            if MarkersInColdPlace.Find(PetMarker.getRef()) != -1
+            ; MessageBox("EditorID of marker: "+GetFormEditorID(PetMarker.GetRef().GetBaseObject()))
+            ; MessageBox(MarkersInColdPlace.ToArray()+"\n"+PetMarker.GetRef().GetBaseObject())
+            if MarkersInColdPlace.HasForm(PetMarker.getRef().GetBaseObject())
+                PrintConsole("[LoPe] Marker is in cold place!")
                 sceneName += "Cold"
             endif
-            debug.messagebox(sceneName)
+            PrintConsole("[LoPe] Scene name:"+sceneName)
             (lope_SSH as lope_ShowSubtitlesHandler).showSubtitlesNonSexlab(\
                 sceneName, 0, Pet.getActorRef())
         Else 
@@ -174,6 +177,14 @@ bool Function SetRandomPetFactionRank(Actor aPet, Faction fPetFaction)
 EndFunction
 
 
+Function spawnHostilesBehind()
+    if Storage.HostilesCount > 0
+
+    endif
+EndFunction
+
+
+; Debug method
 Function waveHand(Actor akActor)
     akActor.playIdle(zIdle_waveHand)
 EndFunction

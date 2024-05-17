@@ -17,6 +17,8 @@ event onUpdate()
         wolf01 = WolfEnc01.getActorReference()
         wolf02 = WolfEnc02.getActorReference()
         
+        wolf01.Enable()
+        wolf02.Enable()
 
         PlayerREF.placeatme(wolf01)
         ; WolfEnc01.ForceRefTo(wolf01)
@@ -35,15 +37,18 @@ event onUpdate()
         questStage = 105
         Game.ForceThirdPerson()
         ; Game.DisablePlayerControls()
-        (PlayerRef as Actor).SetDontMove()
+        if wolf01.GetRelationshipRank(PlayerRef as Actor) == 0
+            (PlayerRef as Actor).SetDontMove()
+        endif
         register(3)
     ElseIf questStage == 105
         setobjectivedisplayed(110)
-        (lope_SSH as lope_ShowSubtitlesHandler).ShowSubtitlesNonSexlab("WolfAmbushStart", 0, None)
+        (lope_SSH as lope_ShowSubtitlesHandler).ShowSubtitlesNonSexlab("WolfAmbushStart", 0, wolf01)
         ; PlayerFoundPet.start()
     elseif questStage == 150
-        WolfEnc01.getRef().Disable()
-        WolfEnc02.getRef().Disable()
+        ; WolfEnc01.getRef().Disable()
+        ; WolfEnc02.getRef().Disable()
+        ReturnWolvesToUtilCell()
     ElseIf questStage == 100
         register(1)
     EndIf
@@ -62,6 +67,14 @@ function registerAndGetStage(Float time)
 endfunction
 
 
+Function ReturnWolvesToUtilCell()
+    if wolf01 && wolf02
+        wolf01.MoveTo(utilCell)
+        wolf02.MoveTo(utilCell)
+    endif
+EndFunction
+
+
 ReferenceAlias Property Marker  Auto  
 
 ObjectReference Property PlayerRef  Auto  
@@ -75,3 +88,5 @@ ReferenceAlias Property WolfEnc02  Auto
 Sound Property WolfHowl  Auto  
 
 ReferenceAlias Property lope_SSH  Auto  
+
+ObjectReference Property utilCell  Auto  

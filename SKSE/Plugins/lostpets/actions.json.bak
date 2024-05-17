@@ -37,21 +37,379 @@
                         ]
                     }
                 }
-            }
+            },
+			"relationshipRank1": {
+				"scene0": {
+					"stage0": {
+						"topic1": {
+							"rotate": [
+								180
+							]
+						},
+						"topic3": {
+							"quest": [
+								"0x24A42C|lost_pets.esp"
+							],
+							"modForm": [
+								"0x280b67|lost_pets.esp"
+							],
+							"scene":[
+								"0x346b68|lost_pets.esp"
+							]
+						},
+						"topic4": {
+							"quest": [
+								"0x24A42C|lost_pets.esp"
+							],
+							"modForm": [
+								"0x24A42C|lost_pets.esp"
+							],
+							"playerIdle": [
+								"0xFFA0C|Skyrim.esm"
+							]
+						},
+						"topic12": {
+							"quest": [
+								"0x24A42C|lost_pets.esp"
+							],
+							"sexlabSceneMultipleActors": [
+								true,
+								[
+									16,
+									17
+								],
+								[
+									"Billyy (Canine) 3p Doggy Spitroast 2"
+								],
+								"None",
+								"wolfAmbushRape",
+								true,
+								false,
+								"WolfAmbushEnd"
+							]
+						}
+					}
+				}
+			}
         },
 		"WolfAmbushEnd": {
-            "scene0": {
-                "stage0": {
-                    "topic0": {
-						"quest": [
-                            "0x24A42C|lost_pets.esp"
-                        ],
-                        "questStage": [
-                            150
-                        ]
-                    }
-                }
-            }
+			"relationshipRank0": {
+				"scene0": {
+					"stage0": {
+						"topic0": {
+							"quest": [
+								"0x24A42C|lost_pets.esp"
+							],
+							"questStage": [
+								150
+							]
+						}
+					}
+				}
+            },
+			"relationshipRank1": {
+				"scene0": {
+					"stage0": {
+						"topic6": {
+							"quest": [
+								"0x24A42C|lost_pets.esp"
+							],
+							"questStage": [
+								150
+							]
+						}
+					}
+				}
+			}
+        },
+		"FoundLostDogFac1": {
+			"relationshipRank0": {
+				"scene0": {
+					"stage0": {
+						"topic0": {
+							"playerIdle": [
+								"0x3EA32|Skyrim.esm",
+								false
+							]
+						},
+						"topic1": {
+							"scene": [
+								"0x2CFEAF|lost_pets.esp"
+							]
+						},
+						"topic2": {
+							"scene": [
+								"0x2CFEB0|lost_pets.esp"
+							]
+						},
+						"topic3": {
+							"playerIdle": [
+								"0xB5E20|Skyrim.esm",
+								true
+							]
+						},
+						"topic4": {
+							"playerIdle": [
+								"0xF6CCC|Skyrim.esm",
+								true
+							]
+						},
+						"topic5": {
+							"playerIdle": [
+								"0x6FF14|Skyrim.esm",
+								true
+							]
+						},
+						"topic6": {
+							"sexlabScene": [
+								true,
+								[
+									"Billyy (Canine) Laying Worship Service"
+								],
+								"None",
+								"dogFac1Sex",
+								true,
+								true,
+								"None"
+							]
+						},
+						"topic7": {
+							"quest": [
+								"0xD66|lost_pets.esp"
+							],
+							"questStage": [
+								120
+							],
+							"increaseRelationships": [
+								true
+							]
+						}
+					}
+				}
+			}
+        },
+		"FoundLostDogFac2": {
+			"relationshipRank0": {
+				"scene0": {
+					"stage0": {
+						"topic3": {
+							"scene": [
+								"0x2CFEB0|lost_pets.esp"
+							]
+						},
+						"topic5": {
+							"quest": [
+								"0xD66|lost_pets.esp"
+							],
+							"spawnHostiles": [
+								true,
+								21
+							]
+						},
+						"topic9": {
+							"playerIdle": [
+								"0xB5E20|Skyrim.esm",
+								true
+							]
+						},
+						"topic15": {
+							"playerIdle": [
+								"0xF6CCC|Skyrim.esm",
+								true
+							]
+						},
+						"topic22": {
+							"sexlabScene": [
+								true,
+								[
+									"Billyy (Canine) Doggy 2"
+								],
+								"None",
+								"dogFac2Sex",
+								true,
+								false,
+								"None"
+							]
+						}
+					},
+					"sexStage4": {
+						"topic8": {
+							"quest": [
+                            "0xD66|lost_pets.esp"
+							],
+							"questStage": [
+								120
+							],
+							"increaseRelationships": [
+								true
+							]
+						}
+					}
+				}
+			}
+        },
+		"FoundLostDogFac3": {
+			"relationshipRank0": {
+				"scene0": {
+					"stage0": {
+						"topic0": {
+							"quest": [
+								"0xD66|lost_pets.esp"
+							],
+							"placeDeadBody": [
+								22
+							]
+						},
+						"topic4": {
+							"scene": [
+								"0x2CD713|lost_pets.esp"
+							]
+						},
+						"topic6": {
+							"playerIdle": [
+								"0xB5E20|Skyrim.esm",
+								true
+							],
+							"removeItem": [
+								19
+							]
+						},
+						"topic13": {
+							"playerIdle": [
+								"0xF6CCC|Skyrim.esm",
+								true
+							]
+						},
+						"topic16": {
+							"sexlabScene": [
+								true,
+								[
+									"Billyy (Canine) Doggy Anal"
+								],
+								"None",
+								"dogFac3Sex",
+								true,
+								false,
+								"None"
+							]
+						}
+					},
+					"sexStage4": {
+						"topic11": {
+							"quest": [
+								"0xD66|lost_pets.esp"
+							],
+							"questStage": [
+								120
+							],
+							"increaseRelationships": [
+								true
+							]
+						}
+					}
+				}
+			}
+        },
+		"FoundLostDogFac7": {
+			"relationshipRank0": {
+				"scene0": {
+					"stage0": {
+						"topic1": {
+							"scene": [
+								"0x2CD713|lost_pets.esp"
+							]
+						},
+						"topic17": {
+							"quest": [
+								"0xD66|lost_pets.esp"
+							],
+							"spawnHostiles": [
+								true,
+								21
+							]
+						},
+						"topic18": {
+							"scene": [
+								"0x2CD713|lost_pets.esp"
+							]
+						},
+						"topic29": {
+							"sexlabScene": [
+								true,
+								[
+									"Billyy (Canine) Sideways"
+								],
+								"None",
+								"dogFac7Sex",
+								true,
+								false,
+								"None"
+							]
+						}
+					},
+					"sexStage4": {
+						"topic8": {
+							"quest": [
+                            "0xD66|lost_pets.esp"
+							],
+							"questStage": [
+								120
+							],
+							"increaseRelationships": [
+								true
+							]
+						}
+					}
+				}
+			}
+        },
+		"DogApproachOwnerFacRank1": {
+			"relationshipRank2": {
+				"scene0": {
+					"stage0": {
+						"topic0": {
+							"scene": [
+								"0x3BD834|lost_pets.esp"
+							]
+						},
+						"topic6": {
+							"scene": [
+								"0x3BD837|lost_pets.esp"
+							]
+						},
+						"topic7": {
+							"sexlabSpecialOffset": [
+								true,
+								"Chair"
+							],
+							"sexlabSceneNoPlayer": [
+								true,
+								[
+									"Billyy (Canine) Chair Doggy 1"
+								],
+								"None",
+								"dogFac7Sex",
+								false,
+								false,
+								"None"
+							]
+						}
+					},
+					"sexStage4": {
+						"topic8": {
+							"quest": [
+                            "0xD66|lost_pets.esp"
+							],
+							"questStage": [
+								120
+							],
+							"increaseRelationships": [
+								true
+							]
+						}
+					}
+				}
+			}
         },
 		"FoundLostDogFacConfident": {
             "scene0": {
@@ -68,67 +426,6 @@
                     }
                 }
             }
-        },
-		"FoundLostDogFacCoward": {
-            "scene0": {
-                "stage0": {
-					"topic0": {
-						"playerIdle": [
-						    "0x3EA32|Skyrim.esm",
-							false
-						]
-                    },
-                    "topic1": {
-						"scene": [
-						    "0x2CFEAF|lost_pets.esp"
-						]
-                    },
-					"topic2": {
-						"scene": [
-						    "0x2CFEB0|lost_pets.esp"
-						]
-                    },
-					"topic3": {
-						"playerIdle": [
-						    "0xB5E20|Skyrim.esm",
-							true
-						]
-                    },
-					"topic4": {
-						"playerIdle": [
-						    "0xF6CCC|Skyrim.esm",
-							true
-						]
-                    },
-					"topic5": {
-						"playerIdle": [
-						    "0x6FF14|Skyrim.esm",
-							true
-						]
-                    },
-					"topic6": {
-						"sexlabScene": [
-							true,
-							[
-								"Billyy (Canine) Laying Worship Service"
-							],
-							"None",
-							"dogBlowjobWorship",
-							true,
-							true,
-							"None"
-						]
-                    },
-					"topic7": {
-						"quest": [
-                            "0xD66|lost_pets.esp"
-                        ],
-                        "questStage": [
-                            120
-                        ]
-                    }
-                }
-            }
-        }		
+        }
     }
 }

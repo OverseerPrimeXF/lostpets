@@ -1,0 +1,38 @@
+{
+	"comment_block": {
+		"wow_comment_in_json": [
+		    "They say Json have no comments, they are wrong",
+			"This file servers for spreading keywords to actors"
+		]
+	}
+	"Actors": {
+		"actor0": [
+			"Bryling",
+			"lope_npcRich"
+		],
+		"actor1": [
+			"AiaArria",
+			"lope_npcGuild"
+		],
+		"actor2": [
+			"EvetteSan",
+			"lope_npcMerchant"
+		],
+		"actor3": [
+			"Illdi",
+			"lope_npcGuild"
+		],
+		"actor4": [
+			"VivienneOnis",
+			"lope_npcCitizen"
+		],
+		"actor5": [
+			"Katla",
+			"lope_npcFarmer"
+		],
+		"actor6": [
+			"SilanaPetreia",
+			"lope_npcPriest"
+		]
+	}
+}

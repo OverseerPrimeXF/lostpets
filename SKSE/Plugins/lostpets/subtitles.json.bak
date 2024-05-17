@@ -124,7 +124,7 @@
                         "Pet",
                         "*Panting happily*",
                         "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic6"
+                        ".forms.FoundLostDogFac1.relationshipRank0.scene0.stage0.topic6"
                     ]
                 }
             }
@@ -136,7 +136,7 @@
                 "stage0": {
                     "topic0": [
                         "Pet",
-                        "*Whines 1*",
+                        "*Whines*",
                         "3"
                     ],
                     "topic1": [
@@ -215,7 +215,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Aren't you cold here? Don't you want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit? And warm my hands as well.",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -226,7 +226,7 @@
                     ],
                     "topic17": [
                         "Player",
-                        "You're such a good dog, liking me petting you, huh? Want some more? *continue petting him*",
+                        "You're such a good and warm dog, liking me petting you, huh? Want some more? *continue petting him*",
                         "6",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -237,7 +237,7 @@
                     ],
                     "topic19": [
                         "Player",
-                        "Looks someone want EVEN more attention, well, how about that? *start petting his belly*",
+                        "Hey, ground is cold. But I see someone wants EVEN more attention, well, how about that? *start petting his belly*",
                         "6",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic5"
                     ],
@@ -266,89 +266,88 @@
             "scene0": {
                 "stage0": {
                     "topic0": [
-                        "Pet",
-                        "*Whines 2*",
-                        "3"
+                        "Player",
+                        "Hey, boy! Finally I found you!",
+                        "4"
                     ],
                     "topic1": [
-                        "Player",
-                        "Hey, boy! There you are!",
-                        "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic0"
+                        "Pet",
+                        "*Looks at you sadly*",
+                        "4"
                     ],
                     "topic2": [
-                        "Pet",
-                        "*Looks at you fearfully*",
+                        "Player",
+                        "Your master sent me look for you.",
                         "4"
                     ],
                     "topic3": [
-                        "Player",
-                        "Don't be afraid of me, I'll not hurt you.",
-                        "4"
+                        "Pet",
+                        "*Comes closer to you*",
+                        "4",
+						".forms.FoundLostDogFac2.relationshipRank0.scene0.stage0.topic3"
                     ],
                     "topic4": [
-                        "Pet",
-                        "*Whines*",
-                        "4"
+                        "Player",
+                        "You are not afraid of me, that will make things easier for us.",
+                        "5"
                     ],
                     "topic5": [
-                        "Player",
-                        "Oh, I almost forgot! Are you hungry? *show him the treat* I have a treat for you, come closer.",
-                        "6"
+                        "Pet",
+                        "*Growling*",
+                        "2",
+                        ".forms.FoundLostDogFac2.relationshipRank0.scene0.stage0.topic3"
                     ],
                     "topic6": [
-                        "Pet",
-                        "*Comes a bit closer looking at the treat*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic1"
+                        "Player",
+                        "Oh, gods! I didn't even notice that wolf, you saved me!",
+                        "4"
                     ],
                     "topic7": [
                         "Player",
-                        "Don't be afraid, come closer and it will be all yours.",
+                        "Thank you, you are really brave one.",
                         "4"
                     ],
                     "topic8": [
                         "Pet",
-                        "*Comes even closer, still been scared*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic2"
+                        "*Waving his tail*",
+                        "4"
                     ],
                     "topic9": [
                         "Player",
-                        "Here we go, see? I'm not scary at all. Here, take this. *give him treat*",
+                        "Hey, your master gave me this for you, take it. *give him treat*",
                         "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic3"
+                        ".forms.FoundLostDogFac2.relationshipRank0.scene0.stage0.topic9"
                     ],
                     "topic10": [
                         "Pet",
-                        "*Takes treat off you hands and eats, seem calming down*",
-                        "5"
+                        "*Takes treat off you hands*",
+                        "3"
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "*Smiling looking at dog* You are really big and strong dog.",
                         "4"
                     ],
                     "topic12": [
                         "Pet",
-                        "*Comes even closer and licks your hand*",
+                        "*Comes closer, sits in front of you*",
                         "4"
                     ],
                     "topic13": [
                         "Player",
-                        "Sorry pal, I don't have anymore right now. Follow me, I'll take you to your master.",
+                        "*Bend closer to dog* You know, I think I haven't thanked you enought for saving me...",
                         "6"
                     ],
                     "topic14": [
                         "Pet",
-                        "*Whines, sits down*",
+                        "*Looks at you with curious*",
                         "4"
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
-                        "8",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+                        "*Whisper on hes ear* Perhaps I can make you feel good? *pet him*",
+                        "5",
+                        ".forms.FoundLostDogFac2.relationshipRank0.scene0.stage0.topic15"
                     ],
                     "topic16": [
                         "Pet",
@@ -357,36 +356,35 @@
                     ],
                     "topic17": [
                         "Player",
-                        "You're such a good dog, liking me petting you, huh? Want some more? *continue petting him*",
+                        "You know, I really love such brave dogs like you.",
                         "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic15"
                     ],
                     "topic18": [
                         "Pet",
-                        "*Lies on the ground, waiting more petting*",
+                        "*Looks at you, happily panting*",
                         "4"
                     ],
                     "topic19": [
                         "Player",
-                        "Looks someone want EVEN more attention, well, how about that? *start petting his belly*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic5"
+                        "But you know, there are ways to make dogs even happier... How about that?",
+                        "5"
                     ],
                     "topic20": [
                         "Pet",
-                        "*Enjoys petting*",
+                        "*Looking at you standing on all fours*",
                         "4"
                     ],
                     "topic21": [
                         "Player",
-                        "*Noticing dog getting aroused* Hmm... I see you're really really enjoyng my attention. How about try something even more pleasant?",
+                        "*Waving hips slowly* Come here, boy, take my gratitude...",
                         "8"
                     ],
                     "topic22": [
                         "Pet",
-                        "*Panting happily*",
+                        "*Comes closer*",
                         "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic6"
+                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic22"
                     ]
                 }
             }
@@ -405,7 +403,7 @@
                         "Player",
                         "Hey, boy! There you are!",
                         "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic0"
+                        ".forms.FoundLostDogFac2Cold.relationshipRank0.scene0.stage0.topic0"
                     ],
                     "topic2": [
                         "Pet",
@@ -529,126 +527,94 @@
                 "stage0": {
                     "topic0": [
                         "Pet",
-                        "*Whines 3*",
-                        "3"
+                        "*Sits near hunted prey*",
+                        "3",
+						".forms.FoundLostDogFac3.relationshipRank0.scene0.stage0.topic0"
                     ],
                     "topic1": [
                         "Player",
                         "Hey, boy! There you are!",
                         "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic0"
+                        ".forms.FoundLostDogFac1.relationshipRank0.scene0.stage0.topic0"
                     ],
                     "topic2": [
                         "Pet",
-                        "*Looks at you fearfully*",
+                        "*Looks at you*",
                         "4"
                     ],
                     "topic3": [
                         "Player",
-                        "Don't be afraid of me, I'll not hurt you.",
+                        "I see you already found food *jiggles*. And I have some more for you here. *show the treat*",
                         "4"
                     ],
                     "topic4": [
                         "Pet",
-                        "*Whines*",
-                        "4"
+                        "*Confidently comes closer to you*",
+                        "2",
+						".forms.FoundLostDogFac3.relationshipRank0.scene0.stage0.topic4"
                     ],
                     "topic5": [
                         "Player",
-                        "Oh, I almost forgot! Are you hungry? *show him the treat* I have a treat for you, come closer.",
-                        "6"
+                        "Such a confident dog you are, no worries about stranger?",
+                        "5"
                     ],
                     "topic6": [
-                        "Pet",
-                        "*Comes a bit closer looking at the treat*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic1"
+                        "Player",
+                        "Here, thats from your master *give him the treat*",
+                        "5",
+                        ".forms.FoundLostDogFac3.relationshipRank0.scene0.stage0.topic6"
                     ],
                     "topic7": [
-                        "Player",
-                        "Don't be afraid, come closer and it will be all yours.",
+                        "Pet",
+                        "*Takes treat*",
                         "4"
                     ],
                     "topic8": [
-                        "Pet",
-                        "*Comes even closer, still been scared*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic2"
+                        "Player",
+                        "Well, if you are not afraid of me at all, how about get you back to your master?",
+                        "6"
                     ],
                     "topic9": [
-                        "Player",
-                        "Here we go, see? I'm not scary at all. Here, take this. *give him treat*",
-                        "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic3"
+                        "Pet",
+                        "*Grumbles*",
+                        "3"
                     ],
                     "topic10": [
-                        "Pet",
-                        "*Takes treat off you hands and eats, seem calming down*",
+                        "Player",
+                        "What is it? Don't want return home?",
                         "5"
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "Maybe I can persuade you to do so?",
                         "4"
                     ],
                     "topic12": [
                         "Pet",
-                        "*Comes even closer and licks your hand*",
+                        "*Comes even closer to you*",
                         "4"
                     ],
                     "topic13": [
                         "Player",
-                        "Sorry pal, I don't have anymore right now. Follow me, I'll take you to your master.",
-                        "6"
+                        "*Jiggles* Coming for petting, huh?",
+                        "5",
+						".forms.FoundLostDogFac3.relationshipRank0.scene0.stage0.topic13"
                     ],
                     "topic14": [
                         "Pet",
-                        "*Whines, sits down*",
+                        "*Walks you around*",
                         "4"
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
-                        "8",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+                        "Hey, where are you go...",
+                        "4"
                     ],
                     "topic16": [
                         "Pet",
-                        "*Happily panting and waving tail*",
-                        "4"
-                    ],
-                    "topic17": [
-                        "Player",
-                        "You're such a good dog, liking me petting you, huh? Want some more? *continue petting him*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
-                    ],
-                    "topic18": [
-                        "Pet",
-                        "*Lies on the ground, waiting more petting*",
-                        "4"
-                    ],
-                    "topic19": [
-                        "Player",
-                        "Looks someone want EVEN more attention, well, how about that? *start petting his belly*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic5"
-                    ],
-                    "topic20": [
-                        "Pet",
-                        "*Enjoys petting*",
-                        "4"
-                    ],
-                    "topic21": [
-                        "Player",
-                        "*Noticing dog getting aroused* Hmm... I see you're really really enjoyng my attention. How about try something even more pleasant?",
-                        "8"
-                    ],
-                    "topic22": [
-                        "Pet",
-                        "*Panting happily*",
+                        "*Suddenly humps you from behind, dropping you on the ground*",
                         "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic6"
+						".forms.FoundLostDogFac3.relationshipRank0.scene0.stage0.topic16"
                     ]
                 }
             }
@@ -786,133 +752,135 @@
         }
     },
     "FoundLostDogFacRank4": {
-        "scene0": {
-            "stage0": {
-                "topic0": [
-                    "Pet",
-                    "*Whines 4*",
-                    "3"
-                ],
-                "topic1": [
-                    "Player",
-                    "Hey, boy! There you are!",
-                    "4",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic0"
-                ],
-                "topic2": [
-                    "Pet",
-                    "*Looks at you fearfully*",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "Don't be afraid of me, I'll not hurt you.",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Whines*",
-                    "4"
-                ],
-                "topic5": [
-                    "Player",
-                    "Oh, I almost forgot! Are you hungry? *show him the treat* I have a treat for you, come closer.",
-                    "6"
-                ],
-                "topic6": [
-                    "Pet",
-                    "*Comes a bit closer looking at the treat*",
-                    "6",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic1"
-                ],
-                "topic7": [
-                    "Player",
-                    "Don't be afraid, come closer and it will be all yours.",
-                    "4"
-                ],
-                "topic8": [
-                    "Pet",
-                    "*Comes even closer, still been scared*",
-                    "6",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic2"
-                ],
-                "topic9": [
-                    "Player",
-                    "Here we go, see? I'm not scary at all. Here, take this. *give him treat*",
-                    "4",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic3"
-                ],
-                "topic10": [
-                    "Pet",
-                    "*Takes treat off you hands and eats, seem calming down*",
-                    "5"
-                ],
-                "topic11": [
-                    "Player",
-                    "See, much easier to trust someone then you're fed. *jiggles*",
-                    "4"
-                ],
-                "topic12": [
-                    "Pet",
-                    "*Comes even closer and licks your hand*",
-                    "4"
-                ],
-                "topic13": [
-                    "Player",
-                    "Sorry pal, I don't have anymore right now. Follow me, I'll take you to your master.",
-                    "6"
-                ],
-                "topic14": [
-                    "Pet",
-                    "*Whines, sits down*",
-                    "4"
-                ],
-                "topic15": [
-                    "Player",
-                    "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
-                    "8",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
-                ],
-                "topic16": [
-                    "Pet",
-                    "*Happily panting and waving tail*",
-                    "4"
-                ],
-                "topic17": [
-                    "Player",
-                    "You're such a good dog, liking me petting you, huh? Want some more? *continue petting him*",
-                    "6",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
-                ],
-                "topic18": [
-                    "Pet",
-                    "*Lies on the ground, waiting more petting*",
-                    "4"
-                ],
-                "topic19": [
-                    "Player",
-                    "Looks someone want EVEN more attention, well, how about that? *start petting his belly*",
-                    "6",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic5"
-                ],
-                "topic20": [
-                    "Pet",
-                    "*Enjoys petting*",
-                    "4"
-                ],
-                "topic21": [
-                    "Player",
-                    "*Noticing dog getting aroused* Hmm... I see you're really really enjoyng my attention. How about try something even more pleasant?",
-                    "8"
-                ],
-                "topic22": [
-                    "Pet",
-                    "*Panting happily*",
-                    "4",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic6"
-                ]
-            }
-        }
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Pet",
+						"*Whines 4*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"Hey, boy! There you are!",
+						"4",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic0"
+					],
+					"topic2": [
+						"Pet",
+						"*Looks at you fearfully*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Don't be afraid of me, I'll not hurt you.",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Whines*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Oh, I almost forgot! Are you hungry? *show him the treat* I have a treat for you, come closer.",
+						"6"
+					],
+					"topic6": [
+						"Pet",
+						"*Comes a bit closer looking at the treat*",
+						"6",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic1"
+					],
+					"topic7": [
+						"Player",
+						"Don't be afraid, come closer and it will be all yours.",
+						"4"
+					],
+					"topic8": [
+						"Pet",
+						"*Comes even closer, still been scared*",
+						"6",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic2"
+					],
+					"topic9": [
+						"Player",
+						"Here we go, see? I'm not scary at all. Here, take this. *give him treat*",
+						"4",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic3"
+					],
+					"topic10": [
+						"Pet",
+						"*Takes treat off you hands and eats, seem calming down*",
+						"5"
+					],
+					"topic11": [
+						"Player",
+						"See, much easier to trust someone then you're fed. *jiggles*",
+						"4"
+					],
+					"topic12": [
+						"Pet",
+						"*Comes even closer and licks your hand*",
+						"4"
+					],
+					"topic13": [
+						"Player",
+						"Sorry pal, I don't have anymore right now. Follow me, I'll take you to your master.",
+						"6"
+					],
+					"topic14": [
+						"Pet",
+						"*Whines, sits down*",
+						"4"
+					],
+					"topic15": [
+						"Player",
+						"What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+						"8",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+					],
+					"topic16": [
+						"Pet",
+						"*Happily panting and waving tail*",
+						"4"
+					],
+					"topic17": [
+						"Player",
+						"You're such a good dog, liking me petting you, huh? Want some more? *continue petting him*",
+						"6",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+					],
+					"topic18": [
+						"Pet",
+						"*Lies on the ground, waiting more petting*",
+						"4"
+					],
+					"topic19": [
+						"Player",
+						"Looks someone want EVEN more attention, well, how about that? *start petting his belly*",
+						"6",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic5"
+					],
+					"topic20": [
+						"Pet",
+						"*Enjoys petting*",
+						"4"
+					],
+					"topic21": [
+						"Player",
+						"*Noticing dog getting aroused* Hmm... I see you're really really enjoyng my attention. How about try something even more pleasant?",
+						"8"
+					],
+					"topic22": [
+						"Pet",
+						"*Panting happily*",
+						"4",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic6"
+					]
+				}
+			}
+		}
     },
     "FoundLostDogFacRank4Cold": {
         "relationshipRank0": {
@@ -1574,127 +1542,158 @@
             "scene0": {
                 "stage0": {
                     "topic0": [
-                        "Pet",
-                        "*Whines 7*",
-                        "3"
-                    ],
-                    "topic1": [
                         "Player",
-                        "Hey, boy! There you are!",
-                        "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic0"
-                    ],
-                    "topic2": [
-                        "Pet",
-                        "*Looks at you fearfully*",
+                        "Hey, pup!",
                         "4"
                     ],
-                    "topic3": [
+                    "topic1": [
+                        "Pet",
+                        "*Comes to you with curiosity*",
+                        "2",
+						".forms.FoundLostDogFac7.relationshipRank0.scene0.stage0.topic1"
+                    ],
+                    "topic2": [
                         "Player",
-                        "Don't be afraid of me, I'll not hurt you.",
+                        "Oh, you are pretty mature dog, really. Sorry for calling you like that.",
+                        "5"
+                    ],
+                    "topic3": [
+                        "Pet",
+                        "*Looks at you friendly and calmly*",
                         "4"
                     ],
                     "topic4": [
-                        "Pet",
-                        "*Whines*",
+                        "Player",
+                        "Hm, you look really calm here.",
                         "4"
                     ],
                     "topic5": [
-                        "Player",
-                        "Oh, I almost forgot! Are you hungry? *show him the treat* I have a treat for you, come closer.",
-                        "6"
+                        "Pet",
+                        "*Panting*",
+                        "3"
                     ],
                     "topic6": [
-                        "Pet",
-                        "*Comes a bit closer looking at the treat*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic1"
+                        "Player",
+                        "Your master is really worried about you're lost.",
+                        "6"
                     ],
                     "topic7": [
-                        "Player",
-                        "Don't be afraid, come closer and it will be all yours.",
-                        "4"
+                        "Pet",
+                        "*Looks at you*",
+                        "3"
                     ],
                     "topic8": [
-                        "Pet",
-                        "*Comes even closer, still been scared*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic2"
-                    ],
-                    "topic9": [
                         "Player",
-                        "Here we go, see? I'm not scary at all. Here, take this. *give him treat*",
-                        "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic3"
-                    ],
-                    "topic10": [
-                        "Pet",
-                        "*Takes treat off you hands and eats, seem calming down*",
+                        "What is it? Aren't you telling me you are not lost?",
                         "5"
                     ],
-                    "topic11": [
+                    "topic9": [
+                        "Pet",
+                        "*Barks*",
+                        "2"
+                    ],
+                    "topic10": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "So, you just walked away by your own?",
                         "4"
                     ],
-                    "topic12": [
+                    "topic11": [
                         "Pet",
-                        "*Comes even closer and licks your hand*",
+                        "*Barks*",
+                        "2"
+                    ],
+                    "topic12": [
+                        "Player",
+                        "And left your poor master alone, worry about your disappearance?",
                         "4"
                     ],
                     "topic13": [
-                        "Player",
-                        "Sorry pal, I don't have anymore right now. Follow me, I'll take you to your master.",
-                        "6"
+                        "Pet",
+                        "*Looks down, whines*",
+                        "3"
                     ],
                     "topic14": [
-                        "Pet",
-                        "*Whines, sits down*",
-                        "4"
+                        "Player",
+                        "Oh, boy, I'm not judging you really. I can understand sometimes dog want be alone, yeah?",
+                        "6"
                     ],
                     "topic15": [
-                        "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
-                        "8",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+                        "Pet",
+                        "*Barks*",
+                        "2"
                     ],
                     "topic16": [
-                        "Pet",
-                        "*Happily panting and waving tail*",
+                        "Player",
+                        "*Jiggles* Yeah, that's right. I can leave you here for a moment, id you'd like.",
                         "4"
                     ],
                     "topic17": [
-                        "Player",
-                        "You're such a good dog, liking me petting you, huh? Want some more? *continue petting him*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+                        "Pet",
+                        "Growling",
+                        "3",
+                        ".forms.FoundLostDogFac7.relationshipRank0.scene0.stage0.topic17"
                     ],
                     "topic18": [
                         "Pet",
-                        "*Lies on the ground, waiting more petting*",
-                        "4"
+                        "*Comes back to you*",
+                        "2",
+						".forms.FoundLostDogFac7.relationshipRank0.scene0.stage0.topic18"
                     ],
                     "topic19": [
                         "Player",
-                        "Looks someone want EVEN more attention, well, how about that? *start petting his belly*",
-                        "6",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic5"
+                        "By the Divines, you are really vigilant, I didn't even hear that wolf!",
+                        "6"
                     ],
                     "topic20": [
                         "Pet",
-                        "*Enjoys petting*",
-                        "4"
+                        "*Panting*",
+                        "2"
                     ],
                     "topic21": [
                         "Player",
-                        "*Noticing dog getting aroused* Hmm... I see you're really really enjoyng my attention. How about try something even more pleasant?",
-                        "8"
+                        "Hey, I have a treat for you from your master, here, take it.",
+                        "5"
                     ],
                     "topic22": [
                         "Pet",
-                        "*Panting happily*",
+                        "*Sits on the ground*",
+                        "4"
+                    ],
+                    "topic23": [
+                        "Player",
+                        "Not hungry yet? *lean closer to him*",
+                        "4"
+                    ],
+                    "topic24": [
+                        "Pet",
+                        "*Looking at you*",
+                        "2"
+                    ],
+                    "topic25": [
+                        "Player",
+                        "*Stroking his head gently* I know, you wanted to stay here alone for a while...",
+                        "4"
+                    ],
+                    "topic26": [
+                        "Pet",
+                        "*Looks at you with curiosity*",
+                        "4"
+                    ],
+                    "topic27": [
+                        "Player",
+                        "But maybe you's like to... relax with someone? I can help you.",
+                        "5"
+                    ],
+                    "topic28": [
+                        "Pet",
+                        "*Licks you face*",
+                        "2"
+                    ],
+                    "topic29": [
+                        "Player",
+                        "*jiggles* Yeah, you wish to. Let's do it then.",
                         "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic6"
+						".forms.FoundLostDogFac7.relationshipRank0.scene0.stage0.topic29"
                     ]
                 }
             }
@@ -1705,29 +1704,29 @@
             "scene0": {
                 "stage0": {
                     "topic0": [
-                        "Pet",
-                        "*Whines 7*",
-                        "3"
+                        "Player",
+                        "Hey, boy! Finally I found you!",
+                        "4"
                     ],
                     "topic1": [
-                        "Player",
-                        "Hey, boy! There you are!",
-                        "4",
-                        ".forms.FoundLostDogFacCoward.scene0.stage0.topic0"
+                        "Pet",
+                        "*Looks somewhere behind you*",
+                        "4"
                     ],
                     "topic2": [
-                        "Pet",
-                        "*Looks at you fearfully*",
+                        "Player",
+                        "What is it? Do you see someone?",
                         "4"
                     ],
                     "topic3": [
-                        "Player",
-                        "Don't be afraid of me, I'll not hurt you.",
-                        "4"
+                        "Pet",
+                        "*Growling *",
+                        "4",
+                        ".forms.FoundLostDogFac2.scene0.stage0.topic3"
                     ],
                     "topic4": [
-                        "Pet",
-                        "*Whines*",
+                        "Player",
+                        "Oh, gods! You saved me from this wolves!",
                         "4"
                     ],
                     "topic5": [
@@ -1832,1232 +1831,2451 @@
         }
     },
     "dogTagsAnal": {
-        "scene0": {
-            "stage0": {
-                "topic0": [
-                    "Player",
-                    "*Stands on all fours* My ass is fully yours now...",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Penetrates your anus*",
-                    "3"
-                ],
-                "topic2": [
-                    "Player",
-                    "Aah! Easy!",
-                    "4"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Moving inside, panting*",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "Well, then I said... Aah! fully yours I meant gentle penetration.",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Grunting with ecstasy*",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "Oh, well, just keep going... Mmhh...",
-                    "4"
-                ]
-            },
-            "stage1": {
-                "topic0": [
-                    "Pet",
-                    "*Moves more intense*",
-                    "4"
-                ],
-                "topic1": [
-                    "Player",
-                    "Yeah... That's a good boy...",
-                    "4"
-                ],
-                "topic2": [
-                    "Pause",
-                    "Pause",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "Never loved anal so much... Ooh! But with you...",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "Where did you... got such skills in that?",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Whines softly*",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "Faster, boy, aaahh... Faster!",
-                    "4"
-                ]
-            },
-            "stage2": {
-                "topic0": [
-                    "Pet",
-                    "*Moving faster and even deeper*",
-                    "4"
-                ],
-                "topic1": [
-                    "Player",
-                    "*Moaning louder* Aah-h-h... That's hot!",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "Don't know if I bothered you with my talking here... Aahh!",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "But I just can't stop expressing my... Ha-ha-aaah! Expressions!",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Dog's knot growing inside*",
-                    "4"
-                ],
-                "topic5": [
-                    "Player",
-                    "Ooh, I feel you getting bigger there!",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "*Moaning louder* Aah-h-h!",
-                    "4"
-                ]
-            },
-            "stage3": {
-                "topic0": [
-                    "Player",
-                    "Yes yes yes! Fuck me like a bitch I am!",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Increasing movement speed even more*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Feeling his precum leaking inside* Aa-a-h! The best part begins!",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "Hope nobody can see us rught now! Aah!",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "Even someoe do I don't care anymore!",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Makes final thrust, whines loud from orgasm*",
-                    "4"
-                ]
-            },
-            "stage4": {
-                "topic0": [
-                    "Player",
-                    "*Screaming from orgasm* Aah-h-h! Yes, fill me up!",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Squirts huge load of cum inside you*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Panting* Ha... Ha... Oohh...",
-                    "4"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Pulls his knot out of you*",
-                    "3"
-                ],
-                "topic4": [
-                    "Player",
-                    "Ouch! Hey! You could have stay inside longer!",
-                    "4"
-                ]
-            }
-        }
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"*Stands on all fours* My ass is fully yours now...",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Penetrates your anus*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"Aah! Easy!",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Moving inside, panting*",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Well, then I said... Aah! fully yours I meant gentle penetration.",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Grunting with ecstasy*",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"Oh, well, just keep going... Mmhh...",
+						"4"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Pet",
+						"*Moves more intense*",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"Yeah... That's a good boy...",
+						"4"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Never loved anal so much... Ooh! But with you...",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Where did you... got such skills in that?",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Whines softly*",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"Faster, boy, aaahh... Faster!",
+						"4"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Pet",
+						"*Moving faster and even deeper*",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"*Moaning louder* Aah-h-h... That's hot!",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"Don't know if I bothered you with my talking here... Aahh!",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"But I just can't stop expressing my... Ha-ha-aaah! Expressions!",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Dog's knot growing inside*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Ooh, I feel you getting bigger there!",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"*Moaning louder* Aah-h-h!",
+						"4"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"Yes yes yes! Fuck me like a bitch I am!",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Increasing movement speed even more*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Feeling his precum leaking inside* Aa-a-h! The best part begins!",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Hope nobody can see us rught now! Aah!",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Even someoe do I don't care anymore!",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Makes final thrust, whines loud from orgasm*",
+						"4"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Player",
+						"*Screaming from orgasm* Aah-h-h! Yes, fill me up!",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Squirts huge load of cum inside you*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Panting* Ha... Ha... Oohh...",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Pulls his knot out of you*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"Ouch! Hey! You could have stay inside longer!",
+						"4"
+					]
+				}
+			}
+		}
     },
     "dogTagsMissionary": {
-        "scene0": {
-            "stage0": {
-                "topic0": [
-                    "Player",
-                    "*Lies down on back* I am ready for you, my dear...",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Penetrates her vagina*",
-                    "3"
-                ],
-                "topic2": [
-                    "Player",
-                    "Ah, that feels so good...",
-                    "4"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Moving slowly, panting*",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "This is perfect... Ahh!",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Growling with pleasure*",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "Yes, just like that... Mmhh...",
-                    "4"
-                ]
-            },
-            "stage1": {
-                "topic0": [
-                    "Pet",
-                    "*Increases pace slightly*",
-                    "4"
-                ],
-                "topic1": [
-                    "Player",
-                    "Yes... That's it...",
-                    "4"
-                ],
-                "topic2": [
-                    "Pause",
-                    "Pause",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "I've never thougth missionary position can be so much fun... Ooh! But with you...",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "That sight of your moving cock is adorable!",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Whines softly*",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "Faster, my love, aaahh... Faster!",
-                    "4"
-                ]
-            },
-            "stage2": {
-                "topic0": [
-                    "Pet",
-                    "*Moving faster and deeper*",
-                    "4"
-                ],
-                "topic1": [
-                    "Player",
-                    "*Moaning louder* Ah-h-h... That's hot!",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "Don't know if I bothered you with my talking here... Ahh!",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "But I just can't stop expressing my... Ha-ha-aaah! Expressions!",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*His cock growing harder inside you*",
-                    "4"
-                ],
-                "topic5": [
-                    "Player",
-                    "Ooh, I feel you getting bigger there!",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "*Moaning louder* Ah-h-h!",
-                    "4"
-                ]
-            },
-            "stage3": {
-                "topic0": [
-                    "Player",
-                    "Yes yes yes! Fuck me like this is the last sex in our life!",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Increasing movement speed even more*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Feeling his precum dripping down her thighs* Ahh... The best part begins!",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "I hope nobody can see us right now! Ahh!",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "Even if someone does, I don't care anymore!",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Makes final thrust, whines loudly from orgasm*",
-                    "4"
-                ]
-            },
-            "stage4": {
-                "topic0": [
-                    "Player",
-                    "*Screaming from orgasm* Ah-h-h! Yes, fill me up!",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Shoots a huge load of cum inside her*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Panting heavily* Ha... Ha... Ohh...",
-                    "4"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Trying to pull out his cock*",
-                    "3"
-                ],
-                "topic4": [
-                    "Player",
-                    "No no! Stay! Gift me more of that pleasure!",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Staying in your pussy*",
-                    "7"
-                ],
-                "topic6": [
-                    "Pet",
-                    "*Finally pulls out*",
-                    "3"
-                ],
-                "topic7": [
-                    "Player",
-                    "Ouch!",
-                    "3"
-                ]
-            }
-        }
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"*Lies down on back* I am ready for you, my dear...",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Penetrates her vagina*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"Ah, that feels so good...",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Moving slowly, panting*",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"This is perfect... Ahh!",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Growling with pleasure*",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"Yes, just like that... Mmhh...",
+						"4"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Pet",
+						"*Increases pace slightly*",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"Yes... That's it...",
+						"4"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"I've never thougth missionary position can be so much fun... Ooh! But with you...",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"That sight of your moving cock is adorable!",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Whines softly*",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"Faster, my love, aaahh... Faster!",
+						"4"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Pet",
+						"*Moving faster and deeper*",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"*Moaning louder* Ah-h-h... That's hot!",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"Don't know if I bothered you with my talking here... Ahh!",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"But I just can't stop expressing my... Ha-ha-aaah! Expressions!",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*His cock growing harder inside you*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Ooh, I feel you getting bigger there!",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"*Moaning louder* Ah-h-h!",
+						"4"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"Yes yes yes! Fuck me like this is the last sex in our life!",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Increasing movement speed even more*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Feeling his precum dripping down her thighs* Ahh... The best part begins!",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"I hope nobody can see us right now! Ahh!",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Even if someone does, I don't care anymore!",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Makes final thrust, whines loudly from orgasm*",
+						"4"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Player",
+						"*Screaming from orgasm* Ah-h-h! Yes, fill me up!",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Shoots a huge load of cum inside her*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Panting heavily* Ha... Ha... Ohh...",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Trying to pull out his cock*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"No no! Stay! Gift me more of that pleasure!",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Staying in your pussy*",
+						"7"
+					],
+					"topic6": [
+						"Pet",
+						"*Finally pulls out*",
+						"3"
+					],
+					"topic7": [
+						"Player",
+						"Ouch!",
+						"3"
+					]
+				}
+			}
+		}
     },
     "dogTagsCowgirl": {
-        "scene0": {
-            "stage0": {
-                "topic0": [
-                    "Player",
-                    "*Inserting his cock inside* Here we go, mmh...",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Happily panting*",
-                    "3"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Starts riding dog*",
-                    "4"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Whines softly*",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "Oh, boy, feeling good already? Aah... Trully it feels great.",
-                    "4"
-                ],
-                "topic5": [
-                    "Pause",
-                    "Pause",
-                    "3"
-                ],
-                "topic6": [
-                    "Pet",
-                    "*Growling with pleasure*",
-                    "4"
-                ],
-                "topic7": [
-                    "Player",
-                    "Yes, just like that... Mmhh...",
-                    "4"
-                ],
-                "topic8": [
-                    "Player",
-                    "Let's go a bit deeper, shall we?",
-                    "4"
-                ]
-            },
-            "stage1": {
-                "topic0": [
-                    "Player",
-                    "*Rides dog deeper and faster*",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Whines softly*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "Aah... so good!",
-                    "4"
-                ],
-                "topic3": [
-                    "Pause",
-                    "Pause",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Whines from pleasure*",
-                    "4"
-                ],
-                "topic5": [
-                    "Player",
-                    "Yeah boy... you like it.",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "But I think, aah... we should go even faster.",
-                    "4"
-                ]
-            },
-            "stage2": {
-                "topic0": [
-                    "Pet",
-                    "*Moves inside you faster*",
-                    "4"
-                ],
-                "topic1": [
-                    "Player",
-                    "*Moaning louder* Ah-h-h... That's it! Keep moving!",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "If you can go deeper... Ohh... Do it!",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "*Moaning* Ahh...",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Dog's cock growing bigger inside you*",
-                    "4"
-                ],
-                "topic5": [
-                    "Player",
-                    "Ooh, I feel you getting bigger there!",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "*Moaning louder* Ah-h-h!",
-                    "4"
-                ]
-            },
-            "stage3": {
-                "topic0": [
-                    "Player",
-                    "Yes yes yes! Keep going, don't stop!",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Increasing movement speed even more*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Feeling his precum dripping down her thighs* Ahh... The best part begins!",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "I hope nobody can see us right now! Ahh!",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "Even if someone does, I don't care anymore!",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Makes final thrust, whines loudly from orgasm*",
-                    "4"
-                ]
-            },
-            "stage4": {
-                "topic0": [
-                    "Player",
-                    "*Screaming from orgasm* Ah-h-h! Yes, fill me up!",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Shoots a huge load of cum inside you*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Panting heavily* Ha... Ha... Ohh...",
-                    "4"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Trying to pull out his cock*",
-                    "3"
-                ],
-                "topic4": [
-                    "Player",
-                    "No no! Stay! Gift me more of that pleasure!",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Staying in your pussy*",
-                    "7"
-                ],
-                "topic6": [
-                    "Pet",
-                    "*Finally pulls out*",
-                    "3"
-                ],
-                "topic7": [
-                    "Player",
-                    "Ouch!",
-                    "3"
-                ]
-            }
-        }
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"*Inserting his cock inside* Here we go, mmh...",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Happily panting*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"*Starts riding dog*",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Whines softly*",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Oh, boy, feeling good already? Aah... Trully it feels great.",
+						"4"
+					],
+					"topic5": [
+						"Pause",
+						"Pause",
+						"3"
+					],
+					"topic6": [
+						"Pet",
+						"*Growling with pleasure*",
+						"4"
+					],
+					"topic7": [
+						"Player",
+						"Yes, just like that... Mmhh...",
+						"4"
+					],
+					"topic8": [
+						"Player",
+						"Let's go a bit deeper, shall we?",
+						"4"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Player",
+						"*Rides dog deeper and faster*",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Whines softly*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"Aah... so good!",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Whines from pleasure*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Yeah boy... you like it.",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"But I think, aah... we should go even faster.",
+						"4"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Pet",
+						"*Moves inside you faster*",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"*Moaning louder* Ah-h-h... That's it! Keep moving!",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"If you can go deeper... Ohh... Do it!",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"*Moaning* Ahh...",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Dog's cock growing bigger inside you*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Ooh, I feel you getting bigger there!",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"*Moaning louder* Ah-h-h!",
+						"4"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"Yes yes yes! Keep going, don't stop!",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Increasing movement speed even more*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Feeling his precum dripping down her thighs* Ahh... The best part begins!",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"I hope nobody can see us right now! Ahh!",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Even if someone does, I don't care anymore!",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Makes final thrust, whines loudly from orgasm*",
+						"4"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Player",
+						"*Screaming from orgasm* Ah-h-h! Yes, fill me up!",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Shoots a huge load of cum inside you*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Panting heavily* Ha... Ha... Ohh...",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Trying to pull out his cock*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"No no! Stay! Gift me more of that pleasure!",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Staying in your pussy*",
+						"7"
+					],
+					"topic6": [
+						"Pet",
+						"*Finally pulls out*",
+						"3"
+					],
+					"topic7": [
+						"Player",
+						"Ouch!",
+						"3"
+					]
+				}
+			}
+		}
     },
     "WolfAmbushStart": {
-        "scene0": {
-            "stage0": {
-                "topic0": [
-                    "Player",
-                    "Oh no...",
-                    "3"
-                ],
-                "topic1": [
-                    "Player",
-                    "*Looks behind*",
-                    "3",
-                    ".forms.WolfAmbushStart.scene0.stage0.topic1"
-                ],
-                "topic2": [
-                    "Player",
-                    "Where did you come from?",
-                    "3"
-                ],
-                "topic3": [
-                    "Wolves",
-                    "*Coming closer*",
-                    "4",
-                    ".forms.WolfAmbushStart.scene0.stage0.topic3"
-                ],
-                "topic4": [
-                    "Player",
-                    "Good wolves, don't get closer, please!",
-                    "3",
-                    ".forms.WolfAmbushStart.scene0.stage0.topic4"
-                ]
-            }
-        }
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"Oh no...",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"*Looks behind*",
+						"3",
+						".forms.WolfAmbushStart.scene0.stage0.topic1"
+					],
+					"topic2": [
+						"Player",
+						"Where did you come from?",
+						"3"
+					],
+					"topic3": [
+						"Wolves",
+						"*Coming closer*",
+						"4",
+						".forms.WolfAmbushStart.scene0.stage0.topic3"
+					],
+					"topic4": [
+						"Player",
+						"Good wolves, don't get closer, please!",
+						"3",
+						".forms.WolfAmbushStart.scene0.stage0.topic4"
+					]
+				}
+			}
+		},
+		"relationshipRank1": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"Oh no, not again!",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"*Look behind*",
+						"3",
+						".forms.WolfAmbushStart.relationshipRank1.scene0.stage0.topic1"
+					],
+					"topic2": [
+						"Player",
+						"Wolves again?",
+						"3"
+					],
+					"topic3": [
+						"Wolves",
+						"*Coming closer*",
+						"4",
+						".forms.WolfAmbushStart.relationshipRank1.scene0.stage0.topic3"
+					],
+					"topic4": [
+						"Player",
+						"Oh, I remember you two! It was you who raped me first time!",
+						"5",
+						".forms.WolfAmbushStart.relationshipRank1.scene0.stage0.topic4"
+					],
+					"topic5": [
+						"Wolves",
+						"*Looking at you friendly*",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"You look friendlier then first time.",
+						"4"
+					],
+					"topic7": [
+						"Player",
+						"So, what do you want now?",
+						"4"
+					],
+					"topic8": [
+						"Wolves",
+						"*Panting, looking at you with desire*",
+						"4"
+					],
+					"topic9": [
+						"Player",
+						"Oh, I see. Well, how about comethin more consensual, huh? I can make you two feel reaaly good, if you please me without your teeth.",
+						"7"
+					],
+					"topic10": [
+						"Wolves",
+						"*Happy howl*",
+						"3"
+					],
+					"topic11": [
+						"Player",
+						"I'll consider this as agreement.",
+						"3",
+						".forms.WolfAmbushStart.relationshipRank1.scene0.stage0.topic12"
+					]
+				}
+			}
+		}
     },
     "WolfAmbushEnd": {
-        "scene0": {
-            "stage0": {
-                "topic0": [
-                    "Player",
-                    "Hey, where you running?",
-                    "4",
-                    ".forms.WolfAmbushEnd.scene0.stage0.topic0"
-                ],
-                "topic1": [
-                    "Player",
-                    "Ha, typical animals, mated and dissappeared.",
-                    "3"
-                ],
-                "topic2": [
-                    "Player",
-                    "Well then, instead of lost pet I found wild horny wolves. Lucky me.",
-                    "3"
-                ],
-                "topic3": [
-                    "Player",
-                    "Perhaps I should return.",
-                    "3"
-                ]
-            }
-        }
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"Hey, where you running?",
+						"4",
+						".forms.WolfAmbushEnd.scene0.stage0.topic0"
+					],
+					"topic1": [
+						"Player",
+						"Ha, typical animals, mated and dissappeared.",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"Well then, instead of lost pet I found wild horny wolves. Lucky me.",
+						"3"
+					],
+					"topic3": [
+						"Player",
+						"Perhaps I should return.",
+						"3"
+					]
+				}
+			}
+		},
+		"relationshipRank1": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"Aah, what was great!",
+						"4"
+					],
+					"topic1": [
+						"Wolves",
+						"*Happy panting*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"And you are still here, I'm surprised! Aren't you runned away last time?",
+						"5"
+					],
+					"topic3": [
+						"Wolves",
+						"*Looks at you bashfully*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"Alright, don't be ashamed so much. So, are we done here?",
+						"4"
+					],
+					"topic5": [
+						"Wolves",
+						"*Happily barks*",
+						"3"
+					],
+					"topic6": [
+						"Player",
+						"Well, farewell then. Maybe we'll meet again in the future, and I hope you'll be as friendly as today.",
+						"6",
+						".forms.WolfAmbushEnd.relationshipRank1.scene0.stage0.topic6"
+					]
+				}
+			}
+		}
     },
     "WolfAmbushRape": {
-        "scene0": {
-            "stage0": {
-                "topic0": [
-                    "Player",
-                    "Good wolves, stay on your places, please!",
-                    "3"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Growling*",
-                    "3"
-                ],
-                "topic2": [
-                    "Pause",
-                    "Pause",
-                    "1"
-                ],
-                "topic3": [
-                    "Player",
-                    "If you wanted to attack me, you'd have already done it, what do you want from me?",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Looking at you with wild desire*",
-                    "3"
-                ],
-                "topic5": [
-                    "Player",
-                    "Oh, I know that sight, you see me like your bitch, aren't you?",
-                    "4"
-                ],
-                "topic6": [
-                    "Pet",
-                    "*Howling*",
-                    "4"
-                ],
-                "topic7": [
-                    "Player",
-                    "Oh, well, allright, let me moment to undress.",
-                    "4"
-                ]
-            },
-            "stage1": {
-                "topic0": [
-                    "Player",
-                    "*Lies naked on the ground*",
-                    "2"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*One wolf licking your pussy*",
-                    "3"
-                ],
-                "topic2": [
-                    "Player",
-                    "Want to taste me first? *to second wolf* And you here juct to observe? Don't you wish to join your friend here?",
-                    "6"
-                ],
-                "topic3": [
-                    "Player",
-                    "Ah, that feels... great, actually. If you'll be such gentle one for whole time, I'll even won't regreat about that ambush.",
-                    "7"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Second wolf stares on your pussy licked by first one*",
-                    "3"
-                ],
-                "topic5": [
-                    "Player",
-                    "Mmm... yeah, could you lick me even harder?",
-                    "4"
-                ]
-            },
-            "stage2": {
-                "topic0": [
-                    "Pet",
-                    "*Wolf takes your leg in teeth and rises it*",
-                    "3"
-                ],
-                "topic1": [
-                    "Player",
-                    "Ouch! That hurts! I could've rise it by myself, you just bark for it!",
-                    "3"
-                ],
-                "topic2": [
-                    "Pet",
-                    "*Licks your pussy faster and deeper*",
-                    "3"
-                ],
-                "topic3": [
-                    "Player",
-                    "Oh-h... that feeling between pain and pleasure...",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Getting noticeable aroused*",
-                    "3"
-                ],
-                "topic5": [
-                    "Player",
-                    "*Jiggles* Looks someone getting harder, in any terms of that word.",
-                    "4"
-                ],
-                "topic6": [
-                    "Player",
-                    "I think you licked me enought, how about us to proseed?",
-                    "4"
-                ]
-            },
-            "stage3": {
-                "topic0": [
-                    "Pet",
-                    "*One wolf cathes your neck to hold, while second penetrates you fast and aggressive*",
-                    "5"
-                ],
-                "topic1": [
-                    "Player",
-                    "Ouch, aah! My neck! Why you need to hold me so hard? Oh, your friend are inside me alredy.",
-                    "5"
-                ],
-                "topic2": [
-                    "Pet",
-                    "*Moving inside you fast and deep*",
-                    "3"
-                ],
-                "topic3": [
-                    "Player",
-                    "*Moaning* Ah, that feeling covers one from teeth on my neck...",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Whines from pleasure*",
-                    "3"
-                ],
-                "topic5": [
-                    "Player",
-                    "*Jiggles* Oh, I heard dogs whining from pleasure, so, wolves pretty much the same, huh?",
-                    "5"
-                ],
-                "topic6": [
-                    "Pet",
-                    "*Increases pace*",
-                    "4"
-                ]
-            },
-            "stage4": {
-                "topic0": [
-                    "Player",
-                    "Aaah! Oh, yeah, that's good... *to second wolf* Come here, let me stroke you as well.",
-                    "5"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Panting*",
-                    "3"
-                ],
-                "topic2": [
-                    "Pause",
-                    "Pause",
-                    "5"
-                ],
-                "topic3": [
-                    "Player",
-                    "*Moaning* Yeah... good boy!",
-                    "4"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Whines softly, panting*",
-                    "3"
-                ],
-                "topic5": [
-                    "Player",
-                    "Oh, boys, I'm so close! Don't stop!",
-                    "4"
-                ],
-                "topic6": [
-                    "Pet",
-                    "*Squirts precum inside you*",
-                    "3"
-                ],
-                "topic7": [
-                    "Player",
-                    "Aah! I feel your precum in me, yeah, you're close too...",
-                    "3"
-                ],
-                "topic8": [
-                    "Pet",
-                    "*Makes final thrusts and pushes his knot deep, locking inside*",
-                    "3"
-                ]
-            },
-            "stage5": {
-                "topic0": [
-                    "Player",
-                    "*Screams from orgasm*",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Fills your pussy with huge hot load*",
-                    "4"
-                ],
-                "topic2": [
-                    "Pause",
-                    "Pause",
-                    "2"
-                ],
-                "topic3": [
-                    "Player",
-                    "*Panting* Haa.. Ohh...",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "Good boys... Oh, I almost forgot about you! Let me lick you as well.",
-                    "3"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Whines softly*",
-                    "3"
-                ],
-                "topic6": [
-                    "Player",
-                    "Hope you liked it as well, that was hot.",
-                    "3"
-                ],
-                "topic7": [
-                    "Player",
-                    "And I hope you are more friendly now, right?",
-                    "4"
-                ],
-                "topic8": [
-                    "Pet",
-                    "*Happily panting*",
-                    "3"
-                ],
-                "topic9": [
-                    "Player",
-                    "Well, I think you are. Ah, you are good boys, despite you raped me.",
-                    "4"
-                ],
-                "topic10": [
-                    "Pause",
-                    "Pause",
-                    "1"
-                ]
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"Good wolves, stay on your places, please!",
+						"3"
+					],
+					"topic1": [
+						"Pet",
+						"*Growling*",
+						"3"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"1"
+					],
+					"topic3": [
+						"Player",
+						"If you wanted to attack me, you'd have already done it, what do you want from me?",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Looking at you with wild desire*",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"Oh, I know that sight, you see me like your bitch, aren't you?",
+						"4"
+					],
+					"topic6": [
+						"Pet",
+						"*Howling*",
+						"4"
+					],
+					"topic7": [
+						"Player",
+						"Oh, well, alright, let me moment to undress.",
+						"4"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Player",
+						"*Lies naked on the ground*",
+						"2"
+					],
+					"topic1": [
+						"Pet",
+						"*One wolf licking your pussy*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"Want to taste me first? *to second wolf* And you here juct to observe? Don't you wish to join your friend here?",
+						"6"
+					],
+					"topic3": [
+						"Player",
+						"Ah, that feels... great, actually. If you'll be such gentle one for whole time, I'll even won't regreat about that ambush.",
+						"7"
+					],
+					"topic4": [
+						"Pet",
+						"*Second wolf stares on your pussy licked by first one*",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"Mmm... yeah, could you lick me even harder?",
+						"4"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Pet",
+						"*Wolf takes your leg in teeth and rises it*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"Ouch! That hurts! I could've rise it by myself, you just bark for it!",
+						"3"
+					],
+					"topic2": [
+						"Pet",
+						"*Licks your pussy faster and deeper*",
+						"3"
+					],
+					"topic3": [
+						"Player",
+						"Oh-h... that feeling between pain and pleasure...",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Getting noticeable aroused*",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"*Jiggles* Looks someone getting harder, in any terms of that word.",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"I think you licked me enought, how about us to proseed?",
+						"4"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Pet",
+						"*One wolf cathes your neck to hold, while second penetrates you fast and aggressive*",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"Ouch, aah! My neck! Why you need to hold me so hard? Oh, your friend are inside me alredy.",
+						"5"
+					],
+					"topic2": [
+						"Pet",
+						"*Moving inside you fast and deep*",
+						"3"
+					],
+					"topic3": [
+						"Player",
+						"*Moaning* Ah, that feeling covers one from teeth on my neck...",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Whines from pleasure*",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"*Jiggles* Oh, I heard dogs whining from pleasure, so, wolves pretty much the same, huh?",
+						"5"
+					],
+					"topic6": [
+						"Pet",
+						"*Increases pace*",
+						"4"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Player",
+						"Aaah! Oh, yeah, that's good... *to second wolf* Come here, let me stroke you as well.",
+						"5"
+					],
+					"topic1": [
+						"Pet",
+						"*Panting*",
+						"3"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic3": [
+						"Player",
+						"*Moaning* Yeah... good boy!",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Whines softly, panting*",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"Oh, boys, I'm so close! Don't stop!",
+						"4"
+					],
+					"topic6": [
+						"Pet",
+						"*Squirts precum inside you*",
+						"3"
+					],
+					"topic7": [
+						"Player",
+						"Aah! I feel your precum in me, yeah, you're close too...",
+						"3"
+					],
+					"topic8": [
+						"Pet",
+						"*Makes final thrusts and pushes his knot deep, locking inside*",
+						"3"
+					]
+				},
+				"stage5": {
+					"topic0": [
+						"Player",
+						"*Screams from orgasm*",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Fills your pussy with huge hot load*",
+						"4"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"2"
+					],
+					"topic3": [
+						"Player",
+						"*Panting* Haa.. Ohh...",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Good boys... Oh, I almost forgot about you! Let me lick you as well.",
+						"3"
+					],
+					"topic5": [
+						"Pet",
+						"*Whines softly*",
+						"3"
+					],
+					"topic6": [
+						"Player",
+						"Hope you liked it as well, that was hot.",
+						"3"
+					],
+					"topic7": [
+						"Player",
+						"And I hope you are more friendly now, right?",
+						"4"
+					],
+					"topic8": [
+						"Pet",
+						"*Happily panting*",
+						"3"
+					],
+					"topic9": [
+						"Player",
+						"Well, I think you are. Ah, you are good boys, despite you raped me.",
+						"4"
+					],
+					"topic10": [
+						"Pause",
+						"Pause",
+						"1"
+					]
+				}
+			}
+		},
+		"relationshipRank1": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"Mount me, boy! *to second wolf* And you, give me that cock of yours.",
+						"5"
+					],
+					"topic1": [
+						"Pet",
+						"*Panting*",
+						"3"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"1"
+					],
+					"topic3": [
+						"Player",
+						"*Licking wolf's dick* Mmm... do you like it?",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Whines softly*",
+						"3"
+					],
+					"topic5": [
+						"Pet",
+						"*Other wolf moving inside you slowly and gently*",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"Mmm... Yeah, like that...",
+						"4"
+					],
+					"topic7": [
+						"Player",
+						"Let's take it deeper, shall we?",
+						"4"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Player",
+						"*Start sucking wolf's dick*",
+						"3"
+					],
+					"topic1": [
+						"Pet",
+						"*Other wolf started moving deeper inside you*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"*Moaning with gilled mouth*",
+						"3"
+					],
+					"topic3": [
+						"Pet",
+						"*Whines softly from pleasure*",
+						"3"
+					],
+					"topic4": [
+						"Pet",
+						"*Other wolf increasing his pace*",
+						"3"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Player",
+						"*Holds other wolf*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"*Thoughts* Gods, that's amazing!",
+						"3"
+					],
+					"topic2": [
+						"Pet",
+						"*Other wolf moves deep and faster*",
+						"3"
+					],
+					"topic3": [
+						"Player",
+						"Mmmh-h...",
+						"4"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"3"
+					],
+					"topic5": [
+						"Pet",
+						"*Other wolf starts moving even faster*",
+						"3"
+					],
+					"topic6": [
+						"Player",
+						"*Takes wolf's dick at full lenght in mouth*",
+						"3"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"*Thoughts* So good...",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Other wolf moving inside you really fast and deep*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Thoughts* Ah, that feels like he hitting my deepest places inside!",
+						"3"
+					],
+					"topic3": [
+						"Player",
+						"*Feel wolves precum leaking inside*",
+						"4"
+					],
+					"topic4": [
+						"Pet",
+						"*Panting fast*",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"*Thoughts* Hope I'll be able to breath with his knot in my mouth",
+						"5"
+					],
+					"topic6": [
+						"Pet",
+						"*Both wolves knotting you*",
+						"4"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Player",
+						"*Knotted from both sides, feeling wolf's cum leaking down your throat* Mmm...",
+						"5"
+					],
+					"topic1": [
+						"Pet",
+						"*Whines softly*",
+						"3"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic3": [
+						"Player",
+						"*Thoughts* Ah, wolf cum is even hotter than dog's one. I wonder how long it will take.",
+						"5"
+					],
+					"topic4": [
+						"Pet",
+						"*Whines softly, panting*",
+						"3"
+					],
+					"topic5": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic6": [
+						"Pet",
+						"*Trying to pull out their knots*",
+						"3"
+					],
+					"topic7": [
+						"Player",
+						"Mmm!",
+						"3"
+					],
+					"topic8": [
+						"Pet",
+						"*Making final thrusts and pulling their knots from you*",
+						"3"
+					]
+				}
+			}
+		}
+    },
+    "dogFac1Sex": {
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"Aw-w, you're such a good boy! I'll make you feel really, really good...",
+						"6"
+					],
+					"topic1": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"Yeah, you like your belly and chest stroked? You're such softie here, I love it!",
+						"6"
+					],
+					"topic3": [
+						"Pet",
+						"*Panting happily*",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"There are things even more pleasant then petting, you know? How about us to get to them?",
+						"7"
+					],
+					"topic5": [
+						"Pet",
+						"*Happily barks*",
+						"4"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Player",
+						"Kiss me, baby.",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Licks your lips*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"*whispering* Yeah, like that... Insert your tongue in my mouth, let's kiss for real.",
+						"6"
+					],
+					"topic3": [
+						"Pet",
+						"*Kisses you*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"Hope you like me massaging your balls.",
+						"4"
+					],
+					"topic5": [
+						"Pet",
+						"*Softly whines, breaths heavilly*",
+						"5"
+					],
+					"topic6": [
+						"Player",
+						"Mmm... it's so nice to touch your balls...",
+						"5"
+					],
+					"topic7": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic8": [
+						"Player",
+						"*Notices dog gets more excited* Yeah, I see you like this, as am I.",
+						"5"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Player",
+						"Mmm... such lovely cock you have here... Want me to stroke it? Let me make you feel good.",
+						"6"
+					],
+					"topic1": [
+						"Player",
+						"*Licking his balls* I wonder if you enjoying me licking your balls as man does.",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*Panting faster*",
+						"3"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic4": [
+						"Player",
+						"Your dick getting even harder, it's so great to touch it.",
+						"5"
+					],
+					"topic5": [
+						"Pet",
+						"*Whines softly but louder*",
+						"4"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"*Looking at dog* Aw-w, so cute to see dog smiling and enjoyng handjob.",
+						"6"
+					],
+					"topic1": [
+						"Player",
+						"Your cock feels so nice in my hand. Want me to hold it bit tighter?",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*Whines even louder from excitement*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Yeah, I know, If I was on your place I would whine too.",
+						"5"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"*Smiling* How abour to stroke you even faster?",
+						"5"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Player",
+						"*Start stroking him faster* No man wouldn't like this, even dog one.",
+						"6"
+					],
+					"topic1": [
+						"player",
+						"Ah, your heart beating so fast.",
+						"4"
+					],
+					"topic2": [
+						"Pet",
+						"*Panting fast and deep*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"You know, I'm impressed, really. I thought everyone will cum after such intense handjob.",
+						"6"
+					],
+					"topic4": [
+						"Player",
+						"*Noticing precum on his dick* But you're about to, aren't you?",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"Let's not waste your cum then... *start licking his cock*",
+						"5"
+					]
+				},
+				"stage5": {
+					"topic0": [
+						"Player",
+						"*Trying to talk with pulled tongue* Like me licking your cock?",
+						"6"
+					],
+					"topic1": [
+						"Pet",
+						"*Whines softly*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"Don't worry, I have some more pleasant for you plans about your cock...",
+						"6"
+					],
+					"topic3": [
+						"Pet",
+						"*Panting fast and deep*",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"*Feeling his precum flow down his cock* Mmm... your precum tastes good... I can't wait anymore. *take his dick in the mouth*",
+						"9"
+					]
+				},
+				"stage6": {
+					"topic0": [
+						"Player",
+						"*Sucking slowly* Mmmm...",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"*Feeleing leaking precum in your mouth*",
+						"5"
+					],
+					"topic2": [
+						"Pet",
+						"*Enjoys blowjob*",
+						"3"
+					],
+					"topic3": [
+						"Player",
+						"*Thoughts* His precum tastes great, I wonder if cum will be as tasty.",
+						"6"
+					],
+					"topic4": [
+						"Player",
+						"*Slurps* Mmfh...",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"*Thoughts* That's as good as sucking to man! I should do it more often.",
+						"6"
+					],
+					"topic6": [
+						"Pet",
+						"*Trembles from each your move*",
+						"4"
+					]
+				},
+				"stage7": {
+					"topic0": [
+						"Player",
+						"*Start deepthroating him* ",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Shivers from each your move*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Swallow spit with precum* Mhpf...",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"*Thoughts* Wow, it takes a bit longer than I expected, does he just holding from orgasm, or my movements aren't intense enough?",
+						"10"
+					],
+					"topic4": [
+						"Pet",
+						"*Whines from pleasure*",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"*Thoughts* Well, boy, you asked for it. *start massaging his balls and suck harder*",
+						"6"
+					]
+				},
+				"stage8": {
+					"topic0": [
+						"Pet",
+						"*Makes sounds close to moans*",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"*Thoughts* Does he... moaning? No, dogs can't do it, but it sounds funny.",
+						"6"
+					],
+					"topic2": [
+						"Player",
+						"*Softly squashing his balls, thinking* Common, boy! Give me all of your cum!",
+						"6"
+					],
+					"topic3": [
+						"Player",
+						"*Feeling dog about to cum, thinking* Yes, yes, yes, cum in my mouth!",
+						"6"
+					],
+					"topic4": [
+						"Pet",
+						"*Makes loud howl from pleasure*",
+						"3"
+					],
+					"topic5": [
+						"Player",
+						"*Feeling dog squirts cum in your mouth, thinking* Aaah-h-h, yes! Give it all to me!",
+						"6"
+					]
+				},
+				"stage9": {
+					"topic0": [
+						"Player",
+						"*Holds dog's cum in mouth a bit to enjoy its taste, swallows*",
+						"5"
+					],
+					"topic1": [
+						"Pet",
+						"*Deeply breaths and whines from orgasm*",
+						"5"
+					],
+					"topic2": [
+						"Player",
+						"*Pulling his cock from mouth* Aw-w, yes! You came so much, I hardly swallowed it. How do you feel?",
+						"6"
+					],
+					"topic3": [
+						"Pet",
+						"*Happily panting*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"*Jiggles* You'd say if you could, yeah? *kiss his cock*",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"Oh, that was great! I liked that, hope you did too.",
+						"5"
+					],
+					"topic6": [
+						"Player",
+						"Well, boy? Let's finish for now. Come on, I need to tidy up myself.",
+						"5"
+					],
+					"topic7": [
+						"Pet",
+						"*Stands up, looks at you with loving eyes*",
+						"4",
+						".forms.FoundLostDogFacCoward.scene0.stage0.topic7"
+					]
+				}
+			}
+		}
+    },
+	"dogFac2Sex": {
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Pet",
+						"*Starts licking you*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"Ah, you want to tease me first?",
+						"4"
+					],
+					"topic2": [
+						"Pet",
+						"*Licks your clit*",
+						"3"
+					],
+					"topic3": [
+						"Player",
+						"Mmm... That feels good.",
+						"4"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Mmm... boy, how about move to something more intense?",
+						"4"
+					],
+					"topic6": [
+						"Pet",
+						"*Mounts you*",
+						"4"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Player",
+						"Yeah, right that...",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Moves inside you slowly*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"You like me in that position?",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Whines softly*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"*Jiggles* Yeah, mating with girl is pleasant, isn't it?",
+						"5"
+					],
+					"topic5": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"Mmm...",
+						"3"
+					],
+					"topic7": [
+						"Pet",
+						"*Starts moving faster*",
+						"4"
+					],
+					"topic8": [
+						"Player",
+						"Ah, yeah, increase your pace!",
+						"4"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Player",
+						"*Feeiling dog's paws on your hips* Oh, boy, this is amazing!",
+						"5"
+					],
+					"topic1": [
+						"Pet",
+						"*Moves inside you deeper*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Moaning* I simply love dogs inside me!",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic4": [
+						"Player",
+						"Could you go deeper and faster, please?",
+						"5"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Pet",
+						"*Starts moving even faster*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"*Feeiling dog's panting close yo ear* Yes, thats it! Keep going!",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*Whines louder from excitement*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Mmm... so great to hear dog's whines while mating like that...",
+						"5"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"*Feeiling dog's precum leaking inside* Ah, you're close to cum, aren't you? Wait for me...",
+						"7"
+					],
+					"topic6": [
+						"Pet",
+						"*Panting fast and deep*",
+						"4"
+					],
+					"topic7": [
+						"Player",
+						"Yeah, just a bit more... Ahh, bit more...",
+						"6"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Pet",
+						"*Thrusts inside you deeper, filling with hot load*",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"*Screaming from orgasm*",
+						"4"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Ah, boy, your cum feels so hot inside...",
+						"5"
+					],
+					"topic4": [
+						"Pet",
+						"*Panting with pleasure*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Mmm... Stay inside me bit longer.",
+						"5"
+					],
+					"topic6": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic7": [
+						"Pet",
+						"*Pulls knot out*",
+						"3"
+					],
+					"topic8": [
+						"Player",
+						"*Feeling dog's cum leaking down your thight* Ah, that was amazing.",
+						"5",
+						".forms.FoundLostDogFac7.relationshipRank0.scene0.sexStage5.topic8"
+					]
+				}
+			}
+		}
+    },
+	"dogFac3Sex": {
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Pet",
+						"*Holds your neck with teeth, penetrating your anus*",
+						"6"
+					],
+					"topic1": [
+						"Player",
+						"Aaah! Boy, you could simply ask to do so!",
+						"4"
+					],
+					"topic2": [
+						"Pet",
+						"*Growling, moving inside you*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Just don't push your teeth so hard! Aah...",
+						"4"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Mmm... I had no idea I'm going to be humped like this today.",
+						"4"
+					],
+					"topic6": [
+						"Pet",
+						"*Moves inside you deep*",
+						"4"
+					],
+					"topic7": [
+						"Player",
+						"*Jiggles* You know, that's kind of fun. Never had such dominant dog in me.",
+						"6"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Pet",
+						"*Releses your neck, starting move faster and deeper*",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"Aah, yeah... that's a good boy...",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"I like feeling your paws on my shoulders...",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Growling quietly*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"*Jiggles* Ha, usually dogs are whining while mating, but you're trying to show your dominance?",
+						"7"
+					],
+					"topic5": [
+						"Pet",
+						"*Starts moving even faster*",
+						"3"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Pet",
+						"*Pushes your head to the ground*",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"*Moaning* Oh, so strong! I'm starting to enjoy it for real!",
+						"4"
+					],
+					"topic2": [
+						"Pet",
+						"*Moves deep inside, pushing your head to the ground*",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic4": [
+						"Player",
+						"Ah, yes! Give me all your cock! Go as hard as you can!",
+						"5"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Pet",
+						"*Places both paws on your back, moving deep*",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"*Closes eyes, breathing deep* A-ah! So great... You really know how to dominate girls!",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*Whines from pleasure*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"*Jiggles* No dog can mate without whining, right?",
+						"5"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"*Feeling dog's precum leaking inside* Ah, you're close to cum, aren't you? Don't hold it, give it all to me!",
+						"7"
+					],
+					"topic6": [
+						"Pet",
+						"*Pushes his knot fully inside you*",
+						"4"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Pet",
+						"*Turns around and fills you with huge load*",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"Ooh, now I'm knotted for real...",
+						"4"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Ah, boy, your cum feels so hot inside...",
+						"5"
+					],
+					"topic4": [
+						"Pet",
+						"*Panting with pleasure*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Mmm... Stay in me bit longer.",
+						"5"
+					],
+					"topic6": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic7": [
+						"Pet",
+						"*Trying to pull out hit knot*",
+						"3"
+					],
+					"topic8": [
+						"Player",
+						"Ouch! Easy, boy!",
+						"4"
+					],
+					"topic9": [
+						"Pet",
+						"*Makes growl and pulls out with high force*",
+						"5"
+					],
+					"topic10": [
+						"Player",
+						"Aaaah!",
+						"2"
+					],
+					"topic11": [
+						"Player",
+						"*Feeling dog's cum leaking down your thight, panting* Next time stay bit longer, alright?",
+						"5",
+						".forms.FoundLostDogFac3.relationshipRank0.scene0.sexStage4.topic11"
+					]
+				}
+			}
+		}
+    },
+	"dogFac7Sex": {
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Pet",
+						"*Penetrates you lying on your side*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"Mmm... Such unusual pose to mate with dog.",
+						"4"
+					],
+					"topic2": [
+						"Pet",
+						"*Looks in your eyes, moving inside you*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"So intimate... Aah, I love that!",
+						"4"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Seems like you are experienced in that, where did you learned how to make woman feel good?",
+						"7"
+					],
+					"topic6": [
+						"Pet",
+						"*Panting*",
+						"3"
+					],
+					"topic7": [
+						"Player",
+						"*Jiggles* Probably I need to ask it from your owner, right?",
+						"4"
+					],
+					"topic8": [
+						"Player",
+						"How about us to proceed?",
+						"3"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Player",
+						"*Feeling dog's cock going deeper* Yeah, like that!",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Moves inside you deeper*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"Ah, this is one of my favorite poses already... Mmm...",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Whines softly*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"Take your time, dear.",
+						"4"
+					],
+					"topic5": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"Mmm...",
+						"3"
+					],
+					"topic7": [
+						"Pet",
+						"*Starts moving faster*",
+						"4"
+					],
+					"topic8": [
+						"Player",
+						"Ah, yeah, could you go even deeper?",
+						"4"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Player",
+						"*Placing arm on pervis* Like somebody can see us here, but still.",
+						"5"
+					],
+					"topic1": [
+						"Pet",
+						"*Moves inside you deeper*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Moaning* I'll never regreat about my desisions to mate with dogs!",
+						"5"
+					],
+					"topic3": [
+						"Pet",
+						"*Panting fast*",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Aah... You know, I can let you even deeper inside me...",
+						"5"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"*Place leg further away near shoulder* Yes! Like that, go as deep as you could!",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"*Feeiling dog's cock deep inside* Mmm... So good...",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*Whines from excitement*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Mmm... I do love dog's whines from pleasure...",
+						"5"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"*Feeiling dog's precum leaking inside* Ooh, the best part, isn't it? Give me all your cum!",
+						"7"
+					],
+					"topic6": [
+						"Dog",
+						"*Panting fast and deep*",
+						"4"
+					],
+					"topic7": [
+						"Player",
+						"Yeah, just a bit more... Ahh, bit more...",
+						"6"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Pet",
+						"*Thrusts inside you deeper, filling with hot load*",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"*Moaning*",
+						"4"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Ah, boy, your knot feels so hot inside...",
+						"5"
+					],
+					"topic4": [
+						"Pet",
+						"*Panting with pleasure*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Mmm... Stay in me bit longer.",
+						"5"
+					],
+					"topic6": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic7": [
+						"Pet",
+						"*Pulls knot out*",
+						"3"
+					],
+					"topic8": [
+						"Player",
+						"Ah, that was amazing...",
+						"5",
+						".forms.FoundLostDogFac7.relationshipRank0.scene0.sexStage4.topic8"
+					]
+				}
+			}
+		}
+    },
+	"DogApproachOwnerFacRank1": {
+        "relationshipRank2": {
+            "scene0": {
+                "stage0": {
+                    "topic0": [
+                        "Pet",
+                        "*Walks to his master*",
+                        "2",
+						".forms.DogApproachOwnerFacRank1.relationshipRank2.scene0.stage0.topic0"
+                    ],
+                    "topic1": [
+                        "Owner",
+                        "Hey, boy. What is it?",
+                        "4"
+                    ],
+                    "topic2": [
+                        "Pet",
+                        "*Panting looking at master*",
+                        "4"
+                    ],
+                    "topic3": [
+                        "Owner",
+                        "Wanna fuck me?",
+                        "4"
+                    ],
+                    "topic4": [
+                        "Pet",
+                        "*Barks*",
+                        "2"
+                    ],
+                    "topic5": [
+                        "Owner",
+                        "Allright, lets find chair to do it.",
+                        "5"
+                    ],
+                    "topic6": [
+                        "Pet",
+                        "*Leads owner to chair*",
+                        "2",
+						".forms.DogApproachOwnerFacRank1.relationshipRank2.scene0.stage0.topic6"
+                    ],
+                    "topic7": [
+                        "Owner",
+                        "Is this chair you want to fuck me on? Alright, let's mate.",
+                        "2",
+						".forms.DogApproachOwnerFacRank1.relationshipRank2.scene0.stage0.topic6"
+                    ]
+                }
             }
         }
     },
-    "dogBlowjobWorship": {
-        "scene0": {
-            "stage0": {
-                "topic0": [
-                    "Player",
-                    "Aw-w, you're such a good boy! I'll make you feel really, really good...",
-                    "6"
-                ],
-                "topic1": [
-                    "Pause",
-                    "Pause",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "Yeah, you like your belly and chest stroked? You're such softie here, I love it!",
-                    "6"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Panting happily*",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "There are things even more pleasant then petting, you know? How about us to get to them?",
-                    "7"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Happily barks*",
-                    "4"
-                ]
-            },
-            "stage1": {
-                "topic0": [
-                    "Player",
-                    "Kiss me, baby.",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Licks your lips*",
-                    "3"
-                ],
-                "topic2": [
-                    "Player",
-                    "*whispering* Yeah, like that... Insert your tongue in my mouth, let's kiss for real.",
-                    "6"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Kisses you*",
-                    "3"
-                ],
-                "topic4": [
-                    "Player",
-                    "Hope you like me massaging your balls.",
-                    "4"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Softly whines, breaths heavilly*",
-                    "5"
-                ],
-                "topic6": [
-                    "Player",
-                    "Mmm... it's so nice to touch your balls...",
-                    "5"
-                ],
-                "topic7": [
-                    "Pause",
-                    "Pause",
-                    "5"
-                ],
-                "topic8": [
-                    "Player",
-                    "*Notices dog gets more excited* Yeah, I see you like this, as am I.",
-                    "5"
-                ]
-            },
-            "stage2": {
-                "topic0": [
-                    "Player",
-                    "Mmm... such lovely cock you have here... Want me to stroke it? Let me make you feel good.",
-                    "6"
-                ],
-                "topic1": [
-                    "Player",
-                    "*Licking his balls* I wonder if you enjoying me licking your balls as man does.",
-                    "6"
-                ],
-                "topic2": [
-                    "Pet",
-                    "*Panting faster*",
-                    "3"
-                ],
-                "topic3": [
-                    "Pause",
-                    "Pause",
-                    "5"
-                ],
-                "topic4": [
-                    "Player",
-                    "Your dick getting even harder, it's so great to touch it.",
-                    "5"
-                ],
-                "topic5": [
-                    "Pet",
-                    "*Whines softly but louder*",
-                    "4"
-                ]
-            },
-            "stage3": {
-                "topic0": [
-                    "Player",
-                    "*Looking at dog* Aw-w, so cute to see dog smiling and enjoyng handjob.",
-                    "6"
-                ],
-                "topic1": [
-                    "Player",
-                    "Your cock feels so nice in my hand. Want me to hold it bit tighter?",
-                    "6"
-                ],
-                "topic2": [
-                    "Pet",
-                    "*Whines even louder from excitement*",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "Yeah, I know, If I was on your place I would whine too.",
-                    "5"
-                ],
-                "topic4": [
-                    "Pause",
-                    "Pause",
-                    "5"
-                ],
-                "topic5": [
-                    "Player",
-                    "*Smiling* How abour to stroke you even faster?",
-                    "5"
-                ]
-            },
-            "stage4": {
-                "topic0": [
-                    "Player",
-                    "*Start stroking him faster* No man wouldn't like this, even dog one.",
-                    "6"
-                ],
-                "topic1": [
-                    "player",
-                    "Ah, your heart beating so fast.",
-                    "4"
-                ],
-                "topic2": [
-                    "Pet",
-                    "*Panting fast and deep*",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "You know, I'm impressed, really. I thought everyone will cum after such intense handjob.",
-                    "6"
-                ],
-                "topic4": [
-                    "Player",
-                    "*Noticing precum on his dick* But you're about to, aren't you?",
-                    "5"
-                ],
-                "topic5": [
-                    "Player",
-                    "Let's not waste your cum then... *start licking his cock*",
-                    "5"
-                ]
-            },
-            "stage5": {
-                "topic0": [
-                    "Player",
-                    "*Trying to talk with pulled tongue* Like me licking your cock?",
-                    "6"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Whines softly*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "Don't worry, I have some more pleasant for you plans about your cock...",
-                    "6"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Panting fast and deep*",
-                    "4"
-                ],
-                "topic4": [
-                    "Player",
-                    "*Feeling his precum flow down his cock* Mmm... your precum tastes good... I can't wait anymore. *take his dick in the mouth*",
-                    "9"
-                ]
-            },
-            "stage6": {
-                "topic0": [
-                    "Player",
-                    "*Sucking slowly* Mmmm...",
-                    "5"
-                ],
-                "topic1": [
-                    "Player",
-                    "*Feeleing leaking precum in your mouth*",
-                    "5"
-                ],
-                "topic2": [
-                    "Pet",
-                    "*Enjoys blowjob*",
-                    "3"
-                ],
-                "topic3": [
-                    "Player",
-                    "*Thoughts* His precum tastes great, I wonder if cum will be as tasty.",
-                    "6"
-                ],
-                "topic4": [
-                    "Player",
-                    "*Slurps* Mmfh...",
-                    "3"
-                ],
-                "topic5": [
-                    "Player",
-                    "*Thoughts* That's as good as sucking to man! I should do it more often.",
-                    "6"
-                ],
-                "topic6": [
-                    "Pet",
-                    "*Trembles from each your move*",
-                    "4"
-                ]
-            },
-            "stage7": {
-                "topic0": [
-                    "Player",
-                    "*Start deepthroating him* ",
-                    "4"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Shivers from each your move*",
-                    "4"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Swallow spit with precum* Mhpf...",
-                    "4"
-                ],
-                "topic3": [
-                    "Player",
-                    "*Thoughts* Wow, it takes a bit longer than I expected, does he just holding from orgasm, or my movements aren't intense enough?",
-                    "10"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Whines from pleasure*",
-                    "3"
-                ],
-                "topic5": [
-                    "Player",
-                    "*Thoughts* Well, boy, you asked for it. *start massaging his balls and suck harder*",
-                    "6"
-                ]
-            },
-            "stage8": {
-                "topic0": [
-                    "Pet",
-                    "*Makes sounds close to moans*",
-                    "4"
-                ],
-                "topic1": [
-                    "Player",
-                    "*Thoughts* Does he... moaning? No, dogs can't do it, but it sounds funny.",
-                    "6"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Softly squashing his balls, thinking* Common, boy! Give me all of your cum!",
-                    "6"
-                ],
-                "topic3": [
-                    "Player",
-                    "*Feeling dog about to cum, thinking* Yes, yes, yes, cum in my mouth!",
-                    "6"
-                ],
-                "topic4": [
-                    "Pet",
-                    "*Makes loud howl from pleasure*",
-                    "3"
-                ],
-                "topic5": [
-                    "Player",
-                    "*Feeling dog squirts cum in your mouth, thinking* Aaah-h-h, yes! Give it all to me!",
-                    "6"
-                ]
-            },
-            "stage9": {
-                "topic0": [
-                    "Player",
-                    "*Holds dog's cum in mouth a bit to enjoy its taste, swallows*",
-                    "5"
-                ],
-                "topic1": [
-                    "Pet",
-                    "*Deeply breaths and whines from orgasm*",
-                    "5"
-                ],
-                "topic2": [
-                    "Player",
-                    "*Pulling his cock from mouth* Aw-w, yes! You came so much, I hardly swallowed it. How do you feel?",
-                    "6"
-                ],
-                "topic3": [
-                    "Pet",
-                    "*Happily panting*",
-                    "3"
-                ],
-                "topic4": [
-                    "Player",
-                    "*Jiggles* You'd say if you could, yeah? *kiss his cock*",
-                    "5"
-                ],
-                "topic5": [
-                    "Player",
-                    "Oh, that was great! I liked that, hope you did too.",
-                    "5"
-                ],
-                "topic6": [
-                    "Player",
-                    "Well, boy? Let's finish for now. Come on, I need to tidy up myself.",
-                    "5"
-                ],
-                "topic7": [
-                    "Pet",
-                    "*Stands up, looks at you with loving eyes*",
-                    "4",
-                    ".forms.FoundLostDogFacCoward.scene0.stage0.topic7"
-                ]
-            }
-        }
+	"dogFac7SexOwner": {
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Pet",
+						"*Penetrates you lying on your side*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"Mmm... Such unusual pose to mate with dog.",
+						"4"
+					],
+					"topic2": [
+						"Pet",
+						"*Looks in your eyes, moving inside you*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"So intimate... Aah, I love that!",
+						"4"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Seems like you are experienced in that, where did you learned how to make woman feel good?",
+						"7"
+					],
+					"topic6": [
+						"Pet",
+						"*Panting*",
+						"3"
+					],
+					"topic7": [
+						"Player",
+						"*Jiggles* Probably I need to ask it from your owner, right?",
+						"4"
+					],
+					"topic8": [
+						"Player",
+						"How about us to proceed?",
+						"3"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Player",
+						"*Feeling dog's cock going deeper* Yeah, like that!",
+						"4"
+					],
+					"topic1": [
+						"Pet",
+						"*Moves inside you deeper*",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"Ah, this is one of my favorite poses already... Mmm...",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Whines softly*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"Take your time, dear.",
+						"4"
+					],
+					"topic5": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic6": [
+						"Player",
+						"Mmm...",
+						"3"
+					],
+					"topic7": [
+						"Pet",
+						"*Starts moving faster*",
+						"4"
+					],
+					"topic8": [
+						"Player",
+						"Ah, yeah, could you go even deeper?",
+						"4"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Player",
+						"*Placing arm on pervis* Like somebody can see us here, but still.",
+						"5"
+					],
+					"topic1": [
+						"Pet",
+						"*Moves inside you deeper*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*Moaning* I'll never regreat about my desisions to mate with dogs!",
+						"5"
+					],
+					"topic3": [
+						"Pet",
+						"*Panting fast*",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Aah... You know, I can let you even deeper inside me...",
+						"5"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"*Place leg further away near shoulder* Yes! Like that, go as deep as you could!",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"*Feeiling dog's cock deep inside* Mmm... So good...",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*Whines from excitement*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Mmm... I do love dog's whines from pleasure...",
+						"5"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"*Feeiling dog's precum leaking inside* Ooh, the best part, isn't it? Give me all your cum!",
+						"7"
+					],
+					"topic6": [
+						"Dog",
+						"*Panting fast and deep*",
+						"4"
+					],
+					"topic7": [
+						"Player",
+						"Yeah, just a bit more... Ahh, bit more...",
+						"6"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Pet",
+						"*Thrusts inside you deeper, filling with hot load*",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"*Moaning*",
+						"4"
+					],
+					"topic2": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"Ah, boy, your knot feels so hot inside...",
+						"5"
+					],
+					"topic4": [
+						"Pet",
+						"*Panting with pleasure*",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Mmm... Stay in me bit longer.",
+						"5"
+					],
+					"topic6": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic7": [
+						"Pet",
+						"*Pulls knot out*",
+						"3"
+					],
+					"topic8": [
+						"Player",
+						"Ah, that was amazing...",
+						"5",
+						".forms.FoundLostDogFac7.relationshipRank0.scene0.sexStage4.topic8"
+					]
+				}
+			}
+		}
     }
 }

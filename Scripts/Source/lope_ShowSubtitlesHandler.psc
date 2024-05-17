@@ -27,7 +27,7 @@ endEvent
 Function doInit()
     RegisterForModEvent("lope_ShowSubtitles", "OnShowSubtitles")
     RegisterForModEvent("lope_ShowSubtitlesNonSexlab", "OnShowSubtitlesNonSexlab")
-    debug.trace("[Lost Pets] Registering events for subtitles handler")
+    MiscUtil.PrintConsole("[Lost Pets] Registering events for subtitles handler")
 endFunction
 
 
@@ -89,7 +89,11 @@ endevent
 
 
 ; Non Sexalb version of subtitles, just showes plain subtitles.
-event OnShowSubtitlesNonSexlab(String eventName, String sceneName, int stageId, Form partner)
+event OnShowSubtitlesNonSexlab(String eventName,\
+                               String sceneName,\
+                               int stageId,\
+                               Form partner,\
+                               form human)
     int topicIdx = 0
     int sceneCount
     int stageCount
@@ -100,7 +104,7 @@ event OnShowSubtitlesNonSexlab(String eventName, String sceneName, int stageId, 
     string sceneFullPath = "."+sceneName
     string[] replic
 
-    sceneFullPath += ".relationshipRank" + (partner as Actor).GetRelationshipRank(PlayerActor)
+    sceneFullPath += ".relationshipRank" + (partner as Actor).GetRelationshipRank(human as Actor)
     sceneCount = PathCount(filename, sceneFullPath) - 1
     if sceneCount > 0
         sceneCount = RandomInt(0, sceneCount)
@@ -117,8 +121,8 @@ event OnShowSubtitlesNonSexlab(String eventName, String sceneName, int stageId, 
         ; sub.WidgetVisible(True)
         if replic[1] == "Pause"
             sub.WidgetVisible(False)
-        ElseIf (replic[0]=="Player")
-            sub.showSubtitles(speaker=game.GetPlayer() as actor, text=replic[1])
+        ElseIf (replic[0]=="Player" || replic[0]=="Owner")
+            sub.showSubtitles(speaker=human as actor, text=replic[1])
         elseif partner && replic[0]=="Pet"
             sub.showSubtitles(speaker=partner as actor, text=replic[1])
         else
@@ -126,17 +130,25 @@ event OnShowSubtitlesNonSexlab(String eventName, String sceneName, int stageId, 
         endif
         if replic.length == 4
             ; get package or apply actor to 
-            act.doActions(replic[3], replic[2] as int, partner as Actor)
+            act.doActions(replic[3], replic[2] as int, partner as Actor, human as Actor)
             if CurrentScene
+                ; MessageBox("currents scene")
                 while CurrentScene.IsPlaying()
                     utility.wait(1)
                 endwhile
             endif
+            if hostilesPresented
+                ; MessageBox("HostilesCount > 0")
+                while Storage.HostilesCount > 0
+                    utility.wait(1)
+                endwhile
+            endif
         endif
-        if !CurrentScene
+        if !CurrentScene || !hostilesPresented
             utility.wait(replic[2] as int)
         else
             CurrentScene = None
+            hostilesPresented = False
         endif
         topicIdx += 1
     endwhile
@@ -157,7 +169,7 @@ event __OnShowSubtitlesOld(String eventName, String sceneName, int stageId, Form
     string[] replic
 
     if !JsonUtil.IsGood(fileName)
-        ; messagebox("J'SON of the bitch is fucked up somehow! Return.")
+        messagebox("Subtitles.json of the bitch is fucked up somehow! Return.")
         return
     endif
     ; messagebox(stageId+" | "+partner)
@@ -193,13 +205,19 @@ event __OnShowSubtitlesOld(String eventName, String sceneName, int stageId, Form
 endEvent
 
 
-function ShowSubtitles(String sceneName, Int stageId, Actor partner = None)
-	SendEvent("lope_ShowSubtitles", sceneName, stageId, partner)
+function ShowSubtitles(String sceneName, Int stageId, Actor partner = None, Actor human = None)
+    if human == None
+        human = PlayerActor
+    endif
+    SendEvent("lope_ShowSubtitles", sceneName, stageId, partner, human)
 endfunction 
 
 
-function ShowSubtitlesNonSexlab(String sceneName, Int stageId, Actor partner = None)
-	SendEvent("lope_ShowSubtitlesNonSexlab", sceneName, stageId, partner)
+function ShowSubtitlesNonSexlab(String sceneName, Int stageId, Actor partner = None, Actor human = None)
+	if human == None
+        human = PlayerActor
+    endif
+    SendEvent("lope_ShowSubtitlesNonSexlab", sceneName, stageId, partner, human)
 endfunction 
 
 
@@ -270,7 +288,7 @@ Function countPrefix(Form FormtoSet)
 EndFunction
 
 
-function SendEvent(String eventName, String sceneName, Int stageId, Form Partner)
+function SendEvent(String eventName, String sceneName, Int stageId, Form Partner, Form Human)
     {Fire a custom tracking event}
     int handle = ModEvent.Create(eventName)
     if (handle)
@@ -279,9 +297,10 @@ function SendEvent(String eventName, String sceneName, Int stageId, Form Partner
         ModEvent.PushString(handle, sceneName)
         ModEvent.PushInt(handle, stageId)
         ModEvent.PushForm(handle, Partner)
+        ModEvent.PushForm(handle, human)
         ModEvent.Send(handle)
     Else
-        debug.messagebox("[SendEvent] All fucked!")
+        debug.messagebox("[LoPe] Subtitles SendEvent: All fucked!")
     endif
 endFunction
 
@@ -299,5 +318,6 @@ lope_storageContainer Property Storage Auto
 lope_functions Property func Auto
 
 Scene Property CurrentScene = None Auto 
+Bool Property hostilesPresented = False Auto
 
 Actor Property PlayerActor Auto

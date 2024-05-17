@@ -19,6 +19,7 @@ int Property MAX_RANK_7 = 1 AutoReadOnly        Hidden
 int[] Property MAX_RANKS    Auto                Hidden
 
 ; Mutables
+int               Property HostilesCount   Auto Hidden
 int[]             Property petsRanksHold1  Auto Hidden
 int[]             Property petsRanksHold2  Auto Hidden
 int[]             Property petsRanksHold3  Auto Hidden
@@ -81,6 +82,21 @@ EndFunction
 Keyword Function locTypeHold()
     return GetForm(0x00016771) as Keyword
 EndFunction
+Faction Function lostPetFaction()
+    return GetFormFromFile(0x00000D63, "lost_pets.esp") as Faction
+EndFunction
+FormList Function sexlabBedsList()
+    return GetFormFromFile(0x000181B1, "SexLab.esm") as FormList
+EndFunction
+FormList Function allChairsList()
+    return GetFormFromFile(0x003BD831, "lost_pets.esp") as FormList
+EndFunction
+FormList Function allBenchesList()
+    return GetFormFromFile(0x003BD832, "lost_pets.esp") as FormList
+EndFunction
+FormList Function chairsFrontLeftList()
+    return GetFormFromFile(0x003BD833, "lost_pets.esp") as FormList
+EndFunction
  
 
 ; Call it once
@@ -94,24 +110,26 @@ Function initializeRanksArrays()
     petsRanksHold7 = CreateIntArray(7, 0)
     petsRanksHold8 = CreateIntArray(7, 0)
     petsRanksHold9 = CreateIntArray(7, 0)
-    ; petsRanksHold1 = new int[7]
-    ; populateIntArray(petsRanksHold1, 0)
-    ; petsRanksHold2 = new int[7]
-    ; populateIntArray(petsRanksHold2, 0)
-    ; petsRanksHold3 = new int[7]
-    ; populateIntArray(petsRanksHold3, 0)
-    ; petsRanksHold4 = new int[7]
-    ; populateIntArray(petsRanksHold4, 0)
-    ; petsRanksHold5 = new int[7]
-    ; populateIntArray(petsRanksHold5, 0)
-    ; petsRanksHold6 = new int[7]
-    ; populateIntArray(petsRanksHold6, 0)
-    ; petsRanksHold7 = new int[7]
-    ; populateIntArray(petsRanksHold7, 0)
-    ; petsRanksHold8 = new int[7]
-    ; populateIntArray(petsRanksHold8, 0)
-    ; petsRanksHold9 = new int[7]
-    ; populateIntArray(petsRanksHold9, 0)
+    ;/
+    petsRanksHold1 = new int[7]
+    populateIntArray(petsRanksHold1, 0)
+    petsRanksHold2 = new int[7]
+    populateIntArray(petsRanksHold2, 0)
+    petsRanksHold3 = new int[7]
+    populateIntArray(petsRanksHold3, 0)
+    petsRanksHold4 = new int[7]
+    populateIntArray(petsRanksHold4, 0)
+    petsRanksHold5 = new int[7]
+    populateIntArray(petsRanksHold5, 0)
+    petsRanksHold6 = new int[7]
+    populateIntArray(petsRanksHold6, 0)
+    petsRanksHold7 = new int[7]
+    populateIntArray(petsRanksHold7, 0)
+    petsRanksHold8 = new int[7]
+    populateIntArray(petsRanksHold8, 0)
+    petsRanksHold9 = new int[7]
+    populateIntArray(petsRanksHold9, 0)
+    /;
     MAX_RANKS = new int[7]
     MAX_RANKS[0] = MAX_RANK_1
     MAX_RANKS[1] = MAX_RANK_2
@@ -130,4 +148,10 @@ Function populateIntArray(int[] array, int value)
         array[index] = value
         index += 1
     EndWhile
+EndFunction
+
+
+; Useless
+int Function getHostilesCount()
+    return HostilesCount
 EndFunction

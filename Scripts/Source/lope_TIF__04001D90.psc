@@ -10,8 +10,6 @@ LocationAlias Property RumirsLoc  Auto
 
 ReferenceAlias Property Pet  Auto  
 
-Actor Property Fenris  Auto  
-
 ReferenceAlias Property RumorsSourceREF  Auto  
 
 Keyword Property LocTypeHold  Auto  

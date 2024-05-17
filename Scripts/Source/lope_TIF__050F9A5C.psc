@@ -6,7 +6,7 @@ Scriptname lope_TIF__050F9A5C Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-LostPetsRadiant.setstage(0)
+LostPetsRadiant.setstage(1)
 RumorsSourceLocExt.ForceLocationTo(RumorsSourceLocation.getLocation())
 RumirsSourceREFExt.ForceRefTo(akspeaker)
 ;END CODE
