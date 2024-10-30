@@ -1,7 +1,10 @@
 Scriptname lopeSubtitlesActionsAPI extends Quest  
 
-import JsonUtil
 import debug
+
+import JsonUtil
+import PO3_SKSEFunctions
+
 
 bool increaseRelationships
 bool playSexlabScene
@@ -13,32 +16,63 @@ int isSetCameraTarget
 int questStage
 int itemAliasToRemove
 int deadBodyAlias
+int needPrivacy
+int setPlayerHeadTrack
+int playerAIControlled
+int setExpression
+int setPCDialogueAllowed
 form questForm
 form playerIdle
+form npcIdle
 form modForm
 form sceneToPlay
 float rotationAngle
 quest actingQuest
 string filename = "../lostpets/actions.json"
-
+string questEditorID
+string setSpecificTarget
+string setPackageOverride
+string removePackageOverride
+; string placeMarkerOn
+string moveMarkerTo
+string setFacingTarget
+string clearFacingTarget
+string setActorFaction
+string undressRefAlias
+string redressRefAlias
+Actor npcActor
 
 ObjectReference Property PlayerRef  Auto
 lope_ShowSubtitlesHandler Property lope_SSH Auto
 lope_sl Property sl Auto
 lope_functions Property func Auto
 lope_storageContainer Property storage Auto
+lope_privateAreaFramework Property privateAreaFramework Auto
+sslActorLibrary Property ActorLib Auto
+lope_strippingUtility Property stripUtil Auto
 
 Event OnUpdate()
     if playerIdle
         (PlayerRef as Actor).PlayIdle(playerIdle as idle)
     endif
+    if npcIdle
+        npcActor.playIdle(npcIdle as Idle)
+    endif
 EndEvent
 
 
+; Heavy as your mom.
 function doActions(string jsonPath, int topicLength, actor Partner = None, actor human = None)
     questForm = GetPathFormValue(filename, jsonPath+".quest[0]", None)
     ; messagebox(questForm)
     if questForm != None
+        actingQuest = questForm as Quest
+    endif
+
+    questEditorID = GetPathStringValue(filename, jsonPath+".questEditorID[0]", "None")
+    ; messagebox(questEditorID)
+    if questEditorID != "None"
+        questForm = GetFormFromEditorID(questEditorID)
         actingQuest = questForm as Quest
     endif
     
@@ -59,6 +93,62 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
         endif
     endif
 
+    npcIdle = GetPathFormValue(filename, jsonPath+".npcIdle[0]", None)
+    if npcIdle != None
+        npcActor = func.getActorFromQuestRefAliasByName(\
+            questForm, GetPathStringValue(\
+                filename, jsonPath+".npcIdle[1]", None))
+        if GetPathBoolValue(filename, jsonPath+".npcIdle[2]", False)
+            ; Utility.Wait(topicLength)
+            RegisterForSingleUpdate(topicLength)
+        else
+            npcActor.playIdle(npcIdle as Idle)
+        endif
+    endif
+
+    ;/placeMarkerOn = GetPathStringValue(filename, jsonPath+".placeMarkerOn[0]")
+    If (placeMarkerOn)
+        ObjectReference marker = func.placeMarkerNearActor(\
+            func.getActorFromQuestRefAliasByName(questForm, placeMarkerOn))
+        string aliasName = GetPathStringValue(filename, jsonPath+".placeMarkerOn[1]")
+        if aliasName
+            func.getQuestRefAliasByName(questForm, aliasName).ForceRefTo(marker)
+        endif
+    EndIf/;
+
+    moveMarkerTo = GetPathStringValue(filename, jsonPath+".moveMarkerTo[0]")
+    If (moveMarkerTo)
+        func.moveMarkerRefAliasToActor(\
+            func.getActorFromQuestRefAliasByName(questForm, moveMarkerTo),\
+                func.getQuestRefAliasByName(questForm,\
+                    GetPathStringValue(filename, jsonPath+".moveMarkerTo[1]")),\
+                func.getQuestRefAliasByName(questForm,\
+                    GetPathStringValue(filename, jsonPath+".moveMarkerTo[2]")),\
+                    -80, 80)
+    EndIf
+
+    setFacingTarget = GetPathStringValue(filename, jsonPath+".setFacingTarget[0]", "")
+    ; fixit
+    If (setFacingTarget != "")
+        ; MessageBox(func.getActorFromQuestRefAliasByName(questForm, setFacingTarget))
+        ; MessageBox(func.getQuestRefAliasByName(questForm,\
+        ;     GetPathStringValue(filename, jsonPath+".setFacingTarget[1]")).GetRef())
+        string targetString =  GetPathStringValue(filename, jsonPath+".setFacingTarget[1]")
+        ObjectReference target
+        if targetString == "Player"
+            target = PlayerRef
+        else
+            target = func.getQuestRefAliasByName(questForm, targetString).GetRef()
+        endif
+        func.getActorFromQuestRefAliasByName(questForm, setFacingTarget).SetLookAt(\
+            target, true)
+    EndIf
+
+    clearFacingTarget = GetPathStringValue(filename, jsonPath+".clearFacingTarget[0]")
+    If (clearFacingTarget)
+        func.getActorFromQuestRefAliasByName(questForm, clearFacingTarget).ClearLookAt()
+    EndIf
+
     rotationAngle = GetPathIntValue(filename, jsonPath+".rotate[0]", -1)
     ; isSetCameraTarget = GetPathIntValue(filename, jsonPath+".rotate[1]", 0)
     ; MessageBox(rotationAngle)
@@ -71,8 +161,42 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
         PlayerRef.SetAngle(PlayerRef.GetAngleX(), PlayerRef.GetAngleY(), PlayerRef.GetAngleZ() - rotationAngle)
     endif
 
+    setSpecificTarget = GetPathStringValue(filename, jsonPath+".setSpecificFurnitureTarget[0]", None)
+    if setSpecificTarget
+        ((questForm as Quest).GetAliasByName("TargetFurniture") as ReferenceAlias).ForceRefTo(\
+        ((questForm as Quest).GetAliasByName(setSpecificTarget) as ReferenceAlias).getRef())
+    endif
+
+    setPackageOverride = GetPathStringValue(filename, jsonPath+".addAliasPackageOverride[0]", None)
+    if setPackageOverride
+        Actor targetActor = func.getActorFromQuestRefAliasByName(questForm, setPackageOverride)
+        ; MessageBox(func.getPackageFromEditorID(\
+        ;    GetPathStringValue(filename, jsonPath+".addAliasPackageOverride[1]", None)))
+        ActorUtil.AddPackageOverride(\
+            targetActor,\
+            func.getPackageFromEditorID(\
+                GetPathStringValue(filename, jsonPath+".addAliasPackageOverride[1]", None)), 65, 1)
+        targetActor.EvaluatePackage()
+        ; MessageBox(targetActor)
+    endif
+
+    removePackageOverride = GetPathStringValue(filename, jsonPath+".removeAliasPackageOverride[0]", None)
+    if removePackageOverride
+        Actor targetActor = func.getActorFromQuestRefAliasByName(questForm, setPackageOverride)
+        ActorUtil.RemovePackageOverride(\
+            targetActor,\
+            func.getPackageFromEditorID(\
+                GetPathStringValue(filename, jsonPath+".removeAliasPackageOverride[1]", None)))
+        targetActor.EvaluatePackage()
+    endif
+
+    playerAIControlled = GetPathIntValue(filename, jsonPath+".playerAIControlled[0]", -1)
+    if playerAIControlled != -1
+        func.setPlayerReadyForAIScene(playerAIControlled as bool)
+    endif
+
     sceneToPlay = GetPathFormValue(filename, jsonPath+".scene[0]", None)
-    ; messagebox(playerIdle + jsonPath+".playerIdle")
+    ; messagebox(sceneToPlay + jsonPath+".scene")
     if sceneToPlay != None
         lope_SSH.CurrentScene = (sceneToPlay as Scene)
         (sceneToPlay as Scene).start()
@@ -84,13 +208,15 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
         string furnAliasName = GetPathStringValue(filename, jsonPath+".sexlabSpecialOffset[1]", -1)
         ObjectReference furn = (\
             (questForm as Quest).GetAliasByName(furnAliasName) as ReferenceAlias).GetRef()
-        if furnAliasName == "OwnersBed"
-            sl.sceneBed = furn
-        elseif furnAliasName == "Chair"
-            sl.sceneOffset = func.getOffsetArray(furn, furnAliasName)
-        endif
+        sl.sceneOffset = func.getOffsetArray(furn, furnAliasName)
+        ; if furnAliasName == "OwnersBed"
+        ;     sl.sceneBed = furn
+        ; elseif furnAliasName == "Chair"
+        ;     sl.sceneOffset = func.getOffsetArray(furn, furnAliasName)
+        ; endif
     endif
 
+    ; fuck
     playSexlabScene = GetPathBoolValue(filename, jsonPath+".sexlabScene[0]", False)
     if playSexlabScene
         String[] animNamesFromJson = PathStringElements(filename, jsonPath+".sexlabScene[1]")
@@ -111,6 +237,7 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
                 )
     endif
 
+    ; the
     playSexlabSceneMultipleActors = GetPathBoolValue(filename, jsonPath+".sexlabSceneMultipleActors[0]", False)
     if playSexlabSceneMultipleActors
         Actor[] Partners = func.GetActorsArrayFromQuestRefAliasIDs(questForm,\
@@ -124,6 +251,7 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
         Bool isUndressingDisabled = GetPathBoolValue(filename, jsonPath+".sexlabSceneMultipleActors[6]")
         String endingSceneName = GetPathStringValue(filename, jsonPath+".sexlabSceneMultipleActors[7]")
         sl.petsSex(PetsREF=Partners,\
+                human=human,\
                 animName=animName,\
                 tags=tags,\
                 sceneName=sceneName,\
@@ -133,6 +261,7 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
                 )
     endif
 
+    ; DRY
     playSexlabSceneNoPlayer = GetPathBoolValue(filename, jsonPath+".sexlabSceneNoPlayer[0]", False)
     if playSexlabSceneNoPlayer
         String[] animNamesFromJson = PathStringElements(filename, jsonPath+".sexlabSceneNoPlayer[1]")
@@ -157,7 +286,7 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
     increaseRelationships = GetPathBoolValue(filename, jsonPath+".increaseRelationships[0]", False)
     ; MessageBox(jsonPath+".increaseRelationships[0] "+increaseRelationships)
     if increaseRelationships
-        sl.IncreaseRelationship(Partner)
+        sl.IncreaseRelationship(Partner, Human)
     endif
 
     spawnHostiles = GetPathBoolValue(filename, jsonPath+".spawnHostiles[0]", False)
@@ -166,13 +295,10 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
         lope_SSH.hostilesPresented = True
         ObjectReference hostile
         int aliasId = GetPathIntValue(filename, jsonPath+".spawnHostiles[1]", 21)
-        ; MessageBox(aliasId+" "+questForm+" "+((questForm as quest).GetAliasById(aliasId) as ReferenceAlias).GetRef())
         int index = 0
-        ; MessageBox(storage.HostilesCount)
         While (index < storage.HostilesCount)
             hostile = PlayerRef.PlaceAtMe(\
                 ((questForm as quest).GetAliasById(aliasId) as ReferenceAlias).GetActorRef().GetActorBase())
-            ; MessageBox(hostile)
             func.MoveActorToRandomPosBehind(hostile as Actor, PlayerRef as Actor, 256.0, 512.0)
             index += 1
         EndWhile
@@ -182,7 +308,7 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
     If (itemAliasToRemove != -1)
         ; ((questForm as Quest).GetAliasById(itemAliasToRemove) as ReferenceAlias).GetRef()
         PlayerRef.RemoveItem(\
-            ((questForm as Quest).GetAliasById(itemAliasToRemove) as ReferenceAlias).GetRef())
+            ((questForm as Quest).GetAliasById(itemAliasToRemove) as ReferenceAlias).GetRef().GetBaseObject())
     EndIf
 
     deadBodyAlias = GetPathIntValue(filename, jsonPath+".placeDeadBody[0]", -1)
@@ -192,4 +318,81 @@ function doActions(string jsonPath, int topicLength, actor Partner = None, actor
         prey.Kill()
     EndIf
 
+    needPrivacy = GetPathIntValue(filename, jsonPath+".needPrivacy[0]", -1)
+    If (needPrivacy != -1)
+        If (needPrivacy == 1)
+            ; string centerPrivacy = GetPathStringValue(filename, jsonPath+".needPrivacy[1]", "")
+            ; if centerPrivacy
+            ;     func.getQuestRefAliasByName(questForm,"CenterPrivacy").ForceRefTo(\
+            ;         func.getQuestRefAliasByName(questForm, centerPrivacy).GetRef())
+            ; endif
+            string centerPrivacy = GetPathStringValue(filename, jsonPath+".needPrivacy[1]", "")
+            privateAreaFramework.startPollingForIntruders(\
+                 func.getQuestRefAliasByName(questForm, centerPrivacy).GetRef())
+        ElseIf (needPrivacy == 0)
+            privateAreaFramework.polling = False
+        EndIf
+    EndIf
+
+    setPlayerHeadTrack = GetPathIntValue(filename, jsonPath+".playerHeadtrack[0]", -1)
+    if setPlayerHeadTrack != -1
+        If (setPlayerHeadTrack == 1)
+            PlayerRef.SetAnimationVariableInt("IsNPC", 1)
+            String whoLookOn = GetPathStringValue(filename, jsonPath+".playerHeadtrack[1]", "")
+            If (whoLookOn != "")
+                (PlayerREF as Actor).SetLookAt(func.getQuestRefAliasByName(questForm, whoLookOn).GetRef())
+            EndIf
+        elseif (setPlayerHeadTrack == 0)
+            PlayerRef.SetAnimationVariableInt("IsNPC", 0)
+            (PlayerREF as Actor).ClearLookAt()
+        EndIf        
+    endif
+
+    setExpression = GetPathIntValue(filename, jsonPath+".setExpression[0]", -1)
+    If (setExpression != -1)
+        func.setPlayerExpression(\
+            setExpression,\
+            GetPathIntValue(filename, jsonPath+".setExpression[1]", 7),\
+            GetPathIntValue(filename, jsonPath+".setExpression[2]", 0)\
+        )
+    EndIf
+
+    setPCDialogueAllowed = GetPathIntValue(filename, jsonPath+".setPCDialogueAllowed[0]", -1)
+    if setPCDialogueAllowed != -1
+        func.setPCDialogueAllowed(\
+            setPCDialogueAllowed as Bool, questForm,\
+            PathStringElements(filename, jsonPath+".setPCDialogueAllowed[1]"))
+    endif
+
+    setActorFaction = GetPathStringValue(filename, jsonPath+".setActorFaction[0]", None)
+    If (setActorFaction)
+        Actor varActor = func.getActorFromQuestRefAliasByName(questForm, setActorFaction)
+        Faction varFaction = GetFormFromEditorID(\
+            GetPathStringValue(filename, jsonPath+".setActorFaction[1]", None)) as Faction
+        if GetPathIntValue(filename, jsonPath+".setActorFaction[2]") == 1
+            varActor.AddToFaction(varFaction)
+            int varRank = GetPathIntValue(filename, jsonPath+".setActorFaction[3]", -2)
+            if varRank > -2
+                varActor.SetFactionRank(varFaction, varRank)
+            endif
+        else
+            varActor.RemoveFromFaction(varFaction)
+        endif
+    EndIf
+
+    undressRefAlias = GetPathStringValue(filename, jsonPath+".undressRefAlias[0]", "")
+    if undressRefAlias
+        ; storage.strippedArmor = ActorLib.StripActor(func.getActorFromQuestRefAliasByName(questForm, undressRefAlias),\
+        ;     DoAnimate=False)
+        stripUtil.strip_actor(func.getActorFromQuestRefAliasByName(questForm, undressRefAlias), True)
+    endif
+
+    redressRefAlias = GetPathStringValue(filename, jsonPath+".redressRefAlias[0]", "")
+    if redressRefAlias
+        ; MessageBox(storage.strippedArmor)
+        ; ActorLib.UnstripActor(func.getActorFromQuestRefAliasByName(questForm, redressRefAlias),\
+        ;     storage.strippedArmor)
+        ; storage.strippedArmor = None
+        stripUtil.unstrip_actor(func.getActorFromQuestRefAliasByName(questForm, redressRefAlias))
+    endif
 endfunction

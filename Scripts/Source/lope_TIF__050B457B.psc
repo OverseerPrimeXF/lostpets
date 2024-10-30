@@ -6,9 +6,10 @@ Scriptname lope_TIF__050B457B Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-int giftLength = Gift.GetSize() - 1
-PlayerREF.addItem(\
-    Gift.getAt(utility.randomInt(0, giftLength)) as ObjectReference, 1)
+;int giftLength = Gift.GetSize() - 1
+;PlayerREF.addItem(\
+;    Gift.getAt(utility.randomInt(0, giftLength)) as ObjectReference, 1)
+func.giveGiftToPlayer(akSpeaker)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -18,3 +19,5 @@ EndFunction
 FormList Property Gift  Auto  
 
 ObjectReference Property PlayerRef  Auto  
+
+lope_functions Property func  Auto  

@@ -1,5 +1,6 @@
 Scriptname lope_sl extends Quest  
-{ Newest version of SL script which handles animation start }
+{ Newest version of SL script which handles animation start.
+  #FuckTheDRY. }
 
 SexLabFramework Property SexLab  Auto  
 
@@ -15,12 +16,14 @@ sslThreadController ThreadController
 bool subtitlesG
 String sceneNameG
 String endingSceneNameG
+String actionOnEndG
 scene afterSexSceneGlobal = None
 Actor currentPet
+Actor currentNPC
 
 
-;/Starts Sexlab scene with options.
-Args: ObjectReference Pet : with who start scene;
+;/ Starts Sexlab scene with options.
+ Args: ObjectReference Pet : with who start scene;
       String animName = "None": if need to start specific anim // DON'T USE WITH  tags;
       String tags = "None": if need to use tags // DON'T USE WITH animName;
       Scene[] scenes = None : if need to player scene with slscene [deprecation candidate];
@@ -29,6 +32,7 @@ Args: ObjectReference Pet : with who start scene;
       Bool isUndressingDisabled = False : disable player undressing.
 /;
 Function petSex(Actor PetREF,\
+                Actor Human = None,\
                 String animName = "None",\
                 String tags = "None",\
                 Scene[] scenes = None,\
@@ -39,6 +43,11 @@ Function petSex(Actor PetREF,\
                 )
     ; messagebox(PetREF.getactorbase().getname())
     ; Setup variables if given
+    if Human
+        currentNPC = Human
+    else
+        currentNPC = None
+    endif
     if scenes
         scenesArray = scenes
         scenesArrayLength = scenes.length
@@ -107,7 +116,15 @@ Function petSex(Actor PetREF,\
             Thread.SetAnimations(anims)
         endif
         PlayerREF.RemoveFromFaction(SexLabAnimatingFaction)
+        PetREF.RemoveFromFaction(SexLabAnimatingFaction)
         Thread.StartThread()
+        if (sceneBed)
+            Thread.CenterOnObject(sceneBed)
+        ElseIf (sceneOffset && sceneOffset.Length == 6)
+            ; MessageBox(sceneOffset)
+            Thread.CenterOnCoords(sceneOffset[0], sceneOffset[1], sceneOffset[2],\
+                                  sceneOffset[3], sceneOffset[4], sceneOffset[5])
+        endif
         ThreadController = sexlab.threadslots.getcontroller(Thread.tid)
     Else
         notification("Shoite! No valid animations found or something went wrong.")
@@ -127,7 +144,8 @@ EndFunction
 
 
 ; Start sex with multiple pets.
-Function petsSex(Actor[] PetsREF,\
+int Function petsSex(Actor[] PetsREF,\
+                 Actor Human = None,\
                  String animName = "None",\
                  String tags = "None",\
                  Scene[] scenes = None,\
@@ -135,10 +153,15 @@ Function petsSex(Actor[] PetsREF,\
                  Bool isShowSubtitle = False,\
                  Bool isUndressingDisabled = False,\
                  Bool isRape = False,\
-                 String endingSceneName = "None"\
-                )
+                 String endingSceneName = "None",\
+                 String actionOnEnd = "None")
     ; messagebox(PetREF.getactorbase().getname())
     ; Setup variables if given
+    if Human
+        currentNPC = Human
+    else
+        currentNPC = None
+    endif
     if scenes
         scenesArray = scenes
         scenesArrayLength = scenes.length
@@ -154,12 +177,20 @@ Function petsSex(Actor[] PetsREF,\
     if endingSceneName != "None"
         endingSceneNameG = endingSceneName
     endif
-
+    if actionOnEnd
+        actionOnEndG = actionOnEnd
+    else
+        actionOnEndG = None
+    endif
     currentPet = PetsREF[0]
     sslThreadModel Thread = SexLab.NewThread()
 
-    Thread.AddActor(PlayerREF, isRape) ; 2nd param ForceSilent = bool
     Thread.AddActors(PetsREF)
+    If (Human)
+        Thread.AddActor(Human, isRape)
+    else        
+        Thread.AddActor(PlayerREF, isRape) ; 2nd param ForceSilent = bool
+    EndIf
     Thread.SetHook("petSex")
     int actorsCount = PetsREF.Length + 1
 
@@ -167,7 +198,8 @@ Function petsSex(Actor[] PetsREF,\
     RegisterForModEvent("HookAnimationStart_petSex", "petSexStarted")
     RegisterForModEvent("HookStageStart_petSex", "petSexStageStart")
     RegisterForModEvent("HookStageEnd_petSex", "petSexStageEnd")
-    RegisterForModEvent("HookAnimationEnd_petSex", "petSexEnded")
+    RegisterForModEvent("HookAnimationEnding_petSex", "petSexEnding")
+    RegisterForModEvent("HookAnimationEnd_petSex", "DoActionOnEnd")
     RegisterForModEvent("PetTracking_Orgasm", "PetOrgasms")
     
     sslBaseAnimation[] anim = new sslBaseAnimation[1]
@@ -175,10 +207,10 @@ Function petsSex(Actor[] PetsREF,\
     string RaceKey
     ;tags = "Billyy, Creature, Dog, Canine, Wolf, Bestiality, CF, Dirty, Loving, Foreplay, Kneeling, Laying, Balljob, Handjob, Blowjob, CumInMouth, Oral, MovingDick, ABC"
     if tags != "None"
-        RaceKey = GetRaceKey(PetsREF[0].getRace())
+        ; RaceKey = GetRaceKey(PetsREF[0].getRace())
         ; messagebox("RaceKey ="+RaceKey)
         ; messagebox("TAGS = "+tags)
-        anims = SexLab.GetCreatureAnimationsByRacekeyTags(actorsCount, RaceKey , tags, "", True)
+        anims = SexLab.GetCreatureAnimationsByRaceTags(actorsCount, PetsREF[0].getRace() , tags, "", True)
         ; messagebox(PetREF.getRace())
     endif
     if animName != "None"
@@ -209,6 +241,7 @@ Function petsSex(Actor[] PetsREF,\
                                   sceneOffset[3], sceneOffset[4], sceneOffset[5])
         endif
         ThreadController = sexlab.threadslots.getcontroller(Thread.tid)
+        return Thread.tid
     Else
         notification("Shoite! No valid animations found or something went wrong.")
         notification("Trying to start at least something.")
@@ -228,11 +261,12 @@ Function petsSex(Actor[] PetsREF,\
             PetsREF.Length, RaceKey)
         int tid = SexLab.StartSex(PetsREF, anim_backup, Hook="petsSex")
         ThreadController = sexlab.threadslots.getcontroller(tid)
+        return tid
     endif  
 EndFunction
 
 
-Function petSexNPC(Actor PetREF,\
+int Function petSexNPC(Actor PetREF,\
                 Actor Human,\
                 String animName = "None",\
                 String tags = "None",\
@@ -240,7 +274,8 @@ Function petSexNPC(Actor PetREF,\
                 String sceneName = "None",\
                 Bool isShowSubtitle = False,\
                 Bool isUndressingDisabled = False,\
-                String endingSceneName = "None"\
+                String endingSceneName = "None",\
+                String actionOnEnd = "None"\
                 )
     ; Setup variables if given
     if scenes
@@ -255,10 +290,16 @@ Function petSexNPC(Actor PetREF,\
     if sceneName != "None"
         sceneNameG = sceneName
     endif
+    if actionOnEnd
+        actionOnEndG = actionOnEnd
+    else
+        actionOnEndG = None
+    endif
     if endingSceneName != "None"
         endingSceneNameG = endingSceneName
     endif
     currentPet = PetREF
+    currentNPC = Human
     sslThreadModel Thread = SexLab.NewThread() 
 
     Thread.AddActor(Human) ; 2nd param ForceSilent = bool
@@ -270,19 +311,22 @@ Function petSexNPC(Actor PetREF,\
     RegisterForModEvent("HookAnimationStart_petSexNPC", "petSexStarted")
     RegisterForModEvent("HookStageStart_petSexNPC", "petSexStageStart")
     RegisterForModEvent("HookStageEnd_petSexNPC", "petSexStageEnd")
-    RegisterForModEvent("HookAnimationEnd_petSexNPC", "petSexEnded")
-    RegisterForModEvent("HPetTracking_Orgasm", "PetOrgasms") 
+    ; RegisterForModEvent("HookAnimationEnd_petSexNPC", "petSexEnded")
+    RegisterForModEvent("HookAnimationEnd_petSexNPC", "DoActionOnEnd")
+    RegisterForModEvent("PetTracking_Orgasm", "PetOrgasms") 
     
     sslBaseAnimation[] anim = new sslBaseAnimation[1]
     sslBaseAnimation[] anims
 
     string RaceKey
     ;tags = "Billyy, Creature, Dog, Canine, Wolf, Bestiality, CF, Dirty, Loving, Foreplay, Kneeling, Laying, Balljob, Handjob, Blowjob, CumInMouth, Oral, MovingDick, ABC"
+    ; MessageBox(tags)
     if tags != "None"
-        RaceKey = GetRaceKey(PetREF.getRace())
+        ; RaceKey = GetRaceKey(PetREF.getRace())
         ; messagebox("RaceKey ="+RaceKey)
         ; messagebox("TAGS = "+tags)
-        anims = SexLab.GetCreatureAnimationsByRacekeyTags(2, RaceKey, tags, "", True)
+        ; anims = SexLab.GetCreatureAnimationsByRacekeyTags(2, RaceKey, tags, "", True) : ###############################
+        anims = SexLab.GetCreatureAnimationsByRaceTags(2, PetREF.getRace(), tags, "")
         ; messagebox(PetREF.getRace())
     endif
     if animName != "None"
@@ -303,8 +347,9 @@ Function petSexNPC(Actor PetREF,\
             ; messagebox("anims set, tags "+anims)
             Thread.SetAnimations(anims)
         endif
-        PlayerREF.RemoveFromFaction(SexLabAnimatingFaction)
-        
+        Human.RemoveFromFaction(SexLabAnimatingFaction)
+        PetREF.RemoveFromFaction(SexLabAnimatingFaction)
+
         Thread.StartThread()
         if (sceneBed)
             Thread.CenterOnObject(sceneBed)
@@ -319,16 +364,143 @@ Function petSexNPC(Actor PetREF,\
         notification("Trying to start at least something.")
         ; Utility.Wait(1)
         Thread.ClearAnimations()
-        PlayerREF.RemoveFromFaction(SexLabAnimatingFaction)
+        Human.RemoveFromFaction(SexLabAnimatingFaction)
         PetREF.RemoveFromFaction(SexLabAnimatingFaction)
-        actor[] actors = new actor[2]
-        actors[0] = Human
-        actors[1] = PetREF
+        actor[] actors = SexLabUtil.MakeActorArray(Human, PetREF)
+        ; actor[] actors = new actor[2]
+        ; actors[0] = Human
+        ; actors[1] = PetREF
+        if tags != "None"
+            RaceKey = GetRaceKey(PetREF.getRace())
+            ; messagebox("RaceKey ="+RaceKey)
+            ; messagebox("TAGS = "+tags)
+            anims = SexLab.GetCreatureAnimationsByRacekeyTags(2, RaceKey, tags, "", True)
+            ; messagebox(PetREF.getRace())
+        endif
+        if animName != "None"
+            anim[0] = SexLab.GetCreatureAnimationByName(animName) 
+        endif
         sslBaseAnimation[] anim_backup = SexLab.GetCreatureAnimationsByRaceKey(2, RaceKey)
         int tid = SexLab.StartSex(actors, anim_backup, Hook="petSex")
         ThreadController = sexlab.threadslots.getcontroller(tid)
-    endif  
+        MiscUtil.PrintConsole("[Lost Pets] Got TID for SL scene: " + tid)
+        return tid
+    endif
+    MiscUtil.PrintConsole("[Lost Pets] Got TID for SL scene: " + Thread.tid)
+    return Thread.tid
 EndFunction
+
+
+; Not really one NPC. Can accept up to 4 additional actors. None of them required.
+Function humanSexPlayer1NPC(Actor Human = None,\
+                            Actor Human2 = None,\
+                            Actor Human3 = None,\
+                            Actor Human4 = None,\
+                            bool playerGoesFirst = False,\
+                            String animName = "None",\
+                            String tags = "None",\
+                            String tagsExcluded = "",\
+                            String sceneName = "None",\
+                            Bool isShowSubtitle = False,\
+                            Bool isUndressingDisabled = False,\
+                            String actionOnEnd = "")
+    if isShowSubtitle && sceneName != "None"
+        subtitlesG = True
+        sceneNameG = sceneName
+    else
+        subtitlesG = False
+    endif
+    if actionOnEnd
+        actionOnEndG = actionOnEnd
+    else
+        actionOnEndG = None
+    endif
+    currentNPC = Human
+    sslThreadModel Thread = SexLab.NewThread()
+    Thread.SetHook("humanSexNPC")
+    RegisterForModEvent("HookAnimationEnd_humanSexNPC", "DoActionOnEnd")
+    if playerGoesFirst ;  Holy Jesus, what is that? What the fuck is that?
+        Thread.AddActor(PlayerRef)
+        if Human
+            Thread.AddActor(Human)
+        endif
+        if Human2
+            Thread.AddActor(Human2)
+        endif
+        if Human3
+            Thread.AddActor(Human3)
+        endif
+        if Human4
+            Thread.AddActor(Human4)
+        endif
+    else
+        if Human
+            Thread.AddActor(Human)
+        endif
+        if Human2
+            Thread.AddActor(Human2)
+        endif
+        if Human3
+            Thread.AddActor(Human3)
+        endif
+        if Human4
+            Thread.AddActor(Human4)
+        endif
+        Thread.AddActor(PlayerRef)
+    endif
+
+    PlayerREF.RemoveFromFaction(SexLabAnimatingFaction)
+    Human.RemoveFromFaction(SexLabAnimatingFaction)
+    sslBaseAnimation[] anim = new sslBaseAnimation[1]
+    sslBaseAnimation[] anims
+    if tags != "None"
+        anims = SexLab.GetAnimationsByTags(2, tags, tagsExcluded, True)
+    endif
+    if animName != "None"
+        anim[0] = SexLab.GetAnimationByName(animName) 
+    endif
+    if isUndressingDisabled == true
+        Thread.SetNoStripping(PlayerRef)
+        Thread.SetNoStripping(Human)
+   endif
+   if anim[0]
+        Thread.SetAnimations(anim)
+    endif
+    if anims
+        Thread.SetAnimations(anims)
+    endif
+    Thread.StartThread()
+    If (sceneOffset && sceneOffset.Length == 6)
+        Notification("Offset presented")
+        Thread.CenterOnCoords(sceneOffset[0], sceneOffset[1], sceneOffset[2],\
+                                sceneOffset[3], sceneOffset[4], sceneOffset[5])
+    endif
+    ThreadController = sexlab.threadslots.getcontroller(Thread.tid)
+EndFunction
+
+
+Event DoActionOnEnd(int tid, bool hasplayer)
+    if endingSceneNameG
+        (lope_SSH as lope_ShowSubtitlesHandler\
+        ).ShowSubtitlesNonSexlab(sceneName=endingSceneNameG,\
+                        stageId=0,\
+                        partner=currentPet,\
+                        human=currentNPC)
+    endif
+    clearBedOffset()
+    If (!actionOnEndG)
+        return
+    EndIf
+    String[] actionOnEnd = PapyrusUtil.StringSplit(actionOnEndG)
+    ; MessageBox(actionOnEnd)
+    if actionOnEnd[0] == "setstage"
+        (GetFormFromEditorID(actionOnEnd[1]) as Quest).SetStage(actionOnEnd[2] as Int)
+    elseif actionOnEnd[0] == "playscene"
+        (GetFormFromEditorID(actionOnEnd[1]) as Scene).Start()
+    elseif actionOnEnd[0] == "setcondition"
+        Conditions.setVariableAt(actionOnEnd[1], actionOnEnd[2] as Int)
+    endif
+endevent
 
 
 int Function getSexlabStage()
@@ -378,7 +550,8 @@ Event petSexStageStart(int tid, bool hasplayer)
         (lope_SSH as lope_ShowSubtitlesHandler\
         ).ShowSubtitles(sceneName=sceneNameG,\
                         stageId=ThreadController.Stage - 1,\                        
-                        partner=currentPet)
+                        partner=currentPet,\
+                        human=currentNPC)
     endif
     ThreadController.UpdateTimer(120)
     ; MessageBox("ThreadController.Stage: "+ThreadController.Stage)
@@ -414,15 +587,22 @@ endevent
 ; endevent
 
 
+Event petSexEnding(int tid, bool hasplayer)
+    ; MessageBox("sl scene ending")
+    (lope_SSH as lope_ShowSubtitlesHandler).ForceEndSubtitles()
+endevent
+
 Event petSexEnded(int tid, bool hasplayer)
-    ; start final scene
-    if endingSceneNameG
-        (lope_SSH as lope_ShowSubtitlesHandler\
-        ).ShowSubtitlesNonSexlab(sceneName=endingSceneNameG,\
-                        stageId=0,\
-                        partner=currentPet)
-    endif
-    clearBedOffset()
+    ; MOVED TO DOACTIONSONEND
+    ; start final scene    
+    ; if endingSceneNameG
+    ;     (lope_SSH as lope_ShowSubtitlesHandler\
+    ;     ).ShowSubtitlesNonSexlab(sceneName=endingSceneNameG,\
+    ;                     stageId=0,\
+    ;                     partner=currentPet,\
+    ;                     human=currentNPC)
+    ; endif
+    ; clearBedOffset()
 endevent
 
 
@@ -432,7 +612,7 @@ endevent
 
 
 Event PetOrgasms(int tid, bool hasplayer)
-    ;messagebox("pet cumming")
+    ; messagebox("")
     ;
 endevent
 
@@ -443,12 +623,15 @@ endevent
 ; endevent
 
 
-; Increase relationshiprank with Pet after mating.
-function IncreaseRelationship(Actor target)
-    int relations = target.GetRelationshipRank(PlayerREF)
+; Increase relationshiprank of Human (Player if None) with Partner after mating.
+function IncreaseRelationship(Actor Partner, Actor Human = None)
+    if !Human
+        Human = PlayerREF
+    endif
+    int relations = Partner.GetRelationshipRank(Human)
     if relations < 4
-        target.SetRelationshipRank(PlayerREF, relations + 1)
-        Notification("Relationships with "+target.GetActorBase().GetName()+" increased")
+        Partner.SetRelationshipRank(Human, relations + 1)
+        Notification("Relationships with " + Partner.GetActorBase().GetName()+" increased")
     endif
 endfunction
 
@@ -497,3 +680,5 @@ Faction Property SexLabAnimatingFaction  Auto
 
 ObjectReference Property sceneBed = None Auto
 float[] Property sceneOffset = None Auto
+
+lope_conditionsContainer Property Conditions Auto

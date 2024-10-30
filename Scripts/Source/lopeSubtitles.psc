@@ -51,7 +51,6 @@ endfunction
 
 
 function ShowSubtitles(Actor speaker = None, String name="None", String text)
-    WidgetVisible(True)
     if speaker 
         NameText[0] = speaker.getActorBase().getName()
     elseif name != "None"
@@ -62,6 +61,7 @@ function ShowSubtitles(Actor speaker = None, String name="None", String text)
     ;UI.InvokeString(HUD_MENU, WidgetRoot + ".setCharSpeech", text)
     ;print(textA=NameText)
     UI.InvokeStringA(HUD_MENU, WidgetRoot + ".setSubtitlesText", NameText)
+    WidgetVisible(True)
 endfunction
 
 String[] Property NameText  Auto

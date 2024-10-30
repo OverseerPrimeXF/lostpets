@@ -167,7 +167,7 @@
 									"Billyy (Canine) Laying Worship Service"
 								],
 								"None",
-								"dogFac1Sex",
+								"dogSex",
 								true,
 								true,
 								"None"
@@ -225,7 +225,7 @@
 									"Billyy (Canine) Doggy 2"
 								],
 								"None",
-								"dogFac2Sex",
+								"dogSex",
 								true,
 								false,
 								"None"
@@ -260,6 +260,15 @@
 								22
 							]
 						},
+						"topic2": {
+							"quest": [
+								"0xD66|lost_pets.esp"
+							],
+							"setFacingTarget": [
+								"Pet",
+								"Player"
+							]
+						},
 						"topic4": {
 							"scene": [
 								"0x2CD713|lost_pets.esp"
@@ -275,9 +284,22 @@
 							]
 						},
 						"topic13": {
+							"quest": [
+								"0xD66|lost_pets.esp"
+							],
+							"moveMarkerTo": [
+								"Player",
+								"MarkerNearPlayer",
+								"MarkerNearPlayerProxy"
+							],
 							"playerIdle": [
 								"0xF6CCC|Skyrim.esm",
 								true
+							]
+						},
+						"topic14": {							
+							"scene": [
+								"0x42F5C8|lost_pets.esp"
 							]
 						},
 						"topic16": {
@@ -287,10 +309,13 @@
 									"Billyy (Canine) Doggy Anal"
 								],
 								"None",
-								"dogFac3Sex",
+								"dogSex",
 								true,
 								false,
 								"None"
+							],
+							"clearFacingTarget": [
+								"Pet"
 							]
 						}
 					},
@@ -310,7 +335,7 @@
 				}
 			}
         },
-		"FoundLostDogFac7": {
+		"FoundLostDogFacRank7": {
 			"relationshipRank0": {
 				"scene0": {
 					"stage0": {
@@ -340,7 +365,7 @@
 									"Billyy (Canine) Sideways"
 								],
 								"None",
-								"dogFac7Sex",
+								"dogSex",
 								true,
 								false,
 								"None"
@@ -363,52 +388,525 @@
 				}
 			}
         },
-		"DogApproachOwnerFacRank1": {
+		"DogApproachOwnerFacRank3": {
 			"relationshipRank2": {
-				"scene0": {
-					"stage0": {
-						"topic0": {
-							"scene": [
-								"0x3BD834|lost_pets.esp"
-							]
-						},
-						"topic6": {
-							"scene": [
-								"0x3BD837|lost_pets.esp"
-							]
-						},
-						"topic7": {
-							"quest": [
-								"0x3A4C34|lost_pets.esp"
-							],
-							"sexlabSpecialOffset": [
-								true,
-								"Chair"
-							],
-							"sexlabSceneNoPlayer": [
-								true,
-								[
-									"Billyy (Canine) Chair Doggy 1"
+				"BrylingREF": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"questEditorID": [
+								    "lope_PetsOwnersScenes"
 								],
-								"None",
-								"dogFac7Sex",
-								false,
-								false,
-								"None"
-							]
+								"setSpecificFurnitureTarget": [
+								    "chair"
+								],
+								"addAliasPackageOverride": [
+								    "Owner",
+									"lope_PetsOwnersScenes_SitTarget"
+								]
+							},
+							"topic1": {
+								"scene": [
+									"0x3BD834|lost_pets.esp"
+								]
+							},
+							"topic6": {
+								"questEditorID": [
+									"lope_PetsOwnersScenes"
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"OwnersBed"
+								],
+								"sexlabSceneNoPlayer": [
+									true,
+									[
+										"Billyy (Canine) Laying Anal"
+									],
+									"None",
+									"dogSexOwner",
+									true,
+									false,
+									"None"
+								]
+							}
+						},
+						"sexStage4": {
+							"topic9": {
+								"questEditorID": [
+								    "lope_PetsOwnersScenes"
+								],
+								"removeAliasPackageOverride": [
+								    "Owner",
+									"lope_PetsOwnersScenes_SitTarget"
+								],
+								"questStage": [
+									100
+								],
+								"increaseRelationships": [
+									true
+								]
+							}
 						}
-					},
-					"sexStage4": {
-						"topic8": {
-							"quest": [
-                            "0xD66|lost_pets.esp"
-							],
-							"questStage": [
-								120
-							],
-							"increaseRelationships": [
-								true
-							]
+					}
+				},
+				"SilanaPetreiaREF": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"scene": [
+									"0x3BD834|lost_pets.esp"
+								]
+							},
+							"topic6": {
+								"scene": [
+									"0x3BD837|lost_pets.esp"
+								]
+							},
+							"topic7": {
+								"quest": [
+									"0x3A4C34|lost_pets.esp"
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"OwnersBed"
+								],
+								"sexlabSceneNoPlayer": [
+									true,
+									[
+										"Billyy (Canine) Laying Anal"
+									],
+									"None",
+									"dogFac7Sex",
+									true,
+									false,
+									"None"
+								]
+							}
+						},
+						"sexStage4": {
+							"topic8": {
+								"quest": [
+								"0xD66|lost_pets.esp"
+								],
+								"questStage": [
+									120
+								],
+								"increaseRelationships": [
+									true
+								]
+							}
+						}
+					}
+				}
+			}
+        },
+		"mariaEvents_1FacRank-2": {
+			"relationshipRank1": {
+				"lope_MariaREF": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"questEditorID": [
+									"lope_MariaEvents"
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"Furniture"
+								],
+								"sexlabSceneNoPlayer": [
+									true,
+									[
+										"Anubs  Dog/Wolf Drunk"
+									],
+									"None",
+									"dogSexMaria_1",
+									true,
+									false,
+									"None"
+								],
+								"setActorFaction": [
+								    "FuckingBard", "JobBardFaction", 0
+								]
+							}
+						}
+					}
+				}
+			}
+        },
+		"mariaEvents_playerTry2f1c": {
+			"relationshipRank0": {
+				"lope_MariaREF": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"questEditorID": [
+									"lope_MariaEvents"
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"Furniture"
+								],
+								"questStage": [
+									75
+								],								
+								"sexlabSceneMultipleActors": [
+									true,
+									[
+										5, 0, 4
+									],
+									[
+										"Anubs  Dog Female Female Tutor"
+									],
+									"None",
+									"dogSexMaria_1_PlayerTry2f1c",
+									true,
+									false,
+									"None"
+								],
+								"setActorFaction": [
+								    "FuckingBard", "JobBardFaction", 0
+								]
+							}
+						},
+						"sexStage4": {
+							"topic13": {
+								"questEditorID": [
+									"lope_MariaEvents"
+								],
+								"questStage": [
+									75
+								],
+								"setActorFaction": [
+								    "Maria", "BardAudienceExcludedFaction", 0
+								]
+							}
+						}
+					}
+				}
+			}
+        },
+		"mariaEvents_playerExp1f1c": {
+			"relationshipRank0": {
+				"lope_MariaREF": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"questEditorID": [
+									"lope_MariaEvents"
+								],
+								"addAliasPackageOverride": [
+								    "Maria",
+									"lope_keepEyeOnPlayer"
+								],
+								"setActorFaction": [
+								    "Maria", "BardAudienceExcludedFaction", 1
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"Furniture"
+								],
+								"sexlabSceneMultipleActors": [
+									true,
+									[
+										5, 4
+									],
+									[
+										"Billyy (Canine) Doggy 3"
+									],
+									"None",
+									"dogSexMaria_1_PlayerExp1f1c",
+									true,
+									false,
+									"None"
+								]
+							}
+						},
+						"sexStage4": {
+							"topic10": {
+								"questEditorID": [
+									"lope_MariaEvents"
+								],
+								"questStage": [
+									75
+								],
+								"setActorFaction": [
+								    "Maria", "BardAudienceExcludedFaction", 0
+								],		
+								"removeAliasPackageOverride": [
+								    "Maria",
+									"lope_keepEyeOnPlayer"
+								]
+							}
+						}						
+					}
+				}
+			}
+        },
+		"dogSexMaria_1FacRank-2": {
+			"relationshipRank1": {
+				"lope_MariaREF": {
+					"scene0": {
+						"sexStage0": {
+							"topic0": {
+								"questEditorID": [
+									"lope_MariaEvents"
+								],
+								"playerAIControlled": [
+									1
+								],
+								"scene": [
+									"0x51CFEB|lost_pets.esp"
+								],
+								"setPCDialogueAllowed": [
+									0,
+									[
+										"Maria",
+										"Billy"
+									]
+								]
+							}
+						},
+						"sexStage2": {
+							"topic3": {
+								"questEditorID": [
+									"lope_MariaEvents"
+								],
+								"playerHeadtrack": [
+									1,
+									"Maria"
+								],
+								"setExpression": [
+									1,
+									4,
+									100
+								]
+							}
+						},
+						"sexStage3": {
+							"topic5": {
+								"setExpression": [
+									1,
+									2,
+									25
+								]
+							}
+						},
+						"sexStage4": {
+							"topic1": {
+								"choise_title": "Player's answer",
+								"choises": [
+									"I saw how girls mating\nwith dogs before",
+									"Never seen girl mating\nwith dog",
+									"I like mating with\ndogs myself, actually"
+								],
+								"write_to_conditions": [
+									true,
+									"PlayersChoise"
+								]
+							}
+						},
+						"sexStage5": {
+							"topic14": {
+								"playerHeadtrack": [
+									0
+								],
+								"questEditorID": [
+									"lope_MariaEvents"
+								],
+								"questStage": [
+									50
+								],
+								"setExpression": [
+									0
+								],
+								"setPCDialogueAllowed": [
+									1,
+									[
+										"Maria",
+										"Billy"
+									]
+								]
+							}
+						}
+					}
+				}
+			}
+        },
+		"dogSexLoPeFiRu_matingEnded": {
+			"relationshipRank0": {
+				"lope_MariaREF": {
+					"scene0": {
+						"sexStage4": {
+							"topic11": {
+								"clearFacingTarget": [
+								    "Maria"
+								],
+								"playerHeadtrack": [
+								    0
+								],							
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"questStage": [
+									200
+								]
+							}
+						}
+					}
+				}
+			}
+        },
+		"foundLostDog_firstTimeFacRank0": {
+			"relationshipRank0": {
+				"lope_MariaREF": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"playerAIControlled": [
+									1
+								],
+								"scene": [
+									"0x5B8F04|lost_pets.esp"
+								]
+							},
+							"topic1": {
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],								
+								"playerAIControlled": [
+									0
+								],
+								"setFacingTarget": [
+									"Maria",
+									"Pet"
+								],
+								"playerHeadtrack": [
+									1,
+									"Pet"
+								]
+							},
+							"topic9": {
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"scene": [
+									"0x5BDE3C|lost_pets.esp"
+								]
+							},
+							"topic10": {
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"npcIdle": [
+									"0xF6CCC|Skyrim.esm",
+									"Maria",
+									true
+								]
+							},
+							"topic27": {
+								"playerAIControlled": [
+									1
+								],
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"scene": [
+									"0x5CF371|lost_pets.esp"
+								]
+							},
+							"topic28": {
+								"playerAIControlled": [
+									1
+								],
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"scene": [
+									"0x5CF36F|lost_pets.esp"
+								]
+							},
+							"topic29-0": {
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"playerAIControlled": [
+									0
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"LostPetMarker"
+								],
+								"sexlabSceneMultipleActors": [
+									true,
+									[
+										3, 0
+									],
+									[
+										"Billyy (Canine) Doggy 2"
+									],
+									"None",
+									"dogSexLoPeFiRu_PlayerTry1f1c",
+									true,
+									false,
+									"None"
+								]
+							},
+							"topic29-1": {
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"playerAIControlled": [
+									0
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"LostPetMarker"
+								],
+								"sexlabSceneMultipleActors": [
+									true,
+									[
+										3, 0
+									],
+									[
+										"Billyy (Canine) Doggy"
+									],
+									"None",
+									"dogSexLoPeFiRu_PlayerExp1f1c",
+									true,
+									false,
+									"None"
+								]
+							},
+							"topic30": {
+								"questEditorID": [
+									"lope_LostPets_firstRumor"
+								],
+								"playerAIControlled": [
+									0
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"LostPetMarker"
+								],
+								"sexlabSceneMultipleActors": [
+									true,
+									[
+										3, 6, 0
+									],
+									[
+										"Anubs  Dog Female Female Tutor"
+									],
+									"None",
+									"dogSexLoPeFiRu_PlayerTry2f1c",
+									true,
+									false,
+									"None"
+								]
+							}
 						}
 					}
 				}
@@ -429,6 +927,91 @@
                     }
                 }
             }
-        }
+        },
+		"specialEventStart_Haafingar4": {
+			"relationshipRank0": {
+				"ElisifTheFairREF": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"addAliasPackageOverride": [
+									"Elisif",
+									"lope_lostPets_SE_Haafingar4_ElisifTravelNearBed"
+								],
+								"setFacingTarget": [
+									"Elisif",
+									"Player"
+								]
+							},
+							"topic21": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"undressRefAlias": [
+									"Elisif"
+								]
+							},
+							"topic23": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"sexlabSceneNoPlayer": [
+									true,
+									[
+										"Billyy (Fox) Doggy"
+									],
+									"None",
+									"SE_Haafingar4",
+									true,
+									false,
+									"SE_Haafingar4Afterscene"
+								]
+							}
+						},
+						"sexStage4": {
+							"topic10": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								]
+							}
+						},
+						"afterStage0": {
+							"topic0": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"addAliasPackageOverride": [
+									"Elisif",
+									"lope_lostPets_SE_Haafingar4_ElisifTravelNearBed"
+								]
+							},
+							"topic2": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"redressRefAlias": [
+									"Elisif"
+								]
+							},
+							"topic9": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"questStage": [
+									300
+								],
+								"removeAliasPackageOverride": [
+									"Elisif",
+									"lope_lostPets_SE_Haafingar4_ElisifTravelNearBed"
+								]
+							}
+						}
+					}
+				}
+			}
+		}
     }
 }

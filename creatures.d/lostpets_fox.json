@@ -1,0 +1,15 @@
+{
+  "modID": "LoPe",
+  "ModName": "More Nasty Critters",
+  "creatures": [
+    {
+      "skinName": "Arctic Fox",
+      "restrictedSlots": [],
+      "arousedArmor": "__formData|MoreNastyCritters.esp|0x266d6",
+      "normalArmor": null,
+      "RaceName": "Fox",
+      "raceForm": "__formData|lost_pets.esp|0x72EBB8",
+      "skinForm": "__formData|Skyrim.esm|0x829b7"
+    }
+  ]
+}

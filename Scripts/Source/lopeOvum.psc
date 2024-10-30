@@ -39,5 +39,3 @@ EndFunction
 function WidgetVisible(Bool isVisible)
     UI.InvokeBool(HUD_MENU, WidgetRoot + ".setVisible", isVisible)
 endfunction
-
-

@@ -87,3 +87,4 @@ Keyword Property LocTypeHold  Auto
 ObjectReference Property PlayerRef  Auto  
 
 lope_storageContainer Property Storage  Auto  
+lope_functions Property func  Auto 

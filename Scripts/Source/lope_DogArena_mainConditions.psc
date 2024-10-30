@@ -1,0 +1,1 @@
+Scriptname lope_DogArena_mainConditions extends Quest  Conditional

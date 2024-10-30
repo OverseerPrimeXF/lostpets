@@ -1,25 +1,15 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-;NEXT FRAGMENT INDEX 17
+;NEXT FRAGMENT INDEX 24
 Scriptname lope_QF_lope_LostPetsRadiant_04000D66 Extends Quest Hidden
+
+;BEGIN ALIAS PROPERTY LostPetMarkerInFalkreath
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LostPetMarkerInFalkreath Auto
+;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY Pet
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Pet Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LostPetMarkerInWhiterun
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LostPetMarkerInWhiterun Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY PetTemporalFollower
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_PetTemporalFollower Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY RumorsSourceLocationExt
-;ALIAS PROPERTY TYPE LocationAlias
-LocationAlias Property Alias_RumorsSourceLocationExt Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY Owner
@@ -27,54 +17,9 @@ LocationAlias Property Alias_RumorsSourceLocationExt Auto
 ReferenceAlias Property Alias_Owner Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY LostPetMarker
+;BEGIN ALIAS PROPERTY LostPetMarkerInHjaalmarch
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LostPetMarker Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY RumorsSourceREF
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_RumorsSourceREF Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY EncounterHostile
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_EncounterHostile Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LostPetMarkerInHaafingar
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LostPetMarkerInHaafingar Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LostPetMarkerInReach
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LostPetMarkerInReach Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LostPetLocation
-;ALIAS PROPERTY TYPE LocationAlias
-LocationAlias Property Alias_LostPetLocation Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LostPetMarkerInPale
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LostPetMarkerInPale Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LostPetMarkerInFalkreath
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LostPetMarkerInFalkreath Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LostPetMarkerInWinterhold
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LostPetMarkerInWinterhold Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Player
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Player Auto
+ReferenceAlias Property Alias_LostPetMarkerInHjaalmarch Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY PlayerSpeaker
@@ -82,9 +27,29 @@ ReferenceAlias Property Alias_Player Auto
 ReferenceAlias Property Alias_PlayerSpeaker Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY LostPetMarkerInHjaalmarch
+;BEGIN ALIAS PROPERTY EncounterHostile
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LostPetMarkerInHjaalmarch Auto
+ReferenceAlias Property Alias_EncounterHostile Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY RumorsSourceREF
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_RumorsSourceREF Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY LostPetMarker
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LostPetMarker Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY LostPetMarkerInReach
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LostPetMarkerInReach Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY LostPetMarkerInWinterhold
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LostPetMarkerInWinterhold Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY LostPetMarkerInRift
@@ -92,19 +57,64 @@ ReferenceAlias Property Alias_LostPetMarkerInHjaalmarch Auto
 ReferenceAlias Property Alias_LostPetMarkerInRift Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY LostPetLocation
+;ALIAS PROPERTY TYPE LocationAlias
+LocationAlias Property Alias_LostPetLocation Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY RumorsSourceLocationExt
+;ALIAS PROPERTY TYPE LocationAlias
+LocationAlias Property Alias_RumorsSourceLocationExt Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY MarkerNearPlayerProxy
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_MarkerNearPlayerProxy Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY LostPetMarkerInPale
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LostPetMarkerInPale Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY LostPetMarkerInEastmarch
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_LostPetMarkerInEastmarch Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY petPrey
+;BEGIN ALIAS PROPERTY LostPetMarkerInWhiterun
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_petPrey Auto
+ReferenceAlias Property Alias_LostPetMarkerInWhiterun Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY PetsTreatBait_predators
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_PetsTreatBait_predators Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY PetTemporalFollower
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_PetTemporalFollower Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY LostPetMarkerInHaafingar
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LostPetMarkerInHaafingar Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Player
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Player Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY MarkerNearPlayer
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_MarkerNearPlayer Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY petPrey
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_petPrey Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN FRAGMENT Fragment_11
@@ -115,19 +125,39 @@ alias_petTemporalFollower.forceRefTo(alias_Pet.getReference())
 EndFunction
 ;END FRAGMENT
 
+;BEGIN FRAGMENT Fragment_15
+Function Fragment_15()
+;BEGIN AUTOCAST TYPE lope_LostPetsController
+Quest __temp = self as Quest
+lope_LostPetsController kmyQuest = __temp as lope_LostPetsController
+;END AUTOCAST
+;BEGIN CODE
+setobjectivedisplayed(0)
+; debug.messagebox("RumorsSourceLocExt"+RumorsSourceLocExt.getLocation())
+actor Pet = alias_pet.getactorreference()
+kmyquest.SetRandomPetFactionRank(Pet, PetFaction)
+; ObjectReference PetMarker = kmyquest.GetRandomMarker(kmyquest.setFormList())
+ObjectReference PetMarker = kmyquest.getPetMarker()
+; debug.messagebox("PetMarker in quest stages is " + PetMarker )
+kmyquest.SetPetMarkerAlias(PetMarker)
+kmyquest.SetPetLocationAlias(PetMarker)
+ObjectReference Marker = alias_lostpetmarker.getreference()
+; Pet.MoveTo(Marker)
+; debug.messagebox(petmarker)
+; Pet.EvaluatePackage()
+utility.wait(1)
+Pet.MoveTo(PetMarker)
+; alias_player.getRef().MoveTo(PetMarker)
+PetFromPackages.ForceRefTo(Pet)
+;END CODE
+EndFunction
+;END FRAGMENT
+
 ;BEGIN FRAGMENT Fragment_9
 Function Fragment_9()
 ;BEGIN CODE
 ; LoPeCo.setHostilesCount() ; moved to functions and actions
 LoPeCo.registerNextTimeUpdate()
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_4
-Function Fragment_4()
-;BEGIN CODE
-stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -163,30 +193,42 @@ debug.messagebox("stage 0")
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_15
-Function Fragment_15()
+;BEGIN FRAGMENT Fragment_17
+Function Fragment_17()
 ;BEGIN AUTOCAST TYPE lope_LostPetsController
 Quest __temp = self as Quest
 lope_LostPetsController kmyQuest = __temp as lope_LostPetsController
 ;END AUTOCAST
 ;BEGIN CODE
-setobjectivedisplayed(0)
-; debug.messagebox("RumorsSourceLocExt"+RumorsSourceLocExt.getLocation())
-actor Pet = alias_pet.getactorreference()
-kmyquest.SetRandomPetFactionRank(Pet, PetFaction)
-; ObjectReference PetMarker = kmyquest.GetRandomMarker(kmyquest.setFormList())
-ObjectReference PetMarker = kmyquest.getPetMarker()
-; debug.messagebox("PetMarker in quest stages is " + PetMarker )
-kmyquest.SetPetMarkerAlias(PetMarker)
-kmyquest.SetPetLocationAlias(PetMarker)
-ObjectReference Marker = alias_lostpetmarker.getreference()
-; Pet.MoveTo(Marker)
-; debug.messagebox(petmarker)
-; Pet.EvaluatePackage()
+;
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_4
+Function Fragment_4()
+;BEGIN CODE
+stop()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_19
+Function Fragment_19()
+;BEGIN CODE
+int newLowestRelationships = LoPeCo.func.isAllPetsInHoldRelationsIncreased()
+if newLowestRelationships == 1
+    Location holdLoc = alias_RumorsSourceLocationExt.getLocation()
+    Quest specialEvent = LoPeCo.func.getSpecialQuest(holdLoc, newLowestRelationships)
+    if specialEvent
+        MiscUtil.printConsole("[Lost Pets] Special event for hold " + PO3_SKSEFunctions.getFormEditorID(\
+            holdLoc) + " conditions matched, quest for relationships " + newLowestRelationships + \
+            " exists and triggered!")
+        specialEvent.setstage(1)
+    endif
+endif
 utility.wait(1)
-Pet.MoveTo(PetMarker)
-; alias_player.getRef().MoveTo(PetMarker)
-PetFromPackages.ForceRefTo(Pet)
+setstage(1000)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -200,3 +242,5 @@ lope_LostPetsController Property LoPeCo  Auto
 ReferenceAlias Property PetFromPackages  Auto  
 
 Faction Property PetFaction  Auto  
+
+lope_POSController Property pos  Auto  

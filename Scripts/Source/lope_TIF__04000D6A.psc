@@ -11,7 +11,7 @@ utility.wait(3)
 sub.showSubtitles(Pet.getActorRef(), text="Cumming inside player")
 utility.wait(3)
 sub.WidgetVisible(false)/;
-subt.showString()
+; subt.showString()
 ;END CODE
 EndFunction
 ;END FRAGMENT

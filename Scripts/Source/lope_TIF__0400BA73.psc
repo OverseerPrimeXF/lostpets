@@ -7,7 +7,7 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 lowestPetRelationship.setValueInt(StartupRoutine.getMinimalRelationships())
-RumorSourceLocation.ForceLocationTo(akspeaker.getCurrentLocation())
+RumorSourceLocation.ForceLocationTo(func.getActorsHold(akspeaker))
 RumorsSourceREF.ForceRefTo(akspeaker)
 ;debug.messagebox("rumors here - "+RumorSourceLocation.getLocation())
 ;END CODE
@@ -25,3 +25,5 @@ GlobalVariable Property lowestPetRelationship  Auto
 lope_LostPetsStartupRoutine Property StartupRoutine Auto 
 
 ReferenceAlias Property RandomPet  Auto  
+
+lope_functions Property func  Auto  

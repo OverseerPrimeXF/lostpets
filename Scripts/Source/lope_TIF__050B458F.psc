@@ -6,13 +6,13 @@ Scriptname lope_TIF__050B458F Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-getowningquest().setstage(1000)
+getowningquest().setstage(999)
 ;getowningquest().stop()
 getowningquest().CompleteQuest()
 lope_start.setstage(1000)
 lope_start.stop()
 lope_start.setstage(0)
-overseer.registerForVisit()
+overseer.registerForVisit() ;  it's me!
 ;END CODE
 EndFunction
 ;END FRAGMENT

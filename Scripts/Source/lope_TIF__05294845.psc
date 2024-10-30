@@ -6,16 +6,17 @@ Scriptname lope_TIF__05294845 Extends TopicInfo Hidden
 Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-getOwningQuest().setstage(130)
+GetOwningQuest().SetStage(130)
 Actor[] WolvesActors = new Actor[2]
 WolvesActors[0] = Wolves[0].getActorRef()
 WolvesActors[1] = Wolves[1].getActorRef()
-sl.petsSex(WolvesActors,\
-                   animName="Anubs  Wolf Wolf Female Surrender",\
-                   isShowSubtitle=True,\
-                   sceneName="WolfAmbushRape",\
-                   isRape=True,\
-                   endingSceneName="WolfAmbushEnd")
+
+sl.petsSex(sl.sexlab.MakeActorArray(Wolves[0].getActorRef(), Wolves[1].getActorRef()),\
+    animName="Anubs  Wolf Wolf Female Surrender",\
+    isShowSubtitle=True,\
+    sceneName="WolfAmbushRape",\
+    isRape=True,\
+    endingSceneName="WolfAmbushEnd")
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -6,7 +6,7 @@ Scriptname lope_TIF__0537343E Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-func.addKeywordsToAllFormsInJson()
+ActorUtil.AddPackageOverride(akSpeaker, keepEyeOn)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -18,3 +18,9 @@ lope_storageContainer Property Storage  Auto
 ReferenceAlias Property Predator  Auto  
 
 lope_functions Property func  Auto  
+
+Spell Property SecArea  Auto  
+
+lope_privateAreaFramework Property privacy  Auto  
+
+Package Property keepEyeOn  Auto  

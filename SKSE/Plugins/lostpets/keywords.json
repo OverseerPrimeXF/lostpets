@@ -5,6 +5,14 @@
 			"This file servers for spreading keywords to actors"
 		]
 	},
+	"Keywords": [
+	    "lope_npcCitizen",
+		"lope_npcFarmer",
+		"lope_npcGuild",
+		"lope_npcMerchant",
+		"lope_npcPriest",
+		"lope_npcRich"
+	],
 	"Actors": {
 		"actor0": [
 			"Bryling",

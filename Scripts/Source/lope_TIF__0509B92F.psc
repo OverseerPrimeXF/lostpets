@@ -7,6 +7,7 @@ Function Fragment_2(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 PS.getRef().enable()
+PS.getRef().getBaseObject().setName(PlayerREF.getBaseObject().getName())
 PS.getRef().moveto(Pet.getRef())
 ;END CODE
 EndFunction

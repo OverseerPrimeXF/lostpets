@@ -1,0 +1,19 @@
+# VS
+.vscode
+
+# assets
+meshes
+textures
+sound
+
+# zip backups
+*.zip
+*.7z
+*.rar
+*.bak
+*.esp.*
+
+# old stuff
+**/old_dlls/
+**/old_sfws/
+**/crap/

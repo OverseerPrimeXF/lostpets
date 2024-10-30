@@ -7,7 +7,7 @@ import MiscUtil
 
 
 
-String sceneName = "FoundLostDogFacRank"
+String sceneName = "FoundLostDog"  ; "FoundLostDogFacRank"
 
 function registerNextTimeUpdate()
     RegisterForSingleUpdate(1)
@@ -21,7 +21,7 @@ Event OnUpdate()
             setobjectivecompleted(100)
             setstage(110)
             ; PlayerFoundPet.start()
-            sceneName += Pet.getActorRef().GetFactionRank(LostPetsFaction)
+           ; sceneName += Pet.getActorRef().GetFactionRank(LostPetsFaction)
             ; MessageBox("EditorID of marker: "+GetFormEditorID(PetMarker.GetRef().GetBaseObject()))
             ; MessageBox(MarkersInColdPlace.ToArray()+"\n"+PetMarker.GetRef().GetBaseObject())
             if MarkersInColdPlace.HasForm(PetMarker.getRef().GetBaseObject())
@@ -151,11 +151,11 @@ bool Function SetRandomPetFactionRank(Actor aPet, Faction fPetFaction)
         return False
     endif
     int generatedRank
-    int iterationLimit = 14
+    int iterationLimit = 21
     While (iterationLimit > 0)
+        generatedRank = GenerateRandomInt(1, 7)
         PrintConsole("[LoPe] iteration on rank set: "+iterationLimit+\
                      " generated rank: "+generatedRank)
-        generatedRank = GenerateRandomInt(1, 7)
         if petHoldRanks[generatedRank - 1] == 0
             petHoldRanks[generatedRank - 1] = 1
             aPet.SetFactionRank(fPetFaction, generatedRank)
@@ -170,6 +170,7 @@ bool Function SetRandomPetFactionRank(Actor aPet, Faction fPetFaction)
         iterationLimit -= 1
     EndWhile
     if iterationLimit <= 0
+        PrintConsole("[LoPe] SetRandomPetFactionRank: It returned more than 20!")
         PrintConsole("[LoPe] Iteration limit reached without luck of rank assignment, "+\
             "giving up and setting random one.")
         aPet.SetFactionRank(fPetFaction, generatedRank)
@@ -177,12 +178,18 @@ bool Function SetRandomPetFactionRank(Actor aPet, Faction fPetFaction)
 EndFunction
 
 
+Function checkIfPOSTimeIsCame()
+    ; code moved
+EndFunction
+
+
+;/
 Function spawnHostilesBehind()
     if Storage.HostilesCount > 0
 
     endif
 EndFunction
-
+/;
 
 ; Debug method
 Function waveHand(Actor akActor)
@@ -222,3 +229,5 @@ FormList Property MarkersInColdPlace  Auto
 lope_functions Property func  Auto  
 
 lope_storageContainer Property Storage  Auto  
+
+lope_POSController Property pos  Auto  
