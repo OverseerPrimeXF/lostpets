@@ -2,6 +2,21 @@
 ;NEXT FRAGMENT INDEX 22
 Scriptname lope_QF_lope_DogArena_fightRa_05A040A0 Extends Quest Hidden
 
+;BEGIN ALIAS PROPERTY Master2
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Master2 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY LosersMaster
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_LosersMaster Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY ArenaStaff
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_ArenaStaff Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY OpponentMarker1
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_OpponentMarker1 Auto
@@ -12,59 +27,9 @@ ReferenceAlias Property Alias_OpponentMarker1 Auto
 ReferenceAlias Property Alias_RandomVisitor Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Master2
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Master2 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY winner
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_winner Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Loser
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Loser Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY OpponentMarker2
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_OpponentMarker2 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Opponent2
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Opponent2 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY ArenaStaff
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_ArenaStaff Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Master1
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Master1 Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY arenaCenter
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_arenaCenter Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Opponent1
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Opponent1 Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY LosersMaster
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_LosersMaster Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY WinnersMaster
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_WinnersMaster Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY LosersMarker
@@ -72,15 +37,58 @@ ReferenceAlias Property Alias_WinnersMaster Auto
 ReferenceAlias Property Alias_LosersMarker Auto
 ;END ALIAS PROPERTY
 
-;BEGIN FRAGMENT Fragment_0
-Function Fragment_0()
+;BEGIN ALIAS PROPERTY OpponentMarker2
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_OpponentMarker2 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Loser
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Loser Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY WinnersMaster
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_WinnersMaster Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY winner
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_winner Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Opponent2
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Opponent2 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Master1
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Master1 Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Opponent1
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Opponent1 Auto
+;END ALIAS PROPERTY
+
+;BEGIN FRAGMENT Fragment_4
+Function Fragment_4()
+;BEGIN AUTOCAST TYPE lope_DogArenaRadiantFightController
+Quest __temp = self as Quest
+lope_DogArenaRadiantFightController kmyQuest = __temp as lope_DogArenaRadiantFightController
+;END AUTOCAST
 ;BEGIN CODE
-;func.rotateOpponentMarkers(\
-;    arenaCenter,\
-;    alias_OpponentMarker1.getReference(),\
-;    alias_OpponentMarker2.getReference())
-DAvc.isRadiantFightRunning = 1
-setStage(1)
+ArenaGate.SetOpen(True)
+func.rotateOpponentMarkers(\
+    arenaCenter,\
+    alias_OpponentMarker1.getReference(),\
+    alias_OpponentMarker2.getReference())
+alias_Opponent1.getActorReference().evaluatePackage()
+alias_Opponent2.getActorReference().evaluatePackage()
+kmyQuest.registerForCheck()
+; setObjectiveDisplayed(5)
+; alias_OpponentMarker1
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -109,45 +117,11 @@ alias_Opponent2.getActorReference().evaluatePackage()
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_16
-Function Fragment_16()
-;BEGIN AUTOCAST TYPE lope_DogArenaRadiantFightConditions
-Quest __temp = self as Quest
-lope_DogArenaRadiantFightConditions kmyQuest = __temp as lope_DogArenaRadiantFightConditions
-;END AUTOCAST
-;BEGIN CODE
-kmyQuest.resetAllConditions()
-setStage(1000)
-;END CODE
-EndFunction
-;END FRAGMENT
-
 ;BEGIN FRAGMENT Fragment_12
 Function Fragment_12()
 ;BEGIN CODE
 alias_Opponent1.getActorReference().playIdle(dogGrowl)
 alias_Opponent2.getActorReference().playIdle(dogGrowl)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_4
-Function Fragment_4()
-;BEGIN AUTOCAST TYPE lope_DogArenaRadiantFightController
-Quest __temp = self as Quest
-lope_DogArenaRadiantFightController kmyQuest = __temp as lope_DogArenaRadiantFightController
-;END AUTOCAST
-;BEGIN CODE
-ArenaGate.SetOpen(True)
-func.rotateOpponentMarkers(\
-    arenaCenter,\
-    alias_OpponentMarker1.getReference(),\
-    alias_OpponentMarker2.getReference())
-alias_Opponent1.getActorReference().evaluatePackage()
-alias_Opponent2.getActorReference().evaluatePackage()
-kmyQuest.registerForCheck()
-; setObjectiveDisplayed(5)
-; alias_OpponentMarker1
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -161,7 +135,7 @@ lope_DogArenaRadiantFightController kmyQuest = __temp as lope_DogArenaRadiantFig
 ;BEGIN CODE
 If DogArenaMainQST.isRunning()
     Int choise = Utility.randomInt(1, 99)
-    debug.messagebox(choise)
+    ; debug.messagebox(choise)
     If 1 <= choise && choise < 25
         DARFc.startVariant = 1
     elseif 25 <= choise && choise < 50
@@ -182,8 +156,8 @@ If DogArenaMainQST.isRunning()
     ;     DARFc.sexVariant = 4
     endif
     ; debug.messageBox(po3_sksefunctions.getformeditorid(lope_DogArena_fightRadiant_FightStarts01))
-    DARFc.startVariant = 4  ; DEBUG
-    DARFc.sexVariant = 2  ; DEBUG
+    ; DARFc.startVariant = 4  ; DEBUG
+    ; DARFc.sexVariant = 2  ; DEBUG
     utility.wait(1)
     kmyQuest.PlayScene(lope_DogArena_fightRadiant_FightStarts01)
     ; lope_DogArena_fightRadiant_FightStarts01.start()
@@ -225,11 +199,37 @@ afterFightScene.start()
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_20
-Function Fragment_20()
+;BEGIN FRAGMENT Fragment_18
+Function Fragment_18()
 ;BEGIN CODE
-utility.Wait(4)
-lope_DogArena_fightRadiant_FightStarts01.start()
+DAvc.isRadiantFightRunning = 0
+stop()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_0
+Function Fragment_0()
+;BEGIN CODE
+;func.rotateOpponentMarkers(\
+;    arenaCenter,\
+;    alias_OpponentMarker1.getReference(),\
+;    alias_OpponentMarker2.getReference())
+DAvc.isRadiantFightRunning = 1
+setStage(1)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_16
+Function Fragment_16()
+;BEGIN AUTOCAST TYPE lope_DogArenaRadiantFightConditions
+Quest __temp = self as Quest
+lope_DogArenaRadiantFightConditions kmyQuest = __temp as lope_DogArenaRadiantFightConditions
+;END AUTOCAST
+;BEGIN CODE
+kmyQuest.resetAllConditions()
+setStage(1000)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -241,18 +241,26 @@ Quest __temp = self as Quest
 lope_DogArenaRadiantFightController kmyQuest = __temp as lope_DogArenaRadiantFightController
 ;END AUTOCAST
 ;BEGIN CODE
+int sceneVariant
+if DARFc.startVariant==1 || DARFc.startVariant==4
+    sceneVariant = 1
+else
+    sceneVariant = 2
+endif
+
 sceneAfterMating = PO3_SKSEFunctions.getFormFromEditorID(\
-    "lope_DogArena_fightRadiant_SceneAfterMating0" + DARFc.startVariant) as Scene
+    "lope_DogArena_fightRadiant_SceneAfterMating0" + sceneVariant) as Scene
+; debug.messagebox(sceneAfterMating)
 sceneAfterMating.start()
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_18
-Function Fragment_18()
+;BEGIN FRAGMENT Fragment_20
+Function Fragment_20()
 ;BEGIN CODE
-DAvc.isRadiantFightRunning = 0
-stop()
+utility.Wait(4)
+lope_DogArena_fightRadiant_FightStarts01.start()
 ;END CODE
 EndFunction
 ;END FRAGMENT

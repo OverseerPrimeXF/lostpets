@@ -17,7 +17,7 @@ endEvent
 
 
 Function update()
-    ; Empty update method, stop activities on arena
+    ; Empty update function, stop activities on arena
     return
 EndFunction
 
@@ -94,6 +94,20 @@ Function SetVisitorsPetEnabledAndMoveToOwner(String name, ReferenceAlias owner, 
 EndFunction
 
 
+Function SetFactionForOwnerAndPet(ReferenceAlias Visitor, Bool left = False)
+    ReferenceAlias pet = GetVisitorsPetByName(visitor.GetName())
+    if left
+        visitor.TryToAddToFaction(lope_DogArenaLeftVisitor)
+        pet.TryToAddToFaction(lope_DogArenaLeftVisitor)
+        Debug.MessageBox(visitor.GetName() + " and " + pet.GetName() + " are concidered as left")
+    else
+        visitor.TryToRemoveFromFaction(lope_DogArenaLeftVisitor)
+        pet.TryToRemoveFromFaction(lope_DogArenaLeftVisitor)
+        Debug.MessageBox(visitor.GetName() + " and " + pet.GetName() + " are concidered as came")
+    endif
+EndFunction
+
+
 Function UpdateVisitors()
     visitorsCameIDs = GetVisitorIDsFromFile(currentDayOfWeek, currentTimeInMinutes / 60, "came")
     
@@ -108,6 +122,8 @@ Function UpdateVisitors()
                 ; Move npc only once, why the heck Papyrus has no 'continue' in loop?
                 visitor = GetVisitorByName(visitorName)
                 visitor.TryToEnable()
+                ; visitor.TryToAddToFaction(lope_DogArenaLeftVisitor)
+                SetFactionForOwnerAndPet(visitor)
                 visitor.TryToMoveTo(markerOutsideArena.GetReference())
                 visitorsConditions.setInt(visitorName, 1)
                 SetVisitorsPetEnabledAndMoveToOwner(visitorName, visitor)
@@ -135,6 +151,8 @@ Function UpdateVisitors()
                 If (visitorsConditions.getInt(visitorName) == 1)
                     MiscUtil.PrintConsole("[Lost Pets] DogArena: processing visitor: " + visitorName + " has left arena.")
                     visitor = GetVisitorByName(visitorName)
+                    ; visitor.TryToRemoveFromFaction(lope_DogArenaLeftVisitor)                    
+                    SetFactionForOwnerAndPet(visitor, True)
                     visitorsConditions.setInt(visitorName, 0)
                 EndIf
                 index += 1
@@ -274,6 +292,8 @@ SexLabFramework Property SexLab Auto
 ReferenceAlias Property markerOutsideArena Auto
 
 String visitorName
+
+Faction Property lope_DogArenaLeftVisitor Auto
 
 lope_functions Property func Auto
 

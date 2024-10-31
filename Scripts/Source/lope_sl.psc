@@ -191,15 +191,15 @@ int Function petsSex(Actor[] PetsREF,\
     else        
         Thread.AddActor(PlayerREF, isRape) ; 2nd param ForceSilent = bool
     EndIf
-    Thread.SetHook("petSex")
+    Thread.SetHook("petsSex")
     int actorsCount = PetsREF.Length + 1
 
     SexLab.TrackActor(PetsREF[0], "PetTracking")
-    RegisterForModEvent("HookAnimationStart_petSex", "petSexStarted")
-    RegisterForModEvent("HookStageStart_petSex", "petSexStageStart")
-    RegisterForModEvent("HookStageEnd_petSex", "petSexStageEnd")
-    RegisterForModEvent("HookAnimationEnding_petSex", "petSexEnding")
-    RegisterForModEvent("HookAnimationEnd_petSex", "DoActionOnEnd")
+    RegisterForModEvent("HookAnimationStart_petsSex", "petSexStarted")
+    RegisterForModEvent("HookStageStart_petsSex", "petSexStageStart")
+    RegisterForModEvent("HookStageEnd_petsSex", "petSexStageEnd")
+    RegisterForModEvent("HookAnimationEnding_petsSex", "petSexEnding")
+    RegisterForModEvent("HookAnimationEnd_petsSex", "DoActionOnEnd")
     RegisterForModEvent("PetTracking_Orgasm", "PetOrgasms")
     
     sslBaseAnimation[] anim = new sslBaseAnimation[1]
@@ -480,6 +480,7 @@ EndFunction
 
 
 Event DoActionOnEnd(int tid, bool hasplayer)
+    ; debug.MessageBox("DoActionOnEnd:" + actionOnEndG)
     if endingSceneNameG
         (lope_SSH as lope_ShowSubtitlesHandler\
         ).ShowSubtitlesNonSexlab(sceneName=endingSceneNameG,\
