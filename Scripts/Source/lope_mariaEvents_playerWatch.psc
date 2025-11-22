@@ -10,7 +10,7 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
     ; PrintConsole("[LoPe] OnLocationChange generally triggered!")
     ; If owningQuest.GetStage() != 10
     If !lope_functions.isStageInList(owningQuest, stages)
-        PrintConsole("[LoPe] quest stage is not 10, 210, return.")
+        ; PrintConsole("[LoPe] quest stage is not 10, 210, return.")
         return
     EndIf
     if owningQuest.getStage() == 10
@@ -58,5 +58,5 @@ lope_ShowSubtitlesHandler Property lope_SSH Auto
 lope_MariaProgression Property mariaProgression Auto
 
 ; constants
-int[] Property stages Auto  ; Yes, this is constant (10, 210)
+int[] Property stages Auto  ; Yes, this is constant (10, 210) filled in creation kit
 float Property neededTimeToPass = 1.0 AutoReadOnly Hidden

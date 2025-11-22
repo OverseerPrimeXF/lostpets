@@ -10,6 +10,8 @@ getOwningQuest().setObjectiveCompleted(10)
 getOwningQuest().setObjectiveDisplayed(100)
 getOwningQuest().setStage(100)
 watch.registerForPetSight()
+Pet.getRef().moveTo(PetMarker.getRef())
+Pet.getRef().moveTo(PetMarker.getRef())
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -19,3 +21,5 @@ EndFunction
 ReferenceAlias Property Pet  Auto  
 
 lope_LPFR_watch Property watch  Auto  
+
+ReferenceAlias Property PetMarker  Auto  

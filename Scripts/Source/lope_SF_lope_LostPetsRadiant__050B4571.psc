@@ -5,9 +5,9 @@ Scriptname lope_SF_lope_LostPetsRadiant__050B4571 Extends Scene Hidden
 ;BEGIN FRAGMENT Fragment_0
 Function Fragment_0()
 ;BEGIN CODE
-getowningquest().setstage(999)
-;getowningquest().stop()
-getowningquest().CompleteQuest()
+getOwningQuest().setstage(999)
+; getowningquest().stop()
+; getowningquest().CompleteQuest()
 lope_start.setstage(1000)
 lope_start.stop()
 ; lope_start.setstage(0)

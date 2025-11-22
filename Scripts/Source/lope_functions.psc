@@ -175,12 +175,17 @@ string Function StringReplaceInVerticalBars(string asInput, string asReplaceWhat
 EndFunction
 
 
+; Returns arrau of actors based on array of reference aliases IDs OR names
 Actor[] function GetActorsArrayFromQuestRefAliasIDs(Form afQuest, int[] ids)
     Actor currentActor
     Actor[] actors = PapyrusUtil.ActorArray(ids.Length)
     int index = 0
     While (index < ids.Length)
-        currentActor = ((afQuest as Quest).GetAlias(ids[index]) as ReferenceAlias).GetActorRef()
+        if isFloat(ids[index])
+            currentActor = ((afQuest as Quest).GetAlias(ids[index]) as ReferenceAlias).GetActorRef()
+        Else
+            currentActor = ((afQuest as Quest).GetAliasByName(ids[index] as String) as ReferenceAlias).GetActorRef()
+        EndIf
         PO3_SKSEFunctions.AddActorToArray(currentActor, actors)
         index += 1
     EndWhile
@@ -215,7 +220,9 @@ Function decreaseHostilesCount(int aiCount = 1)
 EndFunction
 
 
-; Gets owned ObjectReference (furniture) by ObjectReference (actor).
+;@Deprecated
+; Done via c++ plugin now. lope_nativeFunctions.FindReferencesOfTypeInCellWithOwner
+; > Gets owned ObjectReference (furniture) by ObjectReference (actor).
 ObjectReference Function FindReferencesOfTypeInCellWithOwner(ObjectReference akOwner,\
                                                              formlist akFormlist)
     ObjectReference[] allRefs = FindAllReferencesOfType(akOwner, akFormList, 0)
@@ -314,17 +321,21 @@ String Function getPathToSceneNPC(String asSceneName, actor akHuman, actor akPar
     String result = "." + asSceneName
     int lostPetFacRank = akPartner.GetFactionRank(storage.lostPetFaction())
     ; MessageBox(lostPetFacRank)
-    if lostPetFacRank >= 1
-        result += ("FacRank" + lostPetFacRank)
-    endif
-    if compareRelationshipsWithPlayer == 1
-        result += (".relationshipRank" + PlayerRef.GetRelationshipRank(akPartner))
-    else
-        result += (".relationshipRank" + akHuman.GetRelationshipRank(akPartner))
-    endif
-    if includeActorName
-        result += ("."+GetFormEditorID(akHuman))
-    endif
+    If (!akPartner.HasKeyword(GetFormFromEditorID("lope_SimpleSceneActor") as Keyword))
+        if lostPetFacRank >= 1
+            result += ("FacRank" + lostPetFacRank)
+        endif
+        if compareRelationshipsWithPlayer == 1
+            result += (".relationshipRank" + PlayerRef.GetRelationshipRank(akPartner))
+        else
+            result += (".relationshipRank" + akHuman.GetRelationshipRank(akPartner))
+        endif
+        if includeActorName
+            result += ("."+GetFormEditorID(akHuman))
+        endif
+    Else
+        result += ".relationshipRank0"
+    EndIf
     if !jsonUtil.IsPathObject("../lostpets/subtitles.json", result)
         PrintConsole("[LoPe] Invalid path: "+result)
         Conditions.iSubtitlesNotPresented = 1
@@ -343,12 +354,14 @@ int Function getMinimalPetRelationshipForCurrentHold()
     int index = 0
     While (index < petsInHold.Length)
         petRelationship = (petsInHold[index] as Actor).GetRelationshipRank(PlayerRef as Actor)
+        ; MessageBox((petsInHold[index] as Actor).GetActorBase().GetName() + " realtionships rank is : " + petRelationship)
         if petRelationship < minRelatonship
             minRelatonship = petRelationship
+            ; MessageBox("petRelationship < minRelatonship! new min: " + minRelatonship)
         endif
         index += 1
     EndWhile
-    return petRelationship
+    return minRelatonship
 EndFunction
 
 
@@ -427,7 +440,7 @@ EndFunction
 
 
 int Function showChoisesBox(String json, String path)
-    Int result = SkyMessage.ShowArray(\
+    Int result = lope_SkyMessage.ShowArray(\
         GetPathStringValue(json, path+".choise_title"),\
         PathStringElements(json, path+".choises"), True) as Int
     If (GetPathBoolValue(json, path+".write_to_conditions[0]"))
@@ -456,7 +469,7 @@ Function setPlayerReadyForAIScene(Bool isAIDriven)
         Game.DisablePlayerControls(abLooking = false, abCamSwitch = true, abSneaking = true)
         PlayerRef.SetAnimationVariableInt("IsNPC", 1)
         Game.SetPlayerAIDriven()
-        PlayerRef.SetActorValue("SpeedMult", 120)
+        PlayerRef.SetActorValue("SpeedMult", 100)
         Game.ForceThirdPerson()
         Game.ShowFirstPersonGeometry(False)
     else
@@ -465,7 +478,7 @@ Function setPlayerReadyForAIScene(Bool isAIDriven)
         Game.ShowFirstPersonGeometry(True)
         Game.EnablePlayerControls()
         PlayerRef.SetActorValue("SpeedMult", 100)
-        Game.EnablePlayerControls()
+        ; MessageBox("player ai controlled no more!")
     endif
 EndFunction
 
@@ -560,7 +573,7 @@ EndFunction
 ; Gets player's housecarl if it's on current cell, returns None if not found
 Actor Function getHousecarlFromCurrentCell()
     Actor[] housecarl = ScanCellNPCsByFaction(GetFormFromEditorID("PlayerHousecarlFaction") as Faction, PlayerRef)
-    If (housecarl.Length > 0)
+    If (housecarl.Length > 0 && housecarl[0].IsEnabled())
         return housecarl[0]
     EndIf
     return None
@@ -574,6 +587,7 @@ int Function isAllPetsInHoldRelationsIncreased()
     int petLowestRelationshipAtStart = (\
         GetFormFromEditorID("lope_petLowestRelationship") as GlobalVariable).GetValueInt()
     int  petLowestRelationshipAfter = getMinimalPetRelationshipForCurrentHold()
+    ; MessageBox("global: " + petLowestRelationshipAtStart + "\nnew: " + petLowestRelationshipAfter)
     if petLowestRelationshipAtStart < petLowestRelationshipAfter
         return petLowestRelationshipAfter
     endif
@@ -584,7 +598,7 @@ EndFunction
 Quest Function getSpecialQuest(Location hold, int currentRelationship)
     String questEditorID = "lope_LostPets_specialEvents_" + \
         getSubstring(GetFormEditorID(hold), "Hold") + currentRelationship
-    PrintConsole("[Lost Pets] SpecialEvent EditorID: " + questEditorID)
+    PrintConsole("[Lost Pets] SpecialEvent EditorID should be: " + questEditorID)
     return GetFormFromEditorID(questEditorID) as Quest
 EndFunction
 
@@ -597,10 +611,13 @@ EndFunction
 
 
 ; The one method to play voice line for subtitles
-; Args array:
+; Args:
 ; >String actorRefAliasName,\
 ; >String questEditorID,\
 ; >String voiceFile
+;
+; Returns:
+; >String wav length in seconds OR String actorBaseEditorID
 String Function PlayTopicVoice(String actorBaseEditorID,\
                                String topicFullPath,\
                                String replicText)
@@ -613,7 +630,13 @@ String Function PlayTopicVoice(String actorBaseEditorID,\
     Else
         speaker = game.FindClosestReferenceOfAnyTypeInListFromRef(Storage.allPets(), PlayerRef, 2048) as Actor
     EndIf
-    String seconds = renameVoiceFiles(topicFullPath, replicText)
+    if speaker
+        MakeActorShutup(speaker)
+    endif
+
+    ;String seconds = renameVoiceFiles(topicFullPath, replicText)
+    String seconds = placeVoiceFile(topicFullPath)
+
     speaker.Say(Storage.UniversalTopic())
     return seconds
 EndFunction
@@ -639,6 +662,21 @@ Function BanishCustomFamiliar()
     ; Activator SummonFX = GetFormFromEditorID("SummonTargetFXActivator") as Activator
     Conditions.AsterConditions.akFamiliar.PlaceAtMe(GetFormFromEditorID("SummonTargetFXActivator") as Activator)
     Conditions.AsterConditions.akFamiliar.MoveTo(Storage.utilCellMarker, 0, 0, 10)
+EndFunction
+
+
+ObjectReference Function SummonFamiliar()
+    ObjectReference familiar = PlayerRef.PlaceAtMe(GetFormFromEditorID("lope_SummonFamiliar"))
+    familiar.PlaceAtMe(GetFormFromEditorID("SummonTargetFXActivator") as Activator)
+    ; MessageBox((GetFormFromEditorID("lope_SummonFamiliar") as ActorBase) == (familiar as Actor).GetActorBase())
+    return familiar
+EndFunction
+
+
+Function BanishFamiliar(ObjectReference familiar)
+    familiar.PlaceAtMe(GetFormFromEditorID("SummonTargetFXActivator") as Activator)
+    familiar.Disable()
+    familiar.DeleteWhenAble()
 EndFunction
 
 
@@ -755,6 +793,26 @@ Int[] Function getRandomValues(int min = 1, int max = 99)
         index += 1
     EndWhile
     return numbers
+EndFunction
+
+
+Function ParalyseActor(Actor akToParalyse, bool paralyse = True)
+    If (paralyse)
+        akToParalyse.SetActorValue("Paralysis", 1)
+        If (akToParalyse.Is3DLoaded())
+            akToParalyse.PushActorAway(akToParalyse, 0)
+        EndIf
+    else
+        akToParalyse.SetActorValue("Paralysis", 0)
+    EndIf    
+EndFunction
+
+
+Function PushActor(Actor akActor, float x = 1.0, float y = 0.0, float z = 1.0, float force = 300.0)
+    If (akActor.Is3DLoaded())
+        akActor.PushActorAway(akActor, 0.0)
+    EndIf
+    akActor.ApplyHavokImpulse(x, y, z, force)
 EndFunction
 
 

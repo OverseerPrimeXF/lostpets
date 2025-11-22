@@ -6,7 +6,7 @@ Scriptname lope_TIF__051AE569 Extends TopicInfo Hidden
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-sl.PetSex(akspeaker, tags="Vaginal", sceneName="dogTagsVaginal", isShowSubtitle=true)
+sl.PetSex(akspeaker, tags="Vaginal,", sceneName="dogTagsVaginal", isShowSubtitle=true)
 aboutToMate.setvalue(0)
 isPlayingTags.setvalue(0)
 ;END CODE

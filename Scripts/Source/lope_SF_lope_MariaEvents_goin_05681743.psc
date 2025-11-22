@@ -6,6 +6,7 @@ Scriptname lope_SF_lope_MariaEvents_goin_05681743 Extends Scene Hidden
 Function Fragment_0()
 ;BEGIN CODE
 func.setPlayerReadyForAIScene(False)
+moveWatch.RunChecks()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -13,7 +14,9 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_1
 Function Fragment_1()
 ;BEGIN CODE
-func.setPlayerReadyForAIScene(true)
+func.setPlayerReadyForAIScene(True)
+moveWatch.RunChecks(True)
+Maria.tryToEvaluatePackage()
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -21,3 +24,6 @@ EndFunction
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
 lope_functions Property func  Auto  
+lope_PlayerMovementWatcher Property moveWatch  Auto  
+
+ReferenceAlias Property Maria  Auto  

@@ -7,10 +7,10 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 if Innkeeper
-    debug.messagebox(Innkeeper)
+   ;  debug.messagebox(Innkeeper)
 endif
 if Innkeeper.getRef()
-    debug.messagebox(Innkeeper.getRef())
+    ; debug.messagebox(Innkeeper.getRef())
 endif
 ;END CODE
 EndFunction

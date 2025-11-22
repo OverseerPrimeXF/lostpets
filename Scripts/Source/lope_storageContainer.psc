@@ -20,7 +20,7 @@ float Property nextPOS = 24.0 AutoReadOnly             Hidden
 ; Not a constant, but should be
 int[]             Property MAX_RANKS              Auto Hidden
 
-; Mutables
+; Variables
 bool              Property isRegisteredForNextPOS Auto Hidden
 bool              Property isRegisteredForRadiant Auto Hidden
 int               Property HostilesCount          Auto Hidden
@@ -220,6 +220,8 @@ Function initializeRanksArrays()
     MAX_RANKS[4] = MAX_RANK_5
     MAX_RANKS[5] = MAX_RANK_6
     MAX_RANKS[6] = MAX_RANK_7
+
+    Trace("[LoPe] Initialized arrays.")
 EndFunction
 
 

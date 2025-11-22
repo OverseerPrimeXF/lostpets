@@ -7,7 +7,11 @@ Int Property askedTopicC  Auto  Conditional
 ; 0 - inn, default if Player has no house.
 Int Property houseChoise = 0  Auto  Conditional
 
+Int Property sittedInsteadOfSex = 0  Auto  Conditional
 Int Property hadSexWithMaria = 0  Auto  Conditional
 Int Property dialMariaInterested = 0  Auto  Conditional
 Int Property didThreesomeHousecarl = 0  Auto  Conditional
+
+; 1 - sitted, 2 - sex
+Int Property forceGreetState = 0  Auto  Conditional
 

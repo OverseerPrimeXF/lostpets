@@ -7,11 +7,13 @@ Function Fragment_2(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 conditions.iTryedAtEvent1 = 0
-getOwningQuest().CompleteQuest()
-getOwningQuest().stop()
+; getOwningQuest().CompleteQuest()
+; getOwningQuest().stop()
 (mariaMeeting as lope_mariaFollower).setFollower(akSpeaker)
 (mariaMeeting as lope_MariaProgression).setTimeRecruited()
 (mariaMeeting as lope_MariaProgression).registerForTimeWithMaria()
+
+getOwningQuest().setStage(1000)
 ;END CODE
 EndFunction
 ;END FRAGMENT

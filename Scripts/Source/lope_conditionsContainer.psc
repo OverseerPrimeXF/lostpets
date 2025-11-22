@@ -9,6 +9,8 @@ Int Property iBlockMariaFollowerDialogues = 0  Auto  Conditional
 
 Int Property iBillyFollowMaria = 1  Auto  Conditional
 
+Int Property iRadiantWolfAmbushCompletedCount = 0  Auto  Conditional
+
 ; -1 - was no check / default state
 ; 1 - NOT presented
 Int Property iSubtitlesNotPresented = -1  Auto  Conditional
@@ -53,6 +55,10 @@ Int Property iElaraAcceptedDogArena = 0 Auto  Conditional
 Int Property iAsterAcceptedDogArena = 0 Auto  Conditional
 Int Property iSonaAcceptedDogArena = 0 Auto  Conditional
 Int Property iBarkeepHiredDogArena = 0 Auto  Conditional
+
+; Wolf Ambush conditions
+
+Int Property iTimesWolvesAmbushed = 0 Auto  Conditional
 
 ; Methods for getting/setting conditional variables by their names
 

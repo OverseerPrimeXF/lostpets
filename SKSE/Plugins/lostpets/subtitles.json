@@ -64,7 +64,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -84,7 +84,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFac1.relationshipRank0.scene0.stage0.topic4"
                     ],
@@ -195,7 +195,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -215,7 +215,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Aren't you cold here? Don't you want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit? And warm my hands as well.",
+                        "What is it? Aren't you cold here? Don't you want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit? And warm my hands as well.",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -455,7 +455,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -475,7 +475,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -545,7 +545,7 @@
                     ],
                     "topic3": [
                         "Player",
-                        "I see you already found food *jiggles*. And I have some more for you here. *show the treat*",
+                        "I see you already found food *giggles*. And I have some more for you here. *show the treat*",
                         "4"
                     ],
                     "topic4": [
@@ -568,7 +568,7 @@
                     "topic7": [
                         "Pet",
                         "*Takes treat*",
-                        "4"
+                        "2"
                     ],
                     "topic8": [
                         "Player",
@@ -597,7 +597,7 @@
                     ],
                     "topic13": [
                         "Player",
-                        "*Jiggles* Coming for petting, huh?",
+                        "*giggles* Coming for petting, huh?",
                         "5",
 						".forms.FoundLostDogFac3.relationshipRank0.scene0.stage0.topic13"
                     ],
@@ -687,7 +687,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -707,7 +707,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -759,126 +759,112 @@
 				"stage0": {
 					"topic0": [
 						"Pet",
-						"*Whines 4*",
+						"*grumbles*",
 						"3"
 					],
 					"topic1": [
 						"Player",
-						"Hey, boy! There you are!",
+						"*whistles* Doggy, is it you I'm looking for?",
 						"4",
-						".forms.FoundLostDogFacCoward.scene0.stage0.topic0"
+						".forms.FoundLostDogFacRank4.relationshipRank0.scene0.stage0.topic1"
 					],
 					"topic2": [
 						"Pet",
-						"*Looks at you fearfully*",
-						"4"
+						"*Looks at sound source*",
+						"2"
 					],
 					"topic3": [
 						"Player",
-						"Don't be afraid of me, I'll not hurt you.",
+						"Well, judging by you are dog and alone here, I guess so.",
 						"4"
 					],
 					"topic4": [
 						"Pet",
-						"*Whines*",
-						"4"
+						"*approaches you*",
+						"1",
+						".forms.FoundLostDogFacRank4.relationshipRank0.scene0.stage0.topic4"
 					],
 					"topic5": [
 						"Player",
-						"Oh, I almost forgot! Are you hungry? *show him the treat* I have a treat for you, come closer.",
-						"6"
+						"Well, you are smart enough not to be afraid of me I see?",
+						"5"
 					],
 					"topic6": [
 						"Pet",
-						"*Comes a bit closer looking at the treat*",
-						"6",
-						".forms.FoundLostDogFacCoward.scene0.stage0.topic1"
+						"*panting*",
+						"6"
 					],
 					"topic7": [
 						"Player",
-						"Don't be afraid, come closer and it will be all yours.",
-						"4"
+						"I have something for you from your master, here.",
+						"4",
+						".forms.FoundLostDogFacRank4.relationshipRank0.scene0.stage0.topic7"
 					],
 					"topic8": [
 						"Pet",
-						"*Comes even closer, still been scared*",
-						"6",
-						".forms.FoundLostDogFacCoward.scene0.stage0.topic2"
+						"*takes treat*",
+						"2"
 					],
 					"topic9": [
 						"Player",
-						"Here we go, see? I'm not scary at all. Here, take this. *give him treat*",
-						"4",
-						".forms.FoundLostDogFacCoward.scene0.stage0.topic3"
+						"You look like really smart dog, so how you appeared here?",
+						"4"
 					],
 					"topic10": [
 						"Pet",
-						"*Takes treat off you hands and eats, seem calming down*",
-						"5"
+						"*panting*",
+						"2"
 					],
 					"topic11": [
 						"Player",
-						"See, much easier to trust someone then you're fed. *jiggles*",
+						"Not smart enough to answer me though, huh?",
 						"4"
 					],
 					"topic12": [
 						"Pet",
-						"*Comes even closer and licks your hand*",
-						"4"
+						"*Grumbles**",
+						"2"
 					],
 					"topic13": [
 						"Player",
-						"Sorry pal, I don't have anymore right now. Follow me, I'll take you to your master.",
-						"6"
+						"So, how about us to get back to your master?",
+						"5"
 					],
 					"topic14": [
 						"Pet",
-						"*Whines, sits down*",
+						"*barks negatively*",
 						"4"
 					],
 					"topic15": [
 						"Player",
-						"What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
-						"8",
-						".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+						"Oh, is that so? Haven't enough of walking yet?",
+						"5"
 					],
 					"topic16": [
-						"Pet",
-						"*Happily panting and waving tail*",
+						"Player",
+						"Maybe I can change your mind with some special attention?",
 						"4"
 					],
 					"topic17": [
-						"Player",
-						"You're such a good dog, liking me petting you, huh? Want some more? *continue petting him*",
-						"6",
-						".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
+						"Pet",
+						"*looks at you with curious*",
+						"2"
 					],
 					"topic18": [
-						"Pet",
-						"*Lies on the ground, waiting more petting*",
-						"4"
+						"Player",
+						"How about to find out how really smart you are to understand what's on my mind, hmm?",
+						"7"
 					],
 					"topic19": [
 						"Player",
-						"Looks someone want EVEN more attention, well, how about that? *start petting his belly*",
-						"6",
-						".forms.FoundLostDogFacCoward.scene0.stage0.topic5"
+						"*lies on back* Come on, I'm all yours now.",
+						"4"
 					],
 					"topic20": [
 						"Pet",
-						"*Enjoys petting*",
-						"4"
-					],
-					"topic21": [
-						"Player",
-						"*Noticing dog getting aroused* Hmm... I see you're really really enjoyng my attention. How about try something even more pleasant?",
-						"8"
-					],
-					"topic22": [
-						"Pet",
-						"*Panting happily*",
-						"4",
-						".forms.FoundLostDogFacCoward.scene0.stage0.topic6"
+						"*approaches you*",
+						"2",
+						".forms.FoundLostDogFacRank4.relationshipRank0.scene0.stage0.topic20"
 					]
 				}
 			}
@@ -949,7 +935,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -969,7 +955,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -1080,7 +1066,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -1100,7 +1086,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -1211,7 +1197,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -1231,7 +1217,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -1342,7 +1328,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -1362,7 +1348,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -1473,7 +1459,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -1493,7 +1479,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -1626,7 +1612,7 @@
                     ],
                     "topic16": [
                         "Player",
-                        "*Jiggles* Yeah, that's right. I can leave you here for a moment, id you'd like.",
+                        "*giggles* Yeah, that's right. I can leave you here for a moment, id you'd like.",
                         "4"
                     ],
                     "topic17": [
@@ -1693,7 +1679,7 @@
                     ],
                     "topic29": [
                         "Player",
-                        "*jiggles* Yeah, you wish to. Let's do it then.",
+                        "*giggles* Yeah, you wish to. Let's do it then.",
                         "4",
 						".forms.FoundLostDogFacRank7.relationshipRank0.scene0.stage0.topic29"
                     ]
@@ -1766,7 +1752,7 @@
                     ],
                     "topic11": [
                         "Player",
-                        "See, much easier to trust someone then you're fed. *jiggles*",
+                        "See, much easier to trust someone then you're fed. *giggles*",
                         "4"
                     ],
                     "topic12": [
@@ -1786,7 +1772,7 @@
                     ],
                     "topic15": [
                         "Player",
-                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *jiggles* May I pet you a bit?",
+                        "What is it? Don't want go home? Maybe I can persuade you? Who is good boy here? *giggles* May I pet you a bit?",
                         "8",
                         ".forms.FoundLostDogFacCoward.scene0.stage0.topic4"
                     ],
@@ -2431,6 +2417,11 @@
 						"Good wolves, don't get closer, please!",
 						"3",
 						".forms.WolfAmbushStart.scene0.stage0.topic4"
+					],
+					"topic5": [
+						"Pause",
+						"Pause",
+						"1"
 					]
 				}
 			}
@@ -2514,22 +2505,23 @@
 						"Player",
 						"Hey, where you running?",
 						"4",
-						".forms.WolfAmbushEnd.scene0.stage0.topic0"
+						".forms.WolfAmbushEnd.relationshipRank0.scene0.stage0.topic0"
 					],
 					"topic1": [
 						"Player",
 						"Ha, typical animals, mated and dissappeared.",
-						"3"
+						"5"
 					],
 					"topic2": [
 						"Player",
 						"Well then, instead of lost pet I found wild horny wolves. Lucky me.",
-						"3"
+						"6"
 					],
 					"topic3": [
 						"Player",
-						"Perhaps I should return.",
-						"3"
+						"Perhaps I should return back.",
+						"3",
+						".forms.WolfAmbushEnd.relationshipRank0.scene0.stage0.topic3"
 					]
 				}
 			}
@@ -2682,7 +2674,7 @@
 					],
 					"topic5": [
 						"Player",
-						"*Jiggles* Looks someone getting harder, in any terms of that word.",
+						"*giggles* Looks someone getting harder, in any terms of that word.",
 						"4"
 					],
 					"topic6": [
@@ -2719,7 +2711,7 @@
 					],
 					"topic5": [
 						"Player",
-						"*Jiggles* Oh, I heard dogs whining from pleasure, so, wolves pretty much the same, huh?",
+						"*giggles* Oh, I heard dogs whining from pleasure, so, wolves pretty much the same, huh?",
 						"5"
 					],
 					"topic6": [
@@ -2824,7 +2816,8 @@
 					"topic9": [
 						"Player",
 						"Well, I think you are. Ah, you are good boys, despite you raped me.",
-						"4"
+						"4",
+						".forms.WolfAmbushRape.relationshipRank0.scene0.stage5.topic9"
 					],
 					"topic10": [
 						"Pause",
@@ -3023,7 +3016,8 @@
 					"topic8": [
 						"Pet",
 						"*Making final thrusts and pulling their knots from you*",
-						"3"
+						"3",
+						".forms.WolfAmbushRape.relationshipRank1.scene0.stage4.topic8"
 					]
 				}
 			}
@@ -3358,7 +3352,7 @@
 					],
 					"topic4": [
 						"Player",
-						"*Jiggles* You'd say if you could, yeah? *kiss his cock*",
+						"*giggles* You'd say if you could, yeah? *kiss his cock*",
 						"5"
 					],
 					"topic5": [
@@ -3444,7 +3438,7 @@
 					],
 					"topic4": [
 						"Player",
-						"*Jiggles* Yeah, mating with girl is pleasant, isn't it?",
+						"*giggles* Yeah, mating with girl is pleasant, isn't it?",
 						"5"
 					],
 					"topic5": [
@@ -3629,7 +3623,7 @@
 					],
 					"topic7": [
 						"Player",
-						"*Jiggles* You know, that's kind of fun. Never had such dominant dog in me.",
+						"*giggles* You know, that's kind of fun. Never had such dominant dog in me.",
 						"6"
 					]
 				},
@@ -3656,7 +3650,7 @@
 					],
 					"topic4": [
 						"Player",
-						"*Jiggles* Ha, usually dogs are whining while mating, but you're trying to show your dominance?",
+						"*giggles* Ha, usually dogs are whining while mating, but you're trying to show your dominance?",
 						"7"
 					],
 					"topic5": [
@@ -3710,7 +3704,7 @@
 					],
 					"topic3": [
 						"Player",
-						"*Jiggles* No dog can mate without whining, right?",
+						"*giggles* No dog can mate without whining, right?",
 						"5"
 					],
 					"topic4": [
@@ -3795,6 +3789,277 @@
 			}
 		}
     },
+	"dogSexFacRank4": {
+		"relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Pet",
+						"*licks your lips*",
+						"1"
+					],
+					"topic1": [
+						"Player",
+						"Mmm yeah... you got me right.",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*strokes his dick* All so hard for me already, that's what I like in smart dogs.",
+						"6"
+					],
+					"topic3": [
+						"Player",
+						"Can't wait to feel you inside me already.",
+						"4"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"Go on boy, push it in me, I need it as much as you are.",
+						"5"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Pet",
+						"*thrusts in you*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"Oooh... that's right, right there...",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"Lick my face boy...",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"If only all dog's were like you, I'd have never heard 'stupid dog' from others...",
+						"6"
+					],
+					"topic5": [
+						"Pet",
+						"*Starts moving even faster*",
+						"3"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Pet",
+						"*sticks tongue in your mouth*",
+						"3"
+					],
+					"topic1": [
+						"Player",
+						"*muffled moan*",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"*thoughts* That's incredible, simply incredible.",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"3"
+					],
+					"topic4": [
+						"Pet",
+						"*starts moving faster*",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"Mmm!",
+						"4"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"That deep tongue kiss was amazing, boy.",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"Aahh... Oh, that pose is... interesting.",
+						"4"
+					],
+					"topic2": [
+						"Player",
+						"Never thought I'd have a dog in me in that position.",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*Moves deep inside you*",
+						"4"
+					],
+					"topic4": [
+						"Pause",
+						"Pause",
+						"5"
+					],
+					"topic5": [
+						"Player",
+						"Oh, that pose requires quite an endurance.",
+						"5"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Pet",
+						"*starts thrusting even faster*",
+						"2"
+					],
+					"topic1": [
+						"Player",
+						"Oh gods, you are making me feel sooo good!",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*Whines from pleasure*",
+						"4"
+					],
+					"topic3": [
+						"Player",
+						"yeah boy, I love it too so much...",
+						"5"
+					],
+					"topic4": [
+						"Player",
+						"Don't stop boy, I need more!",
+						"5"
+					],
+					"topic5": [
+						"Pause",
+						"Pause",
+						"3"
+					],
+					"topic6": [
+						"Pet",
+						"*pushes deeper*",
+						"1"
+					],
+					"topic7": [
+						"Pet",
+						"*pushes in you even harder*",
+						"2"
+					],
+					"topic8": [
+						"Player",
+						"Ohh I can almost see the stars...",
+						"6"
+					],
+					"topic9": [
+						"Pet",
+						"*panting near your ear*",
+						"4"
+					],
+					"topic10": [
+						"Player",
+						"Feeling you so close is so good...",
+						"5"
+					],
+					"topic11": [
+						"Player",
+						"If only all dogs were like you, I'd have been most happy woman in the world.",
+						"7"
+					]
+				},
+				"stage5": {
+					"topic0": [
+						"Pause",
+						"Pause",
+						"1"
+					],
+					"topic1": [
+						"Pet",
+						"*increses pace*",
+						"2"
+					],
+					"topic2": [
+						"Pet",
+						"*whines with pleasure*",
+						"2"
+					],
+					"topic3": [
+						"Player",
+						"Oh my god, yes! *whimpers* This feels incredible...",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"You are such strong hound!",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"So deep inside me... your thick cock stretching out my pussy... ah! *giggles breathlessly*",
+						"7"
+					],
+					"topic6": [
+						"Pet",
+						"*Panting with pleasure*",
+						"2"
+					],
+					"topic7": [
+						"Player",
+						"*moans loudly* yesssss... right there!",
+						"5"
+					]
+				},
+				"stage6": {
+					"topic0": [
+						"Pet",
+						"*makes final thrust*",
+						"1"
+					],
+					"topic1": [
+						"Player",
+						"*panting deep* Oh-h... Mmm...",
+						"3"
+					],
+					"topic2": [
+						"Player",
+						"I can feel you flooding me inside...",
+						"4"
+					],
+					"topic3": [
+						"Pet",
+						"*whines with pleasure*",
+						"3"
+					],
+					"topic4": [
+						"Player",
+						"Yeah, boy, that was incredible...",
+						"4"
+					],
+					"topic5": [
+						"Player",
+						"I've never felt so satisfied and dirty at the same time.",
+						"5",
+						".forms.FoundLostDogFacRank4.relationshipRank0.scene0.sexStage6.topic5"
+					]
+				}
+			}
+		}
+    },
 	"dogSexFacRank7": {
 		"relationshipRank0": {
 			"scene0": {
@@ -3836,7 +4101,7 @@
 					],
 					"topic7": [
 						"Player",
-						"*Jiggles* Probably I need to ask it from your owner, right?",
+						"*giggles* Probably I need to ask it from your owner, right?",
 						"4"
 					],
 					"topic8": [
@@ -4020,7 +4285,7 @@
 						"topic0": [
 							"Owner",
 							"Pause",
-							"20",
+							"3",
 							".forms.DogApproachOwnerFacRank3.relationshipRank2.BrylingREF.scene0.stage0.topic0"
 						],
 						"topic1": [
@@ -4050,8 +4315,8 @@
 							"3"
 						],
 						"topic6": [
-							"Pet",
-							"*Enters Bryling's anus*",
+							"Owner",
+							"Aah!",
 							"2",
 							".forms.DogApproachOwnerFacRank3.relationshipRank2.BrylingREF.scene0.stage0.topic6"
 						]
@@ -4103,6 +4368,68 @@
 							"Is this chair you want to fuck me on? Alright, let's mate.",
 							"2",
 							".forms.DogApproachOwnerFacRank1.relationshipRank2.scene0.stage0.topic7"
+						]
+					}
+				}
+			}
+        }
+    },
+	"specialEventStart_haafingar3": {
+        "relationshipRank2": {
+			"BrylingREF": {
+				"scene0": {
+					"stage0": {
+						"topic0": [
+							"Player",
+							"Well, why uncomfortanle, maybe... Well, for female in that case yeah.",
+							"5"
+						],
+						"topic1": [
+							"Player",
+							"But your pet will be more than comfortable doing it to you.",
+							"5"
+						],
+						"topic2": [
+							"Human",
+							"Yeah, if I lay on chair from the side...",
+							"4"
+						],
+						"topic3": [
+							"Pet",
+							"*panting*",
+							"2"
+						],
+						"topic4": [
+							"Player",
+							"I think your boy can't wait for it already.",
+							"5"
+						],
+						"topic5": [
+							"Human",
+							"I can't wait for it already myself, actually.",
+							"5"
+						],
+						"topic6": [
+							"Player",
+							"Well, how about you undress then, and let him do what you both desire so bad?",
+							"6"
+						],
+						"topic7": [
+							"Human",
+							"Alright, just one second...",
+							"4",
+							".forms.specialEventStart_Haafingar3.relationshipRank2.BrylingREF.scene0.stage0.topic7"
+						],
+						"topic8": [
+							"Player",
+							"Mmm... nice body, thane.",
+							"4"
+						],
+						"topic9": [
+							"Human",
+							"Thanks, I guess. So, I just lay here and...",
+							"5",
+							".forms.specialEventStart_Haafingar3.relationshipRank2.BrylingREF.scene0.stage0.topic9"
 						]
 					}
 				}
@@ -4233,7 +4560,7 @@
 						],
 						"topic23": [
 							"Human",
-							"*Jiggles* I hope so as well.",
+							"*Giggles* I hope so as well.",
 							"4",
 							".forms.specialEventStart_Haafingar4.relationshipRank0.ElisifTheFairREF.scene0.stage0.topic23"
 						]
@@ -5321,7 +5648,7 @@
 							],
 							"choise2": [
 								"Owner",
-								"*Jiggles* Well now, looks like we found each other here. Two dog lovers.",
+								"*giggles* Well now, looks like we found each other here. Two dog lovers.",
 								"6"
 							]
 						},
@@ -5424,7 +5751,7 @@
 						],
 						"topic3": [
 							"Player",
-							"*Jiggles* You look so cute now.",
+							"*giggles* You look so cute now.",
 							"4"
 						],
 						"topic4": [
@@ -5454,7 +5781,7 @@
 						],
 						"topic9": [
 							"Owner",
-							"*Jiggles* You can say so...",
+							"*giggles* You can say so...",
 							"4"
 						],
 						"topic10": [
@@ -5671,7 +5998,7 @@
 						],
 						"topic8": [
 							"Human",
-							"*Jiggles* You don't need to believe, as you can feel it by your own.",
+							"*giggles* You don't need to believe, as you can feel it by your own.",
 							"4"
 						]
 					},
@@ -5802,7 +6129,7 @@
 						],
 						"topic2": [
 							"Human",
-							"Mmm... Yeah, you noticed second pussy here, right? *Jiggles* Make me feel good.",
+							"Mmm... Yeah, you noticed second pussy here, right? *giggles* Make me feel good.",
 							"6"
 						],
 						"topic3": [
@@ -5945,7 +6272,7 @@
 						],
 						"topic3": [
 							"Human",
-							"*Jiggles* Billy's really active today.",
+							"*giggles* Billy's really active today.",
 							"5"
 						],
 						"topic4": [
@@ -6019,7 +6346,7 @@
 					"stage2": {
 						"topic0": [
 							"Human",
-							"*Jiggles* He really likes you.",
+							"*giggles* He really likes you.",
 							"4"
 						],
 						"topic1": [
@@ -6256,7 +6583,7 @@
 						],
 						"topic7": [
 							"Human",
-							"*Jiggles* Only second mating and already fond of it, right?",
+							"*giggles* Only second mating and already fond of it, right?",
 							"5"
 						],
 						"topic8": [
@@ -6513,7 +6840,7 @@
 					"stage2": {
 						"topic0": [
 							"Human",
-							"*Jiggles* He really likes it.",
+							"*giggles* He really likes it.",
 							"4"
 						],
 						"topic1": [
@@ -6849,7 +7176,7 @@
 						],
 						"topic8": [
 							"Human",
-							"*Jiggles* You don't need to believe, as you can feel it by your own.",
+							"*giggles* You don't need to believe, as you can feel it by your own.",
 							"4"
 						]
 					},
@@ -6980,7 +7307,7 @@
 						],
 						"topic2": [
 							"Human",
-							"Mmm... Yeah, you noticed second pussy here, right? *Jiggles* Make me feel good.",
+							"Mmm... Yeah, you noticed second pussy here, right? *giggles* Make me feel good.",
 							"6"
 						],
 						"topic3": [
@@ -7197,7 +7524,7 @@
 						],
 						"topic1": [
 							"Player",
-							"*Jiggles* Well, I'm glad you are.",
+							"*giggles* Well, I'm glad you are.",
 							"4"
 						],
 						"topic2": [
@@ -7335,6 +7662,282 @@
 			}
 		}
     },
+	"SE_Haafingar3": {
+		"relationshipRank2": {
+			"BrylingREF": {
+				"scene0": {
+					"stage0": {
+						"topic0": [
+							"Player",
+							"And your dog will figure out the rest.",
+							"4"
+						],
+						"topic1": [
+							"Human",
+							"Ouch! He tries to penetrate wrong hole!",
+							"5"
+						],
+						"topic2": [
+							"Player",
+							"Ah, I see. But believe me, in love question no hole is wrong. *giggle*",
+							"7"
+						],
+						"topic3": [
+							"Human",
+							"But this one is... well, let's say untouched yet.",
+							"5"
+						],
+						"topic4": [
+							"Player",
+							"Oh, so your boy will be proud to touch it first.",
+							"5"
+						],
+						"topic5": [
+							"Human",
+							"Oh, well, have any advice for it?",
+							"5"
+						],
+						"topic6": [
+							"Player",
+							"Just relax. Let him enter.",
+							"4"
+						],
+						"topic7": [
+							"Human",
+							"Okay, I'll try...",
+							"4"
+						]
+					},
+					"stage1": {
+						"topic0": [
+							"Human",
+							"Aaah! Gods... he is inside!",
+							"4"
+						],
+						"topic1": [
+							"Player",
+							"Great, now just enjoy the ride.",
+							"4"
+						],
+						"topic2": [
+							"Pet",
+							"*Panting*",
+							"2"
+						],
+						"topic3": [
+							"Human",
+							"Nngh...",
+							"3"
+						],
+						"topic4": [
+							"Player",
+							"you will like it... eventually.",
+							"4"
+						],
+						"topic5": [
+							"Human",
+							"Ev-ventually, huh. Oh, gods, why I'm even doing it...",
+							"6"
+						],
+						"topic6": [
+							"Player",
+							"Because you want wild love I believe.",
+							"5"
+						],
+						"topic7": [
+							"Human",
+							"Wild...",
+							"3"
+						]
+					},
+					"stage2": {
+						"topic0": [
+							"Human",
+							"Ahh!",
+							"2"
+						],
+						"topic1": [
+							"Player",
+							"*giggles* He is definetly enjoying it.",
+							"4"
+						],
+						"topic2": [
+							"Human",
+							"I... Aah... must admit... I'm strating to enjoy it too...",
+							"6"
+						],
+						"topic3": [
+							"Player",
+							"Great, and after this time it might become... regular thing.",
+							"6"
+						],
+						"topic4": [
+							"Human",
+							"Regular? Oh, you think he would like to do it again with me?",
+							"6"
+						],
+						"topic5": [
+							"Player",
+							"Of course, you are his mate now.",
+							"5"
+						],
+						"topic6": [
+							"Human",
+							"Great... simply great...",
+							"4"
+						]
+					},
+					"stage3": {
+						"topic0": [
+							"Human",
+							"Ooh... simply awesome feeling!",
+							"5"
+						],
+						"topic1": [
+							"Human",
+							"I love it, it's really nice feeling.",
+							"5"
+						],
+						"topic2": [
+							"Player",
+							"So, no regrets anymore?",
+							"4"
+						],
+						"topic3": [
+							"Human",
+							"Regrets? No, no regrets. Only pleasure and... Oh, few more times me do that and...",
+							"7"
+						],
+						"topic4": [
+							"Human",
+							"I might get drawn in it. Just don't tell anybody, alright?",
+							"5"
+						],
+						"topic5": [
+							"Player",
+							"I won't tell anyone. Just don't get catched doing it on public.",
+							"6"
+						],
+						"topic6": [
+							"Human",
+							"*chuckles* I will try not to.",
+							"4"
+						],
+						"topic7": [
+							"Player",
+							"Look at this pace, you must feel increadible now.",
+							"6"
+						],
+						"topic8": [
+							"Human",
+							"I feel absolutely amazing now...",
+							"5"
+						]
+					},
+					"stage4": {
+						"topic0": [
+							"Pet",
+							"*Trusts deeped knotting her*",
+							"3"
+						],
+						"topic1": [
+							"Human",
+							"Aah! Divines, that was painfull!",
+							"5"
+						],
+						"topic2": [
+							"Player",
+							"Oh, wow, he forced his knot into you.",
+							"5"
+						],
+						"topic3": [
+							"Human",
+							"His what?",
+							"3"
+						],
+						"topic4": [
+							"Player",
+							"It's... thing on dog's dick. Don't worry, it will get smaller in time.",
+							"6"
+						],
+						"topic5": [
+							"Player",
+							"How do you feel?",
+							"3"
+						],
+						"topic6": [
+							"Human",
+							"Filled. Like, too much than I wanted to.",
+							"4"
+						],
+						"topic7": [
+							"Human",
+							"Still I loved that.",
+							"4"
+						],
+						"topic8": [
+							"Player",
+							"Well, I'm glad you did.",
+							"4"
+						]
+					},
+					"stage5": {
+						"topic0": [
+							"Pet",
+							"*turns around*",
+							"2"
+						],
+						"topic1": [
+							"Human",
+							"Ouch, boy, easier!",
+							"5"
+						],
+						"topic2": [
+							"Player",
+							"Don't worry, it's normal for dogs to do so.",
+							"5"
+						],
+						"topic3": [
+							"Human",
+							"How long it will last?",
+							"4"
+						],
+						"topic4": [
+							"Player",
+							"Depends on dog. Some of them might pull out quickly, sometimes they can stay inside for hours.",
+							"8"
+						],
+						"topic5": [
+							"Human",
+							"Hours? Gods, I don't have so much time.",
+							"5"
+						],
+						"topic6": [
+							"Player",
+							"Oh, come on. There's always time for great mating session. And it's afterglow.",
+							"7"
+						],
+						"topic7": [
+							"Human",
+							"Yeah, right. I'll just...",
+							"4"
+						],
+						"topic8": [
+							"Pet",
+							"*Pulls out of her*",
+							"2"
+						],
+						"topic9": [
+							"Human",
+							"Ouch! I think he pulled out.",
+							"4",							
+							".forms.specialEventStart_Haafingar3.relationshipRank2.BrylingREF.scene0.sexStage5.topic9"
+						]
+					}
+				}
+			}
+		}
+    },
 	"SE_Haafingar4Afterscene": {
 		"relationshipRank0": {
 			"ElisifTheFairREF": {
@@ -7397,5 +8000,675 @@
 				}
 			}
 		}
-    }
+    },
+	"MeekoSex": {
+        "relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Player",
+						"Yeah, lick me, boy.",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"Mmm...",
+						"4"
+					],
+					"topic2": [
+						"Pet",
+						"*panting*",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Now, come here, I need you inside me.",
+						"5"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Player",
+						"Aah... very good...",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"I love feeling of your thick doggy dick inside me.",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*moves inside you*",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"*moan* I love doing this with dogs, you know? It's such... wild and hot.",
+						"7"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Player",
+						"Oh, yes, like this...",
+						"4"
+					],
+					"topic1": [
+						"Player",
+						"Move deeper in me, boy.",
+						"4"
+					],
+					"topic2": [
+						"Pet",
+						"*panting*",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"I hope I'm helping you feel better too.",
+						"5"
+					],
+					"topic5": [
+						"Pet",
+						"*barks happily*",
+						"5"
+					],
+					"topic6": [
+						"Player",
+						"Well, I'm glad you think that way. I...",
+						"5"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"Want you even deeper and faster!",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"Make me yours, fill me up!",
+						"5"
+					],
+					"topic2": [
+						"Pet",
+						"*panting fast*",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Gods it's so good, don't stop, don't you dare to stop now!",
+						"6"
+					],
+					"topic5": [
+						"Pet",
+						"*panting fast*",
+						"3"
+					],
+					"topic6": [
+						"Player",
+						"I'm so close, yet few more thrusts...",
+						"5"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Pet",
+						"*makes final thrust, feeling you with hot load*",
+						"5"
+					],
+					"topic1": [
+						"Player",
+						"Yes, YES! Fill me up!",
+						"5"
+					],
+					"topic2": [
+						"Pet",
+						"*whines*",
+						"4"
+					],
+					"topic3": [
+						"Pause",
+						"Pause",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"By the Nine, it's so good... You are good boy, Meeko, the best boy...",
+						"6"
+					],
+					"topic5": [
+						"Pet",
+						"*panting happily*",
+						"3"
+					],
+					"topic6": [
+						"Player",
+						"Well, I believe we can do it more often, don't you think?",
+						"5"
+					],
+					"topic7": [
+						"Pet",
+						"*pulls knot out of you*",
+						"2"
+					],
+					"topic8": [
+						"Player",
+						"Oh, that was trully amazing.",
+						"4"
+					]
+				}
+			}
+		}
+    },
+	"rookThief_rapeDog": {
+        "relationshipRank0": {
+			"scene0": {
+				"stage0": {
+					"topic0": [
+						"Human",
+						"Aa-ah! No, no, that hurts!",
+						"5"
+					],
+					"topic1": [
+						"Pet",
+						"*growl*",
+						"2"
+					],
+					"topic2": [
+						"Player",
+						"Oh, he is your ass, good.",
+						"4"
+					],
+					"topic3": [
+						"Human",
+						"N-nothing good about it! He holds my neck with teeth!",
+						"7"
+					],
+					"topic4": [
+						"Player",
+						"Well, it's not for long... I hope.",
+						"5"
+					]
+				},
+				"stage1": {
+					"topic0": [
+						"Human",
+						"Aah... gods, why it should be happening to me?",
+						"6"
+					],
+					"topic1": [
+						"Player",
+						"To make you understand it is very bad to try to rob someone on the road.",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*moves inside her*",
+						"2"
+					],
+					"topic3": [
+						"Human",
+						"I get it, I get it, please, let me go...",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Well, it's only dog's desidion then to let you go now.",
+						"5"
+					]
+				},
+				"stage2": {
+					"topic0": [
+						"Human",
+						"It's too much...",
+						"4"
+					],
+					"topic1": [
+						"Human",
+						"I would never do it again, please, put him away!",
+						"6"
+					],
+					"topic2": [
+						"Pet",
+						"*panting*",
+						"2"
+					],
+					"topic3": [
+						"Player",
+						"I know you wouldn't. Be patient, it's not for a long time, I hope at leats.",
+						"7"
+					],
+					"topic4": [
+						"Human",
+						"What a twisted dog of yours, why he should do it to me?",
+						"7"
+					],
+					"topic5": [
+						"Player",
+						"Well, as I said he had not female for a while.",
+						"5"
+					],
+					"topic6": [
+						"Human",
+						"Human is not a f-female for a dog, gods!",
+						"5"
+					]
+				},
+				"stage3": {
+					"topic0": [
+						"Player",
+						"*giggle* I don't know, you pretty much a female for him.",
+						"6"
+					],
+					"topic1": [
+						"Player",
+						"So just relax and enjoy it.",
+						"5"
+					],
+					"topic2": [
+						"Pet",
+						"*panting fast*",
+						"2"
+					],
+					"topic3": [
+						"Human",
+						"I c-can't enjoy it, it hurts!",
+						"4"
+					],
+					"topic4": [
+						"Player",
+						"Not used to anal I see. Well, unlucky you I suppose.",
+						"6"
+					],
+					"topic5": [
+						"Human",
+						"S-stop... gloating on me already...",
+						"5"
+					],
+					"topic6": [
+						"Player",
+						"Alright, alright. Looks like he is about to finish.",
+						"5"
+					]
+				},
+				"stage4": {
+					"topic0": [
+						"Pet",
+						"*makes final thrust, filling her with hot load*",
+						"2"
+					],
+					"topic1": [
+						"Human",
+						"AAH! No way, does he... cumming inside me?",
+						"5"
+					],
+					"topic2": [
+						"Pet",
+						"*whines*",
+						"2"
+					],
+					"topic3": [
+						"Player",
+						"Of course he does. That what all males do in the end of a sex. *giggle*",
+						"4"
+					],
+					"topic4": [
+						"Human",
+						"*sigh*",
+						"2"
+					],
+					"topic5": [
+						"Pet",
+						"*panting happily*",
+						"2"
+					],
+					"topic6": [
+						"Player",
+						"I see he enjoyed you.",
+						"5"
+					],
+					"topic7": [
+						"Pet",
+						"*pulls knot out of her*",
+						"2"
+					],
+					"topic8": [
+						"Human",
+						"Ouch!",
+						"2"
+					]
+				}
+			}
+		}
+    },
+	"FalmersGirl_firstSexStart": {
+		"relationshipRank0": {
+			"lope_Leyla": {
+				"scene0": {
+					"stage0": {
+						"topic0": [
+							"Human",
+							"*muffled sounds of moaning*",
+							"3",
+							".forms.FalmersGirl_firstSexStart.relationshipRank0.lope_Leyla.scene0.stage0.topic0"
+						]
+					}
+				}
+			}
+        }
+	},
+	"FalmersGirl_firstSex": {
+		"relationshipRank0": {
+			"lope_Leyla": {
+				"scene0": {
+					"stage0": {
+						"topic0": [
+							"Player",
+							"What's that?",
+							"4"
+						],
+						"topic1": [
+							"Player",
+							"Sounds like someone here is having fun time.",
+							"4"
+						],
+						"topic2": [
+							"Human",
+							"Mmm... that's so good...",
+							"5"
+						],
+						"topic3": [
+							"Player",
+							"And I even know who.",
+							"4"
+						],
+						"topic4": [
+							"DistanceLT",
+							"300"
+						],
+						"topic5": [
+							"Human",
+							"Ahh, boys, you are such great lovers...",
+							"4"
+						],
+						"topic6": [
+							"Player",
+							"Having fun I see?",
+							"4"
+						],
+						"topic7": [
+							"Human",
+							"*gasp* Oh, h-hi again.",
+							"3"
+						],
+						"topic8": [
+							"Human",
+							"Y-yeah, you can say so..",
+							"4"
+						]
+					},					
+					"stage1": {
+						"topic0": [
+							"Human",
+							"O-oh...",
+							"4"
+						],
+						"topic1": [
+							"Human",
+							"I hoped nobody will see that.",
+							"4"
+						],
+						"topic2": [
+							"Human",
+							"Pretty hot sight.",
+							"4"
+						],
+						"topic3": [
+							"Human",
+							"Mhmm... that's feels amazing as well.",
+							"4"
+						],
+						"topic4": [
+							"Player",
+							"Is that why you needed that oil, hmm?",
+							"5"
+						],
+						"topic5": [
+							"Human",
+							"Oil? Oh, well, yeah...",
+							"4"
+						],
+						"topic6": [
+							"Human",
+							"It appeared to be great lube for... that.",
+							"4"
+						],
+						"topic7": [
+							"Player",
+							"*chuckle* I can tell. Seems like it's easy to take two falmers at the same time with that.",
+							"6"
+						],
+						"topic8": [
+							"Human",
+							"You have no idea... And that feeling... mmm...",
+							"4"
+						]
+					},
+					"stage2": {
+						"topic0": [
+							"Player",
+							"How you even came up to sex with falmers?",
+							"4"
+						],
+						"topic1": [
+							"Human",
+							"Aahh... it's not me really who started that...",
+							"5"
+						],
+						"topic2": [
+							"Human",
+							"I just accepted that then they showed interest in me.",
+							"6"
+						],
+						"topic3": [
+							"Player",
+							"And how they showned it to you?",
+							"4"
+						],
+						"topic4": [
+							"Human",
+							"Well, it stated from touching me... I kinda liked that...",
+							"5"
+						],
+						"topic5": [
+							"Human",
+							"Then their actions became bolder... and I didn't push them away...",
+							"5"
+						],
+						"topic6": [
+							"Human",
+							"And in time it all ened up with having sex with them.",
+							"4"
+						],
+						"topic7": [
+							"Player",
+							"Are you having two falmers in you every time?",
+							"4"
+						],
+						"topic8": [
+							"Human",
+							"N-no... sometimes it's three of them... sometimes one... depends on how horny they are I guess.",
+							"6"
+						]
+					},
+					"stage3": {
+						"topic0": [
+							"Human",
+							"Aah! Yes! Faster!",
+							"4"
+						],
+						"topic1": [
+							"Player",
+							"you are really into it I see.",
+							"5"
+						],
+						"topic2": [
+							"Human",
+							"*moans*",
+							"6"
+						],
+						"topic3": [
+							"Player",
+							"I think you won't be able to talk anymore with such intense action.",
+							"5"
+						],
+						"topic4": [
+							"Human",
+							"I.... I... Aahh!",
+							"5"
+						],
+						"topic5": [
+							"Human",
+							"Cumming!",
+							"5"
+						]
+					},
+					"stage4": {
+						"topic0": [
+							"Human",
+							"Mmm...",
+							"4"
+						],
+						"topic1": [
+							"Player",
+							"Well, won't bother you, lovers.",
+							"5"
+						],
+						"topic2": [
+							"Human",
+							"*kisses with falmer*",
+							"6"
+						],
+						"topic3": [
+							"Pause",
+							"Pause",
+							"5"
+						],
+						"topic4": [
+							"Human",
+							"Oh, boys, that was so amazing.",
+							"5",
+							".forms.FalmersGirl_firstSexStart.relationshipRank0.lope_Leyla.scene0.sexStage4.topic4"
+						]
+					}
+				}
+			}
+        }
+	},
+	"test_renaming": {
+		"relationshipRank1": {
+			"lope_MariaREF": {
+				"scene0": {
+					"stage0": {
+						"topic0": [
+							"Human",
+							"init of sex",
+							"1",
+							".forms.test_renamingSex.relationshipRank1.lope_MariaREF.scene0.stage0.topic0"
+						]
+					}
+				}
+			}
+        }
+	},
+	"test_renamingSex": {
+		"relationshipRank1": {
+			"lope_MariaREF": {
+				"scene0": {
+					"stage0": {
+						"topic0": [
+							"Human",
+							"0 0",
+							"lope_Maria"
+						],
+						"topic1": [
+							"Human",
+							"0 1",
+							"lope_Maria"
+						]
+					},
+					"stage1": {
+						"topic0": [
+							"Human",
+							"1 0",
+							"lope_Maria"
+						],
+						"topic1": [
+							"Human",
+							"1 1",
+							"lope_Maria"
+						]
+					},
+					"stage2": {
+						"topic0": [
+							"Human",
+							"2 0",
+							"lope_Maria"
+						],
+						"topic1": [
+							"Human",
+							"2 1",
+							"lope_Maria"
+						]
+					},
+					"stage3": {
+						"topic0": [
+							"Human",
+							"3 0",
+							"lope_Maria"
+						],
+						"topic1": [
+							"Human",
+							"3 1",
+							"lope_Maria"
+						]
+					},
+					"stage4": {
+						"topic0": [
+							"Human",
+							"4 0",
+							"lope_Maria"
+						],
+						"topic1": [
+							"Human",
+							"4 1",
+							"lope_Maria"
+						]
+					}
+				}
+			}
+        }
+	}
 }

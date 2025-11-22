@@ -11,13 +11,14 @@
     Final="false">
     <Variables>
         <!-- Set the name of your mod: -->
-        <Variable Name="ModName" Value="CHANGE THE MOD NAME HERE" />
+        <Variable Name="ModName" Value="Lost Pets" />
         <!-- The folder where you store all of your mods -->
         <Variable Name="ModsFolder" Value="C:\[YOUR MODS FOLDER]" />
     </Variables>
     <Imports>
         <!-- <Import>@ModsFolder\SKSE64\Scripts\Source</Import> -->
         <Import>D:\SteamLibrary\steamapps\common\Skyrim Special Edition\Data\Scripts\Source</Import>
+        <!-- <Import>G:\ModOrganizer2\SSE DBG\mods\SexLab Utility Plus\scripts\source</Import> -->
     </Imports>
     <Folders>
         <!-- Relative path to folder containing .psc Papyrus source code files for this project -->

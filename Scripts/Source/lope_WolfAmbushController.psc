@@ -7,9 +7,12 @@ Int questStage
 Actor  wolf01
 Actor  wolf02
 
+float distance = 300000.0
+
 
 event onUpdate()
-    If questStage  == 100 && playerRef.GetDistance(Marker.getReference()) <= 512
+    distance = playerRef.GetDistance(Marker.getReference())
+    If questStage == 100 && distance <= 128
         setstage(105)
         Debug.Notification("No sight of pet here...")
         setobjectivecompleted(100)
@@ -22,13 +25,13 @@ event onUpdate()
 
         PlayerREF.placeatme(wolf01)
         ; WolfEnc01.ForceRefTo(wolf01)
-        WolfEnc01.TryToEvaluatePackage()
         myFuncs.MoveActorToRandomPosBehind(wolf01, PlayerREF as actor, 512, 1024)
+        WolfEnc01.TryToEvaluatePackage()
 
         PlayerREF.placeatme(wolf02)
         ; WolfEnc02.ForceRefTo(wolf02)
-        WolfEnc02.TryToEvaluatePackage()
         myFuncs.MoveActorToRandomPosBehind(wolf02, PlayerREF as actor, 512, 1024)
+        WolfEnc02.TryToEvaluatePackage()
 
         WolfHowl.Play(Wolf01)
         WolfHowl.Play(Wolf02)
@@ -38,12 +41,22 @@ event onUpdate()
         Game.ForceThirdPerson()
         ; Game.DisablePlayerControls()
         if wolf01.GetRelationshipRank(PlayerRef as Actor) == 0
-            (PlayerRef as Actor).SetDontMove()
+            ; (PlayerRef as Actor).SetDontMove()
+            game.DisablePlayerControls(\
+                abMovement = true,\
+                abFighting = true,\
+                abCamSwitch = false,\
+                abLooking = false,\
+                abSneaking = true,\
+                abMenu = false,\
+                abActivate = false,\
+                abJournalTabs = false\
+            )
         endif
         register(3)
     ElseIf questStage == 105
         setobjectivedisplayed(110)
-        (lope_SSH as lope_ShowSubtitlesHandler).ShowSubtitlesNonSexlab("WolfAmbushStart", 0, wolf01)
+        (lope_SSH as lope_ShowSubtitlesHandler).ShowSubtitlesNonSexlab("WolfAmbushStart", 0, partner=wolf01)
         ; PlayerFoundPet.start()
     elseif questStage == 150
         ; WolfEnc01.getRef().Disable()
@@ -51,6 +64,7 @@ event onUpdate()
         ReturnWolvesToUtilCell()
     ElseIf questStage == 100
         register(1)
+        ; debug.MessageBox(playerRef + " | " + Marker.getReference())
     EndIf
 endevent
 
@@ -68,6 +82,7 @@ endfunction
 
 
 Function ReturnWolvesToUtilCell()
+    ; MessageBox("ReturnWolvesToUtilCell")
     if wolf01 && wolf02
         wolf01.MoveTo(utilCell)
         wolf02.MoveTo(utilCell)

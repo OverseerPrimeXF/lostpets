@@ -7,7 +7,8 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 aboutToMate.setValue(0)
-sl.PetSex(Pet.getRef(), tags="Anal")
+sl.sceneOffset = func.getOffsetArray(TavernBed.getReference(), "bed")
+sl.PetSex(Pet.getActorRef(), tags="Anal,")
 sl.playNPCReactionScene(Innkeeper.getReference(), reaction=Reaction, locKWD=LocTypeInn, moveSpeaker=True)
 ;if PlayerREF.getCurrentLocation().hasKeyword(LocTypeInn) && Innkeeper.getActorRef().IsInLocation(PlayerREF.GetCurrentLocation())
 ;endif
@@ -30,3 +31,7 @@ ReferenceAlias Property Innkeeper  Auto
 Scene Property reaction  Auto  
 
 GlobalVariable Property aboutToMate  Auto  
+
+ReferenceAlias Property TavernBed  Auto  
+
+lope_functions Property func  Auto  

@@ -88,6 +88,7 @@ endfunction
 Event dogBlowjobStageStart(int tid, bool hasplayer)
     ;messagebox("currentStage - "+currentStage)
     scenesArray[currentStage].start()
+    ThreadController.AutoAdvance = False
     ThreadController.UpdateTimer(120)
     ;
 endevent

@@ -4,9 +4,16 @@
             "scene0": {
                 "stage0": {
 					"topic1": {
-                        "rotate": [
-                            180
-                        ]
+						"quest": [
+                            "0x24A42C|lost_pets.esp"
+                        ],
+						"playerAIControlled": [
+							1
+						],
+						"setFacingTarget": [
+							"Player",
+							"WolfEnc01"
+						]
                     },
                     "topic3": {
 						"quest": [
@@ -23,18 +30,23 @@
                         ]
                     },
 					"topic4": {
-						"quest": [
-                            "0x24A42C|lost_pets.esp"
-                        ],
                         "modForm": [
                             "0x24A42C|lost_pets.esp"
                         ],
                         "playerIdle": [
                             "0xD286|Dawnguard.esm"
                         ],
+						"quest": [
+                            "0x24A42C|lost_pets.esp"
+                        ],
                         "questStage": [
                             125
                         ]
+                    },
+					"topic5": {
+						"playerAIControlled": [
+							0
+						]
                     }
                 }
             },
@@ -42,9 +54,16 @@
 				"scene0": {
 					"stage0": {
 						"topic1": {
-							"rotate": [
-								180
-							]
+							"quest": [
+								"0x24A42C|lost_pets.esp"
+							],
+							"playerAIControlled": [
+								1
+							],
+							"setFacingTarget": [
+								"Player",
+								"WolfEnc01"
+						    ]
 						},
 						"topic3": {
 							"quest": [
@@ -92,6 +111,30 @@
 				}
 			}
         },
+        "WolfAmbushRape": {
+			"relationshipRank0": {
+				"scene0": {
+					"stage5": {
+						"topic9": {
+							"playerAIControlled": [
+								0
+							]
+						}
+					}
+				}
+			},
+			"relationshipRank1": {
+				"scene0": {
+					"stage4": {
+						"topic8": {
+							"playerAIControlled": [
+								0
+							]
+						}
+					}
+				}
+			}
+        },
 		"WolfAmbushEnd": {
 			"relationshipRank0": {
 				"scene0": {
@@ -103,6 +146,17 @@
 							"questStage": [
 								150
 							]
+						},
+						"topic3": {
+							"playerAIControlled": [
+								0
+							],
+							"clearFacingTarget": [
+							    "Player"
+							],
+							"playerHeadtrack": [
+							    0
+							]
 						}
 					}
 				}
@@ -111,11 +165,17 @@
 				"scene0": {
 					"stage0": {
 						"topic6": {
+							"playerAIControlled": [
+								0
+							],
 							"quest": [
 								"0x24A42C|lost_pets.esp"
 							],
 							"questStage": [
-								150
+								155
+							],
+							"clearFacingTarget": [
+							    "Player"
 							]
 						}
 					}
@@ -335,6 +395,68 @@
 				}
 			}
         },
+		"FoundLostDogFacRank4": {
+			"relationshipRank0": {
+				"scene0": {
+					"stage0": {
+						"topic0": {							
+							"sceneEditorID": [
+								"lope_LostPetsRadiant_petComesCloserConfident"
+							]
+						},
+						"topic1": {
+							"playerIdle": [
+								"0x3EA32|Skyrim.esm",
+								false
+							]
+						},
+						"topic4": {
+							"sceneEditorID": [
+								"lope_LostPetsRadiant_petComesEvenCloserConfident"
+							]
+						},
+						"topic7": {
+							"quest": [
+								"0xD66|lost_pets.esp"
+							],
+							"playerIdle": [
+								"0xB5E20|Skyrim.esm",
+								true
+							],
+							"removeItem": [
+								19
+							]
+						},
+						"topic20": {
+							"sexlabScene": [
+								true,
+								[
+									"Billyy (Canine) Missionary Crab"
+								],
+								"None",
+								"dogSex",
+								true,
+								false,
+								"None"
+							]
+						}
+					},
+					"sexStage6": {
+						"topic5": {
+							"quest": [
+                            "0xD66|lost_pets.esp"
+							],
+							"questStage": [
+								120
+							],
+							"increaseRelationships": [
+								true
+							]
+						}
+					}
+				}
+			}
+        },
 		"FoundLostDogFacRank7": {
 			"relationshipRank0": {
 				"scene0": {
@@ -398,7 +520,7 @@
 								    "lope_PetsOwnersScenes"
 								],
 								"setSpecificFurnitureTarget": [
-								    "chair"
+								    "OwnersBed"
 								],
 								"addAliasPackageOverride": [
 								    "Owner",
@@ -406,6 +528,13 @@
 								]
 							},
 							"topic1": {
+								"questEditorID": [
+								    "lope_PetsOwnersScenes"
+								],
+								"evaluatePackage": [
+								    true,
+								    ["Pet"]
+								],
 								"scene": [
 									"0x3BD834|lost_pets.esp"
 								]
@@ -697,7 +826,7 @@
 								"choise_title": "Player's answer",
 								"choises": [
 									"I saw how girls mating\nwith dogs before",
-									"Never seen girl mating\nwith dog",
+									"Never saw girl mating\nwith dog",
 									"I like mating with\ndogs myself, actually"
 								],
 								"write_to_conditions": [
@@ -1012,6 +1141,122 @@
 					}
 				}
 			}
-		}
+		},
+		"specialEventStart_Haafingar3": {
+			"relationshipRank2": {
+				"BrylingREF": {
+					"scene0": {
+						"stage0": {
+							"topic7": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"undressRefAlias": [
+									"Bryling"
+								]
+							},
+							"topic9": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"SexChair",
+									"Chair"
+								],
+								"sexlabSceneNoPlayer": [
+									true,
+									[
+										"Billyy (Canine) Chair(Armless) Over Chair Anal"
+									],
+									"None",
+									"SE_Haafingar3",
+									true,
+									false,
+									"None"
+								]
+							}
+						},
+						"sexStage5": {
+							"topic9": {
+								"questEditorID": [
+									"lope_LostPets_specialEvents_Whiterun1"
+								],
+								"questStage": [
+								    100
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"FalmersGirl_firstSexStart": {
+			"relationshipRank0": {
+				"lope_Leyla": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"questEditorID": [
+									"lope_FalmersGirl"
+								],
+								"sexlabSpecialOffset": [
+									true,
+									"Bedroll",
+									"Bedroll"
+								],
+								"sexlabSceneMultipleActors": [
+									true,
+									[
+									    0, 2, 3
+									],
+									[
+										"Billyy (Falmer) 3p Laying DP"
+									],
+									"None",
+									"FalmersGirl_firstSex",
+									true,
+									false,
+									"None"
+								]
+							}
+						},
+						"sexStage4": {
+							"topic4": {
+								"questEditorID": [
+									"lope_FalmersGirl"
+								],
+								"questStage": [
+								    50
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"test_renamingSex": {
+			"relationshipRank1": {
+				"lope_MariaREF": {
+					"scene0": {
+						"stage0": {
+							"topic0": {
+								"sexlabSceneNoPlayer": [
+									true,
+									[
+										"Billyy (Canine) Doggy 3"
+									],
+									"None",
+									"test_renamingSex",
+									true,
+									false,
+									"None"
+								]
+							}
+						}
+					}
+				}
+			}
+        }
     }
 }

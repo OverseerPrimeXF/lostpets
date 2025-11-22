@@ -7,6 +7,7 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 ; Housecarl.forceRefTo(func.getHousecarlFromCurrentCell())
+states.forceGreetState = 2
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -16,3 +17,5 @@ EndFunction
 lope_functions Property func  Auto  
 
 ReferenceAlias Property HouseCarl  Auto  
+
+lope_mariaEvents_states Property states  Auto  

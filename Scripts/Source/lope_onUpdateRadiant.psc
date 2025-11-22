@@ -11,11 +11,11 @@ event OnUpdateGameTime()
 endevent
 
 
-function registerForRadiant()
+function registerForRadiant(float time = 24.0)
     ; debug.messagebox("registerForVisit")
     if !Storage.isRegisteredForRadiant
         ; debug.messagebox("registerForRadiant If got TRUE")
-        registerForSingleUpdateGameTime(24.0)
+        registerForSingleUpdateGameTime(time)
         Storage.isRegisteredForRadiant = True
     endif
 endfunction

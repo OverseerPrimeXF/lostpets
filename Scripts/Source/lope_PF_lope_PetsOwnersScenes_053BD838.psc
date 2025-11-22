@@ -5,7 +5,7 @@ Scriptname lope_PF_lope_PetsOwnersScenes_053BD838 Extends Package Hidden
 ;BEGIN FRAGMENT Fragment_0
 Function Fragment_0(Actor akActor)
 ;BEGIN CODE
-thisScene.stop()
+; thisScene.stop()
 ;END CODE
 EndFunction
 ;END FRAGMENT

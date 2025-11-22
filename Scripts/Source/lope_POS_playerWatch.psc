@@ -24,6 +24,7 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
         if self.GetOwningQuest().getstage() == 10
             self.GetOwningQuest().setstage(102)
         endif
+        lope_SSH.questInitator = None
         CurrentLocation.Clear()
     endif
     if CurrentLocation.GetLocation()
@@ -33,12 +34,12 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
             Pet.ForceRefTo(utilityPet.getRef())
             Owner.ForceRefTo(utilityOwner.getRef())
             ; MessageBox(Pet.GetActorRef().GetDisplayName()+" "+Owner.GetActorRef().GetDisplayName())
-            OwnersBed.ForceRefTo(func.FindReferencesOfTypeInCellWithOwner(\
-                Owner.GetRef(), Storage.sexlabBedsList()))
+            OwnersBed.ForceRefTo(lope_nativeFunctions.FindReferencesOfTypeInCellWithOwner(\
+                Owner.GetRef(), Storage.sexlabBedsList(), 0))
             ; MessageBox(utilityChair.GetRef())
             chair.ForceRefTo(utilityChair.GetRef())
             string sceneName = "DogApproachOwner"
-            lope_SSH.questIniator = self.GetOwningQuest()
+            lope_SSH.questInitator = self.GetOwningQuest()
             lope_SSH.showSubtitlesNonSexlab(sceneName, 0, Pet.getActorRef(), Owner.GetActorRef())
             self.GetOwningQuest().setstage(10)
         endif
@@ -77,7 +78,7 @@ MessageBox(CurrentLocation.GetLocation())
             ; MessageBox(utilityChair.GetRef())
             chair.ForceRefTo(utilityChair.GetRef())
             string sceneName = "DogApproachOwner"
-            lope_SSH.questIniator = self.GetOwningQuest()
+            lope_SSH.questInitator = self.GetOwningQuest()
             lope_SSH.showSubtitlesNonSexlab(sceneName, 0, Pet.getActorRef(), Owner.GetActorRef())
             self.GetOwningQuest().setstage(10)
         endif

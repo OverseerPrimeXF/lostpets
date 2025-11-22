@@ -16,8 +16,10 @@ Import lope_nativeFunctions
 
 Event  OnInit()
     doInit()
+    While (IsInMenuMode())
+        Wait(1)
+    EndWhile
     Storage.initializeRanksArrays()
-    Trace("[LoPe] Initialized arrays.")
     startup.setPetsArrays()
     Trace("[LoPe] Set pets arrays.")
     ; func.addKeywordsToAllFormsInJson()
@@ -37,14 +39,19 @@ endEvent
 ;    endif
 ;endEvent
 
+Function RegisterCustomRaces()
+    sslCreatureAnimationSlots.AddRaceID("Foxes", "lope_foxPetRace")
+    sslCreatureAnimationSlots.AddRaceID("Canines", "lope_ShepherdRace")
+    MiscUtil.PrintConsole("[Lost Pets] Added custom races to SL index")
+EndFunction
+
 
 Function doInit()
     RegisterForModEvent("lope_ShowSubtitles", "OnShowSubtitles")
     RegisterForModEvent("lope_ShowSubtitlesNonSexlab", "OnShowSubtitlesNonSexlab")    
     ; RegisterForModEvent("lope_ShowOvumGif", "OnShowOvumGif")
     MiscUtil.PrintConsole("[Lost Pets] Registered events for subtitles handler")
-    sslCreatureAnimationSlots.AddRaceID("Foxes", "lope_foxPetRace")
-    MiscUtil.PrintConsole("[Lost Pets] Added custom fox race to SL index")
+    RegisterCustomRaces()
 endFunction
 
 
@@ -73,6 +80,7 @@ event OnShowSubtitles(String eventName,\
     string sceneFullPath ;  = "."+sceneName
     string topicFullPath
     string[] replic
+    Actor currentSpeaker = None
 
     ; sceneFullPath += ".relationshipRank" + (partner as Actor).GetRelationshipRank(human as Actor)
     ; sceneCount = PathCount(filename, "."+sceneName) - 1
@@ -91,6 +99,7 @@ event OnShowSubtitles(String eventName,\
         If (forceEndSubt)
             forceEndSubt = False
             sub.WidgetVisible(False)
+            ; moveAllFilesBack()
             return
         EndIf
         topicFullPath = sceneFullPath + ".topic"+topicIdx
@@ -103,15 +112,23 @@ event OnShowSubtitles(String eventName,\
             sub.WidgetVisible(False)
             topicIdx = 0
             sl.nextStageSexlab()
+            ; moveAllFilesBack()
             return
         endif
-        if questIniator && !questIniator.IsRunning()
+        if questInitator && !questInitator.IsRunning()
             ; If quest iniator is ended don't show subt.
             sub.WidgetVisible(False)
-            questIniator = None
+            questInitator = None
+            ; moveAllFilesBack()
             return
         endif
         if (sl.getSexlabStage() - 1) > stageId
+            If (currentSpeaker)
+                lope_nativeFunctions.MakeActorShutup(currentSpeaker)
+                ; MessageBox(topicFullPath)
+                ; moveToWorked(topicFullPath)
+                ; moveAllFilesBack()
+            EndIf
             return
         endif
         ; replic = PathStringElements(fileName, sceneFullPath+".topic"+topicIdx)
@@ -127,19 +144,22 @@ event OnShowSubtitles(String eventName,\
                 ; MessageBox(human as Actor + " on distance of player: "+ PlayerActor.GetDistance(human as Actor))
                 Utility.Wait(0.5)
             endwhile
-        elseif replic[1] == "Pause"
+        ElseIf replic[1] == "Pause"
             sub.WidgetVisible(False)
         ElseIf (replic[0]=="Player")
+            currentSpeaker = PlayerActor as Actor
             sub.showSubtitles(\
-                speaker=PlayerActor as Actor,\
+                speaker=currentSpeaker,\
                 text=func.SRIB(replic[1], (partner as actor).getactorbase().getName()))
         ElseIf (replic[0]=="Human" || replic[0]=="Owner")
+            currentSpeaker = human as Actor
             sub.showSubtitles(\
-                speaker=human as Actor,\
+                speaker=currentSpeaker,\
                 text=func.SRIB(replic[1], (partner as actor).getactorbase().getName()))
         elseif partner && replic[0]=="Pet"
+            currentSpeaker = partner as Actor
             sub.showSubtitles(\
-                speaker=partner as actor,\
+                speaker=currentSpeaker,\
                 text=func.SRIB(replic[1], PlayerActor)\
                 )
         else
@@ -150,13 +170,22 @@ event OnShowSubtitles(String eventName,\
             act.doActions(replic[3], replic[2] as int, partner as Actor)
         endif
         ; utility.wait(replic[2] as int)
-        utility.wait(func.PlayTopicVoice(replic[2], topicFullPath, replic[1]) as Float)
-        topicIdx += 1        
+        Utility.Wait(func.PlayTopicVoice(replic[2], topicFullPath, replic[1]) as Float)        
+        if (sl.getSexlabStage() - 1) > stageId
+            If (currentSpeaker)
+                lope_nativeFunctions.MakeActorShutup(currentSpeaker)
+            EndIf
+            return
+        endif
+        currentSpeaker = None
+        topicIdx += 1
         sub.WidgetVisible(False)
         Utility.Wait(0.2)
-        If (!isFloat(replic[2]))
-            MoveVoiceFilesBack(topicFullPath)  ; we pretend if we haven't actorbase in replic[2] we don't have voicefile
+        If (!isFloat(replic[2]))  ; we pretend if we didn't have actorbase in replic[2] we didn't have voicefile either
+            ; MoveVoiceFilesBack(topicFullPath)
+            ; moveToWorked(topicFullPath)
         EndIf
+        ; UI.InvokeString("HUD Menu", "_global.skse.CloseMenu", "InventoryMenu")
     endwhile
     sub.WidgetVisible(False)
     topicIdx = 0
@@ -198,7 +227,7 @@ event OnShowSubtitlesNonSexlab(String eventName,\
     endif
     ; sceneFullPath += sceneName+".scene"+sceneCount
     ; stageCount = PathCount(fileName, sceneFullPath)
-    
+
     sceneFullPath += ".scene" + sceneCount
     sceneFullPath += ".stage" + stageId
     topicCount = PathCount(fileName, sceneFullPath) - 1
@@ -217,12 +246,17 @@ event OnShowSubtitlesNonSexlab(String eventName,\
             sub.WidgetVisible(False)
             topicIdx = 0
             sl.nextStageSexlab()
+            CurrentScene = None
+            
+            moveAllFilesBack()
             return
         endif
-        if questIniator && !questIniator.IsRunning()
+        if questInitator && !questInitator.IsRunning()
             ; If quest iniator is ended don't show subs.
             sub.WidgetVisible(False)
-            questIniator = None
+            questInitator = None
+            CurrentScene = None
+            moveAllFilesBack()
             return
         endif
         ; replic = PathStringElements(fileName, sceneFullPath+".topic"+topicIdx)
@@ -251,7 +285,7 @@ event OnShowSubtitlesNonSexlab(String eventName,\
             ; get package or apply actor to 
             act.doActions(replic[3], replic[2] as int, partner as Actor, human as Actor)
             if CurrentScene
-                ; MessageBox("currents scene")
+                ; MessageBox("currents scene: " + CurrentScene)
                 while CurrentScene.IsPlaying()
                     utility.wait(0.5)
                 endwhile
@@ -274,11 +308,14 @@ event OnShowSubtitlesNonSexlab(String eventName,\
         sub.WidgetVisible(False)
         Utility.Wait(0.2)
         If (!isFloat(replic[2]))
-            MoveVoiceFilesBack(topicFullPath)  ; we pretend if we haven't actorbase in replic[2] we don't have voicefile
+            ; MoveVoiceFilesBack(topicFullPath)  ; we pretend if we haven't actorbase in replic[2] we don't have voicefile
+            moveToWorked(topicFullPath)
         EndIf
+        CurrentScene = None
     endwhile
     sub.WidgetVisible(False)
     topicIdx = 0
+    ; questInitator = None
     ; sl.nextStageSexlab()
 endevent
 
@@ -483,6 +520,6 @@ lope_functions Property func Auto
 Scene Property CurrentScene = None Auto 
 Bool Property hostilesPresented = False Auto  
 
-Quest Property questIniator Auto
+Quest Property questInitator Auto
 
 Actor Property PlayerActor Auto

@@ -7,6 +7,8 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 Quest qt = GetOwningquest()
+qt.setObjectiveDisplayed(200, false)
+qt.setObjectiveDisplayed(51, False)
 qt.setstage(1000)
 qt.stop()
 overseer.registerForVisit()

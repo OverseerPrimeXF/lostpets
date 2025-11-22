@@ -40,8 +40,10 @@ endEvent
 Event OnEquipped(Actor akActor)
     ; debug.MessageBox("Bait dropped!")
     game.GetPlayer().DropObject(self.GetRef().GetBaseObject())
-    game.DisablePlayerControls(abMenu = True)
-    game.EnablePlayerControls()
+    ; game.DisablePlayerControls(abMenu = True)
+    ; game.EnablePlayerControls()
+    UI.InvokeString("HUD Menu", "_global.skse.CloseMenu", "InventoryMenu")
+    UI.InvokeString("HUD Menu", "_global.skse.CloseMenu", "TweenMenu")
 EndEvent
 
 

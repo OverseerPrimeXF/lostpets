@@ -7,7 +7,7 @@ String FILE_NAME = "../lostpets/dog_arena_visitors_schedule.json"
 
 
 Function Initializer()
-    visitorsOnArena = new int[1]
+    ; visitorsOnArena = PapyrusUtil.IntArray(4)
 EndFunction
 
 
@@ -272,6 +272,11 @@ Function RegisterForNextCheck()
 EndFunction
 
 
+Function debug()
+    debug.MessageBox("visitorsCameIDs "+visitorsCameIDs +"\nvisitorsLeftIDs "+ visitorsLeftIDs+"\nvisitorsOnArena "+visitorsOnArena)
+EndFunction
+
+
 Bool radiantFightRunning
 Bool previousFightState = False
 Bool radiantFightJustEnded
@@ -281,7 +286,7 @@ int currentDayOfWeek = 0
 
 Int[] visitorsCameIDs
 Int[] visitorsLeftIDs
-int[] visitorsOnArena
+int[] Property visitorsOnArena Auto
 
 ReferenceAlias visitor
 

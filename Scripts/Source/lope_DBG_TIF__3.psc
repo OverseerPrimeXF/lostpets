@@ -6,7 +6,8 @@ Scriptname lope_DBG_TIF__3 Extends TopicInfo Hidden
 Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-stripUtil.unstrip_actor(akSpeaker)
+debug.messagebox(\
+    lope_nativeFunctions.FindReferencesOfTypeInCellWithOwner(akSpeaker, sexlabBeds, 0))
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -14,14 +15,12 @@ EndFunction
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
 
-ReferenceAlias Property visitor01  Auto  
-ReferenceAlias Property visitor02  Auto  
-ReferenceAlias Property visitor03  Auto  
-ReferenceAlias Property visitor04  Auto  
+ReferenceAlias Property testAlias  Auto  
 
-lope_DogArena_arenaUpdater Property aU  Auto  
-
+Scene Property lope_dbg_debugScene  Auto  
 
 lope_functions Property func  Auto  
 
-lope_strippingUtility Property stripUtil  Auto  
+Idle Property write  Auto  
+
+FormList Property SexLabBeds  Auto  

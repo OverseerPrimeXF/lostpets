@@ -1,0 +1,14 @@
+{
+	"modID": "LoPe",
+	"ModName": "More Nasty Critters",
+	"creatures": [
+		{
+			"skinName": "Shepherd from Lost Pets",
+			"normalArmor": null,
+			"arousedArmor": "__formData|lost_pets.esp|0x124B36",
+			"RaceName": "Shepherd (Lost Pets)",
+			"raceForm": "__formData|lost_pets.esp|0x11D462",
+			"skinForm": "__formData|lost_pets.esp|0x11D463"
+		}
+	]
+}

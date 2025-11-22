@@ -1,20 +1,10 @@
 ;BEGIN FRAGMENT CODE - Do not edit anything between this and the end comment
-;NEXT FRAGMENT INDEX 8
+;NEXT FRAGMENT INDEX 11
 Scriptname lope_QF_lope_LostPetsPetVisit_050FC1F6 Extends Quest Hidden
 
-;BEGIN ALIAS PROPERTY Pet_GameCatcher
+;BEGIN ALIAS PROPERTY TavernBed
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Pet_GameCatcher Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Pet
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Pet Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY Innkeeper
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Innkeeper Auto
+ReferenceAlias Property Alias_TavernBed Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY PetFollower
@@ -22,9 +12,24 @@ ReferenceAlias Property Alias_Innkeeper Auto
 ReferenceAlias Property Alias_PetFollower Auto
 ;END ALIAS PROPERTY
 
+;BEGIN ALIAS PROPERTY Pet
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Pet Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Pet_GameCatcher
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Pet_GameCatcher Auto
+;END ALIAS PROPERTY
+
 ;BEGIN ALIAS PROPERTY Player
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Player Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Innkeeper
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Innkeeper Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY Owner
@@ -32,19 +37,14 @@ ReferenceAlias Property Alias_Player Auto
 ReferenceAlias Property Alias_Owner Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY PlayerSpeaker
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_PlayerSpeaker Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY Pet_GameRunaway
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Pet_GameRunaway Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY TavernBed
+;BEGIN ALIAS PROPERTY PlayerSpeaker
 ;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_TavernBed Auto
+ReferenceAlias Property Alias_PlayerSpeaker Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN FRAGMENT Fragment_6
@@ -56,6 +56,15 @@ lope_PetVisitScript kmyQuest = __temp as lope_PetVisitScript
 ;BEGIN CODE
 kmyquest.setStartTime()
 kmyquest.register(2.0)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_8
+Function Fragment_8()
+;BEGIN CODE
+setObjectiveDisplayed(10, false)
+setObjectiveDisplayed(200, false)
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -17,6 +17,7 @@ Function Fragment_2(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 (getOwningquest() as lope_mariaEvents_aliasUtil).fillDoubleBedFurnitureAlias()
+states.forceGreetState = 2
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -26,3 +27,5 @@ EndFunction
 lope_functions Property func  Auto  
 
 Scene Property goToBed  Auto  
+
+lope_mariaEvents_states Property states  Auto  

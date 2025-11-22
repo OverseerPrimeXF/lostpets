@@ -12,7 +12,7 @@ Event OnGainLOS(Actor akViewer, ObjectReference akTarget)
     ; (SSH as lope_ShowSubtitlesHandler).Foo()
     (SSH as lope_ShowSubtitlesHandler).ShowSubtitlesNonSexlab(\
         "foundLostDog_firstTime", 0,\
-        self.GetActorReference(), Maria.GetActorRef())
+        self.GetActorReference(), Maria.GetActorReference())
 endEvent
 
 

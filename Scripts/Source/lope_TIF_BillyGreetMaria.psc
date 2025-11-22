@@ -16,7 +16,7 @@ EndFunction
 Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-Billy.setLookAt(lope_Maria)
+; Billy.setLookAt(lope_Maria)
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -8,6 +8,8 @@ Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 getowningquest().setobjectivedisplayed(200)
 getowningquest().setstage(200)
+getowningquest().setObjectiveDisplayed(51, false)
+getowningquest().setObjectiveDisplayed(10, false)
 ;END CODE
 EndFunction
 ;END FRAGMENT

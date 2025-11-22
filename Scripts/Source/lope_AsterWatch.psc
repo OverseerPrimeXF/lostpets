@@ -8,10 +8,20 @@ Event OnInit()
 endEvent
 
 
-Event OnPlayerLoadGame()
+; Event OnPlayerLoadGame()
+;     registerForAnimEvents()
+; endEvent
+
+Event OnLoad()
     registerForAnimEvents()
 endEvent
 
+Event OnUnload()
+    UnregisterForAnimationEvent(self.getReference(), "IdleChairBook_OnePage")
+    UnregisterForAnimationEvent(self.getReference(), "ChairReadingIdles")
+    UnregisterForAnimationEvent(self.getReference(), "IdleFurnitureExit")
+   ;  Debug.MessageBox("Aster unregistered for animations due to she is unloaded.")
+endEvent
 
 Event OnUpdate()
     isAsterTurnedManyPages()
@@ -29,7 +39,7 @@ Function checkIfTimeForMiddenScene()
     if self.getReference().GetCurrentLocation() != (GetFormFromEditorID("WinterholdCollegeMiddenLocation") as Location) || self.GetOwningQuest().GetStage() == 0
         return
     endIf
-    currentTimeInMinutes = func.GetCurrentTimeInMinutes()
+    currentTimeInMinutes = lope_functions.GetCurrentTimeInMinutes()
     ; debug.notification("Current game time in minutes: " + currentTimeInMinutes)
     If (currentTimeInMinutes >= 240 && currentTimeInMinutes < 1200)  ; (func.CompareGameTimeWith(4, 0) >= 0)
         Scene AsterScene = GetFormFromEditorID("lope_AsterDialogues_AsterPetIntimacy01") as Scene
@@ -77,11 +87,15 @@ EndFunction
 
 
 function registerForAnimEvents()
+    ; debug.MessageBox("Aster registered for anims!")
     if !RegisterForAnimationEvent(self.getReference(), "IdleChairBook_OnePage")
         debug.notification("Failed to register for IdleChairBook_OnePage")
     endif
     if !RegisterForAnimationEvent(self.getReference(), "IdleFurnitureExit")
-        debug.notification("Failed to register for Reset")
+        debug.notification("Failed to register for IdleFurnitureExit")
+    endif    
+    if !RegisterForAnimationEvent(self.getReference(), "ChairReadingIdles")
+        debug.notification("Failed to register for ChairReadingIdles")
     endif
 endfunction
 
@@ -92,11 +106,16 @@ Event OnAnimationEvent(ObjectReference akSource, string asEventName)
             registerForPagesTurnCount()
             AsterConditions.iAsterTurnedPage = 1
             AsterConditions.iAsterSitting = 1
-            debug.MessageBox("Aster turned page")
+            ; debug.MessageBox("Aster turned one page")
         elseif (asEventName == "IdleFurnitureExit")
             AsterConditions.iAsterTurnedPage = 0
             AsterConditions.iAsterSitting = 0
             AsterConditions.iAsterTurnedManyPages = 0
+        elseif (asEventName == "ChairReadingIdles")
+            ; AsterConditions.iAsterTurnedPage = 0
+            ; AsterConditions.iAsterSitting = 0
+            AsterConditions.iAsterTurnedManyPages = 1
+            ; Debug.MessageBox("Aster turned many pages")
         endIf
     endIf
 endEvent

@@ -12,10 +12,13 @@ EndEvent
 
 
 Function strip_actor(Actor akActor, Bool doAnimate = True)
+    ; debug.messageBox(akActor)
     if strippedActors.Find(akActor) > -1
         return
     endif    
-    setClothesArray(addActorToArray(akActor=akActor), SexLab.StripActor(ActorREF=akActor, doAnimate=doAnimate, leadIn=True))
+    setClothesArray(\
+        addActorToArray(akActor=akActor),\
+        SexLab.StripActor(ActorREF=akActor, doAnimate=doAnimate, leadIn=True))
 EndFunction
 
 

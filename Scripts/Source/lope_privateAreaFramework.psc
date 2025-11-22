@@ -25,7 +25,7 @@ Event OnUpdate()
 EndEvent
 
 
-; Register for next check for acotrs in area.
+; Register for next check for actors in area.
 Function pollingForNewIntruders()
     RegisterForSingleUpdate(pollingInterval)
 EndFunction
@@ -42,7 +42,7 @@ Function startPollingForIntruders(ObjectReference akCenterPrivacy = None)
 EndFunction
 
 
-; Dcan area in radius and add uniuque to TrackedActors.
+; Scan area in radius and add uniuque to TrackedActors.
 Function getAllUniqueActorsRefInAreaRadius(float afRadius)
     previousActorCount = TrackedActors.Length
     ; TemporalActors = FindAllReferencesWithKeyword(\
@@ -83,7 +83,7 @@ Function removeKeepDistancePackages()
 EndFunction
 
 
-; Set deafult values to used variables.
+; Set default values to used variables.
 Function resetFramework()
     previousActorCount = 0
     currentActorCount = 0

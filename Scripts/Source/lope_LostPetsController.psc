@@ -9,14 +9,25 @@ import MiscUtil
 
 String sceneName = "FoundLostDog"  ; "FoundLostDogFacRank"
 
-function registerNextTimeUpdate()
-    RegisterForSingleUpdate(1)
+float distance
+
+function registerNextTimeUpdate(int time = 1)
+    RegisterForSingleUpdate(time)
 EndFunction
 
 
 Event OnUpdate()
+    If getstage() == 10
+        Pet.TryToMoveTo(petMarker.getReference())
+    endIf
     If getstage() == 100
-        If playerRef.GetDistance(Pet.getReference()) <= 1024
+        distance = playerRef.GetDistance(Pet.getReference())
+        ; MessageBox(distance)
+        If (distance  <= 2048 && !PlayerActor.IsInFaction(CreatureFriendFaction))
+            PlayerActor.AddToFaction(CreatureFriendFaction)
+            PlayerActor.AddToFaction(BanditFriendFaction)
+            registerNextTimeUpdate()
+        elseIf distance <= 1024 && Pet.getActorReference().hasLOS(PlayerREF)
             Debug.Notification(Pet.GetActorReference().getActorBase().getName()+" somewhere nearby.")
             setobjectivecompleted(100)
             setstage(110)
@@ -24,11 +35,13 @@ Event OnUpdate()
            ; sceneName += Pet.getActorRef().GetFactionRank(LostPetsFaction)
             ; MessageBox("EditorID of marker: "+GetFormEditorID(PetMarker.GetRef().GetBaseObject()))
             ; MessageBox(MarkersInColdPlace.ToArray()+"\n"+PetMarker.GetRef().GetBaseObject())
-            if MarkersInColdPlace.HasForm(PetMarker.getRef().GetBaseObject())
+            if MarkersInColdPlace.HasForm(PetMarker.getReference().GetBaseObject())
                 PrintConsole("[LoPe] Marker is in cold place!")
                 sceneName += "Cold"
             endif
-            PrintConsole("[LoPe] Scene name:"+sceneName)
+            PrintConsole("[LoPe] Scene name: "+sceneName)
+            ; Assign this quest to SSH
+            (lope_SSH as lope_ShowSubtitlesHandler).questInitator = self
             (lope_SSH as lope_ShowSubtitlesHandler).showSubtitlesNonSexlab(\
                 sceneName, 0, Pet.getActorRef())
         Else 
@@ -36,6 +49,12 @@ Event OnUpdate()
         EndIf
     EndIf
 EndEvent
+
+
+Function RemovePlayerFromFriendsFactions()
+    PlayerActor.RemoveFromFaction(CreatureFriendFaction)
+    PlayerActor.RemoveFromFaction(BanditFriendFaction)
+EndFunction
 
 
 ; [OBSOLETE] Return formlist with avaliable lost pet places for Owner's hold.;Doesnt worked, changed
@@ -178,6 +197,11 @@ bool Function SetRandomPetFactionRank(Actor aPet, Faction fPetFaction)
 EndFunction
 
 
+Function ResetQuestInitiatorAtSSH()
+    (lope_SSH as lope_ShowSubtitlesHandler).questInitator = None
+EndFunction
+
+
 Function checkIfPOSTimeIsCame()
     ; code moved
 EndFunction
@@ -191,7 +215,7 @@ Function spawnHostilesBehind()
 EndFunction
 /;
 
-; Debug method
+; Debug
 Function waveHand(Actor akActor)
     akActor.playIdle(zIdle_waveHand)
 EndFunction
@@ -212,6 +236,8 @@ ReferenceAlias[] Property LostPet_Markers  Auto
 ReferenceAlias Property Pet  Auto  
 
 ObjectReference Property PlayerRef  Auto  
+Actor property PlayerActor Auto
+
 Scene Property PlayerFoundPet  Auto  
 
 ReferenceAlias Property PlayerSpeaker  Auto  
@@ -231,3 +257,6 @@ lope_functions Property func  Auto
 lope_storageContainer Property Storage  Auto  
 
 lope_POSController Property pos  Auto  
+
+Faction Property CreatureFriendFaction Auto
+Faction Property BanditFriendFaction Auto

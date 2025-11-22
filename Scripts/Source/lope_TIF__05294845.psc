@@ -7,9 +7,9 @@ Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 GetOwningQuest().SetStage(130)
-Actor[] WolvesActors = new Actor[2]
-WolvesActors[0] = Wolves[0].getActorRef()
-WolvesActors[1] = Wolves[1].getActorRef()
+; Actor[] WolvesActors = new Actor[2]
+; WolvesActors[0] = Wolves[0].getActorRef()
+; WolvesActors[1] = Wolves[1].getActorRef()
 
 sl.petsSex(sl.sexlab.MakeActorArray(Wolves[0].getActorRef(), Wolves[1].getActorRef()),\
     animName="Anubs  Wolf Wolf Female Surrender",\
@@ -17,6 +17,8 @@ sl.petsSex(sl.sexlab.MakeActorArray(Wolves[0].getActorRef(), Wolves[1].getActorR
     sceneName="WolfAmbushRape",\
     isRape=True,\
     endingSceneName="WolfAmbushEnd")
+    ;actionOnEnd="setStage,lope_LostPetsWolfAmbush,150"\
+; )
 ;END CODE
 EndFunction
 ;END FRAGMENT

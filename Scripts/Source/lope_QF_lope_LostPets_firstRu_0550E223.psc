@@ -7,19 +7,9 @@ Scriptname lope_QF_lope_LostPets_firstRu_0550E223 Extends Quest Hidden
 ReferenceAlias Property Alias_Player Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Maria
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Maria Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY Owner
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_Owner Auto
-;END ALIAS PROPERTY
-
-;BEGIN ALIAS PROPERTY RumorSource
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_RumorSource Auto
 ;END ALIAS PROPERTY
 
 ;BEGIN ALIAS PROPERTY LostPetMarker
@@ -27,24 +17,25 @@ ReferenceAlias Property Alias_RumorSource Auto
 ReferenceAlias Property Alias_LostPetMarker Auto
 ;END ALIAS PROPERTY
 
-;BEGIN ALIAS PROPERTY Pet
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_Pet Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY PetFollower
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_PetFollower Auto
 ;END ALIAS PROPERTY
 
-;BEGIN FRAGMENT Fragment_8
-Function Fragment_8()
-;BEGIN CODE
-alias_PetFollower.forceRefTo(alias_Pet.getRef())
-alias_PetFollower.getActorRef().EvaluatePackage()
-;END CODE
-EndFunction
-;END FRAGMENT
+;BEGIN ALIAS PROPERTY Pet
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Pet Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY Maria
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_Maria Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY RumorSource
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_RumorSource Auto
+;END ALIAS PROPERTY
 
 ;BEGIN FRAGMENT Fragment_6
 Function Fragment_6()
@@ -59,6 +50,12 @@ Function Fragment_2()
 ;BEGIN CODE
 ;LoPeCo.SetRandomPetFactionRank(\
 ;    alias_Pet.getActorRef(), storage.LostPetFaction())
+
+Quest aliasUtil = PO3_SKSEFunctions.getFormFromEditorID("lope_LostPetsRadiant_aliasutil") as Quest
+aliasUtil.setStage(0)
+alias_LostPetMarker.forceRefTo((aliasUtil.GetAliasByName("PetMarker") as ReferenceAlias).getReference())
+aliasUtil.setStage(1000)
+
 PetFromPackages.ForceRefTo(alias_Pet.getRef())
 alias_Pet.getRef().moveTo(alias_LostPetMarker.getRef())
 ;END CODE
@@ -71,6 +68,15 @@ Function Fragment_4()
 PetFromPackages.clear()
 completeQuest()
 stop()
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_8
+Function Fragment_8()
+;BEGIN CODE
+alias_PetFollower.forceRefTo(alias_Pet.getRef())
+alias_PetFollower.getActorRef().EvaluatePackage()
 ;END CODE
 EndFunction
 ;END FRAGMENT

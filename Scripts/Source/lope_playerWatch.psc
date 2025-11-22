@@ -1,4 +1,6 @@
 Scriptname lope_playerWatch extends ReferenceAlias  
+{Script for watch player on pet visiting radiant.}
+
 
 event OnItemRemoved(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer)
     ; debug.messagebox(akBaseItem + " | " + aiItemCount  + " | " + akItemReference  + " | " + akDestContainer)

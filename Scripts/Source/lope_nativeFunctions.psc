@@ -19,8 +19,34 @@ Form Function getRandomFormWithKeywordsFromList(Formlist kwds, bool match_all)  
 ; gets all game form ids and writes to lope_debug file, no CTD
 Function getAllFormsEditorIDs() global native
 
-Function SetActorCollision(Actor akActor, bool disable) global native
+Function MakeActorShutup(Actor akActor) global native
 
 int[] Function excludeElementsInt(int[] fromExclude, int[] whatExclude) global native
+
+Actor[] Function makeFriendly(Location aLocation, Race[] aRaces) Global native
+
+ObjectReference Function FindReferencesOfTypeInCellWithOwner(ObjectReference center, Form formlist, float radius) Global native
+
+; @Deprecated
+Function setFriendly(Location loc, Race[] races) Global
+    return
+    Actor[] allActorsOnLoc = makeFriendly(loc, races)
+    int index = 0
+    While (index < allActorsOnLoc.Length)
+        Actor item = allActorsOnLoc[index]
+        ; item.SetActorValue("Aggression", 0)
+        Debug.MessageBox(item.GetActorBase().GetName() + "'s aggression is: " + item.GetActorValue("Aggression"))
+        index += 1
+    EndWhile
+EndFunction
+
+; @Deprecated
+Function moveToWorked(String path) global native
+; @Deprecated
+Function moveAllFilesBack() global native
+
+String Function placeVoiceFile(String path) global native  ; it just works.
+
+; Function testLocRefType() global native  ; crap.
 
 ; float Function makeActorSay(ObjectReference akSpeaker, Topic topicToSay) global native
